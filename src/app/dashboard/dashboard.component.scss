@@ -1,0 +1,33 @@
+.heading {
+    font-size: 22px;
+    padding: 10px 0;
+    color: #5a5a5a;
+}
+
+.box-color{
+    background-color: #fff;
+    padding-bottom: 5px;
+    .sub-heading{
+        padding:15px;
+        text-align: center;
+        font-size: 12px;
+    }
+    .row-heading{
+        background-color: #8DD6F4;
+        color: #fff;
+        padding: 10px 0;
+        font-size: 10px;
+    }
+    .row-dtl{
+        padding: 10px 0;
+        border-bottom: 1px solid #e5e5e5;
+        font-size: 12px;
+    }
+}
+
+.dropdown .btn-default, .btn-default {
+    background-color: #B2B2B2;
+    color: #fff;
+    font-size: 12px;
+    min-width: 100px;
+}
