@@ -8,7 +8,7 @@ import { Options } from 'ng5-slider';
 })
 export class DashboardComponent implements OnInit {
 
-  value: number = 5;
+  value = 50;
 
   country = [
     {'id': 'IN', 'display': 'India'},

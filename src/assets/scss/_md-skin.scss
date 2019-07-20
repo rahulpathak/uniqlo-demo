@@ -111,19 +111,19 @@ body.md-skin {
     color: #ffffff;
   }
 
-  .nav > li.active > a {
-    color: darken($text-color, 5%);
-    font-weight: 700;
-  }
+  // .nav > li.active > a {
+  //   color: darken($text-color, 5%);
+  //   font-weight: 700;
+  // }
 
-  .navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus {
-    font-weight: 700;
-    color: darken($text-color, 5%);
-  }
+  // .navbar-default .nav > li > a:hover, .navbar-default .nav > li > a:focus {
+  //   font-weight: 700;
+  //   color: darken($text-color, 5%);
+  // }
 
-  .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-    background: $navy;
-  }
+  // .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  //   background: $navy;
+  // }
 
   .navbar-top-links li {
     display: inline-table;
@@ -154,9 +154,9 @@ body.md-skin {
     font-weight: 400;
   }
 
-  .navbar-static-side .nav > li > a:focus, .navbar-static-side .nav > li > a:hover {
-    background-color: inherit;
-  }
+  // .navbar-static-side .nav > li > a:focus, .navbar-static-side .nav > li > a:hover {
+  //   background-color: inherit;
+  // }
 
   .navbar-top-links .dropdown-menu li a {
     padding: 3px 20px;

@@ -6,18 +6,24 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { Ng5SliderModule } from 'ng5-slider';
+import { MaterialDesignModule } from './material-design.module';
+import { VoiceofstoreComponent } from './voiceofstore/voiceofstore.component';
+import { VoiceofcustomerComponent } from './voiceofcustomer/voiceofcustomer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    VoiceofstoreComponent,
+    VoiceofcustomerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    Ng5SliderModule
+    Ng5SliderModule,
+    MaterialDesignModule
   ],
   providers: [],
   bootstrap: [AppComponent]

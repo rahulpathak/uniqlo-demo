@@ -2,21 +2,30 @@
   <div class="sidebar-collapse">
     <ul class="nav metismenu" id="side-menu" #sideMenu>
       <li>
-        <img src="assets/img/uniqlo.logo.png" style="height:40px;padding:5px;"/>
+        <img src="assets/img/uniqlo.logo.png" style="height:40px;padding:5px;" />
       </li>
       <li routerLinkActive="active">
-        <a>
+        <a [routerLink]="['/dashboard']">
+          <span class="dashboard"></span>
           <span class="nav-label">Dashboad</span>
         </a>
       </li>
       <li routerLinkActive="active">
-        <a>
+        <a [routerLink]="['/voc']">
+          <div class="voc"></div>
           <span class="nav-label">VOC</span>
         </a>
       </li>
       <li routerLinkActive="active">
-        <a>
+        <a [routerLink]="['/vos']">
+          <div class="voc"></div>
           <span class="nav-label">VOS</span>
+        </a>
+      </li>
+      <li routerLinkActive="active">
+        <a [routerLink]="['']">
+          <div class="mi"></div>
+          <span class="nav-label">MI</span>
         </a>
       </li>
       <!-- <li [ngClass]="{ 'modal-active' : isModalOpened }" *ngIf="currentUrl" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
@@ -25,7 +34,7 @@
           <span class="nav-label">{{'HOME_HOME' | translate}}</span>
         </a>
       </li> -->
-    
+
       <!-- <li [ngClass]="{ 'modal-active' : isModalOpened }" *ngIf="userObject?.participantType == 'CARE_ADMINISTRATOR'" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
         <a [routerLink]="['/home']" [queryParams]="{ list: true }">
           <i class="vh-icon-Care-Plans fa-lg"></i>

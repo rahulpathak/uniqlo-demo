@@ -256,13 +256,13 @@ video {
   position: relative !important;
 }
 
-@media (min-width: 768px) {
-  #page-wrapper {
-    position: inherit;
-    margin: 0 0 0 240px;
-    min-height: 2002px;
-  }
-}
+// @media (min-width: 768px) {
+//   #page-wrapper {
+//     position: inherit;
+//     margin: 0 0 0 240px;
+//     min-height: 2002px;
+//   }
+// }
 
 .title-action {
   text-align: right;
@@ -1707,3 +1707,99 @@ body.mini-navbar.fixed-sidebar .logo-element {
   cursor: none;
   pointer-events: none;
 }
+
+.login-icon {
+  background: url('assets/img/user_male2.svg') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  display: -ms-grid;
+  display: -webkit-box;
+  display: -moz-box;
+  display: inline-block;
+  margin: 0 7px;
+}
+.globle-icon{
+  background: url('assets/img/globe.svg') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  display: -ms-grid;
+  display: -webkit-box;
+  display: -moz-box;
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.trans-icon{
+  background: url('assets/img/translate.svg') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  display: -ms-grid;
+  display: -webkit-box;
+  display: -moz-box;
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.print-icon{
+  background: url('assets/img/printerText.svg') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  display: -ms-grid;
+  display: -webkit-box;
+  display: -moz-box;
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.search-icon{
+  background: url('assets/img/search.svg') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  display: -ms-grid;
+  display: -webkit-box;
+  display: -moz-box;
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.dashboard{
+  background: url('assets/img/dashboard.svg#Layer_1') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 32px;
+  height: 30px;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.voc{
+  background: url('assets/img/message.svg') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 32px;
+  height: 30px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.mi{
+  background: url('assets/img/mi.svg') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 32px;
+  height: 30px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+

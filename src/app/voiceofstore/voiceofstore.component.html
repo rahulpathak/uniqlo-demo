@@ -1,8 +1,6 @@
-<!-- <ng5-slider class="custom-slider" [(value)]="value" [options]="options"></ng5-slider> -->
 <div class="row">
   <div class="col-lg-12 no-padding">
     <div class="wrapper wrapper-content white-bg">
-      <!-- <ng-content select="[dashboard-body-locator]"></ng-content> -->
       <div class="row">
         <div class="col-lg-12 no-padding">
           <div class="col-lg-3">
@@ -91,149 +89,10 @@
     </div>
   </div>
 </div>
-<div class="heading">
-  Voice of Customer
-</div>
 <div class="row">
-  <div class="col-lg-12 no-padding">
-    <div class="col-lg-6 box-color no-padding-left">
-      <div class="col-lg-12 no-padding border-all">
-        <div class="sub-heading">Oppurtunities: Product with Top Rating</div>
-        <div class="col-lg-12 row-heading">
-          <div class="col-lg-1">
-            Id
-          </div>
-          <div class="col-lg-4">
-            Part Number
-          </div>
-          <div class="col-lg-2">
-            Dep ID
-          </div>
-          <div class="col-lg-3">
-            Evaluation(Average)
-          </div>
-          <div class="col-lg-2">
-            Comments
-          </div>
-        </div>
-        <div class="col-lg-12 row-dtl">
-          <div class="col-lg-1">
-            1
-          </div>
-          <div class="col-lg-4 text-overflow" title="420110 Cotton Relax Fit Crew Neck Long-Sleeve T-Shirt">
-            420110 Cotton Relax Fit Crew Neck Long-Sleeve T-Shirt
-          </div>
-          <div class="col-lg-2">
-            34
-          </div>
-          <div class="col-lg-3">
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="value" aria-valuemin="0" aria-valuemax="100"
-                [ngStyle]="{'width.%': value}">
-                {{value}}
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            28
-          </div>
-        </div>
-        <div class="col-lg-12 row-dtl">
-          <div class="col-lg-1">
-            2
-          </div>
-          <div class="col-lg-4">
-            420001 Means
-          </div>
-          <div class="col-lg-2">
-            34
-          </div>
-          <div class="col-lg-3">
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="value" aria-valuemin="0" aria-valuemax="100"
-                [ngStyle]="{'width.%': value}">
-                {{value}}
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            28
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-6 box-color no-padding-right">
-      <div class="col-lg-12 no-padding border-all">
-        <div class="sub-heading">Risk: Product with Low Rating</div>
-        <div class="col-lg-12 row-heading">
-          <div class="col-lg-1">
-            Id
-          </div>
-          <div class="col-lg-4">
-            Part Number
-          </div>
-          <div class="col-lg-2">
-            Dep ID
-          </div>
-          <div class="col-lg-3">
-            Evaluation(Average)
-          </div>
-          <div class="col-lg-2">
-            Comments
-          </div>
-        </div>
-        <div class="col-lg-12 row-dtl">
-          <div class="col-lg-1">
-            1
-          </div>
-          <div class="col-lg-4">
-            4210001 Womens
-          </div>
-          <div class="col-lg-2">
-            27
-          </div>
-          <div class="col-lg-3">
-            <div class="progress">
-              <div class="progress-bar red" role="progressbar" aria-valuenow="value" aria-valuemin="0" aria-valuemax="100"
-                [ngStyle]="{'width.%': value}">
-                {{value}}
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            28
-          </div>
-        </div>
-        <div class="col-lg-12 row-dtl">
-          <div class="col-lg-1">
-            2
-          </div>
-          <div class="col-lg-4">
-            4210001 Womens
-          </div>
-          <div class="col-lg-2">
-            27
-          </div>
-          <div class="col-lg-3">
-            <div class="progress">
-              <div class="progress-bar red" role="progressbar" aria-valuenow="value" aria-valuemin="0" aria-valuemax="100"
-                [ngStyle]="{'width.%': value}">
-                {{value}}
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            28
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="col-lg-12 box-heading">
+    Voice of Store
   </div>
-</div>
-<div class="heading">
-  Voice of Store
-</div>
-<div class="row">
   <div class="col-lg-12 no-padding">
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">Improvements</div>
@@ -308,3 +167,29 @@
     </div>
   </div>
 </div>
+<br>
+<!-- <mat-table #table [dataSource]='dataSource' matSort class="white-bg">
+
+  <ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> No. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="weight">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Weight </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="symbol">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Symbol </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table> -->
