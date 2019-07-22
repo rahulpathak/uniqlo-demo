@@ -118,7 +118,7 @@
             <div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuenow="top.evaluation" aria-valuemin="0"
                 aria-valuemax="100" [style.width.%]="(top.evaluation / 5) * 100">
-                {{top.evaluation}}
+                {{displayTwoDigitsDecimal(top.evaluation)}}
               </div>
             </div>
           </div>
@@ -162,7 +162,7 @@
             <div class="progress">
               <div class="progress-bar red" role="progressbar" aria-valuenow="low.evaluation" aria-valuemin="0"
                 aria-valuemax="100" [style.width.%]="(low.evaluation / 5) * 100">
-                {{low.evaluation}}
+                {{displayTwoDigitsDecimal(low.evaluation)}}
               </div>
             </div>
           </div>

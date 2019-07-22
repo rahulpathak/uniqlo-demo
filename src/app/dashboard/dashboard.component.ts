@@ -125,6 +125,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     });
   }
 
+  displayTwoDigitsDecimal(number) {
+    return parseFloat(number).toFixed(2);
+  }
+
   sumComments(row) {
     return parseInt(row.comments[0]) + parseInt(row.comments[1]);
   }
