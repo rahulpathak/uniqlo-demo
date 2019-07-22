@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-lg-12 no-padding">
           <div class="col-lg-3">
-            <button type="button" class="btn btn-default width-75 m-r-sm">Women</button>
-            <button type="button" class="btn btn-default width-75 m-r-sm">Men</button>
+            <button type="button" (click)="toogleFilter('department', 'women')" [ngClass]="filterButtonClass('department', 'women')" class="btn width-75 m-r-sm">Women</button>
+            <button type="button" (click)="toogleFilter('department', 'men')" [ngClass]="filterButtonClass('department', 'men')" class="btn width-75 m-r-sm">Men</button>
             <div class="dropdown inline-block">
               <button class="btn btn-default width-75 text-left-align dropdown-toggle" type="button"
                 data-toggle="dropdown">Kids
@@ -23,7 +23,7 @@
                 data-toggle="dropdown">Country
                 <span class="caret dropdown-position"></span></button>
               <ul class="dropdown-menu">
-                <li *ngFor="let ctry of country"><a>{{ctry.display}}</a></li>
+                <li *ngFor="let ctry of country" (click)="toogleFilter('country', ctry.display)"><a>{{ctry.display}}</a></li>
               </ul>
             </div>
             <div class="dropdown inline-block">
@@ -85,72 +85,44 @@
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">Improvements</div>
       <div class="col-lg-12 row-dtl" *ngFor="let imp of improvements">
-        <div class="col-lg-5 text-overflow" title="{{imp.product}}"> 1 &nbsp;
+        <div class="col-lg-5 text-overflow" title="{{imp.product}}">
           <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{imp.product}}</div>
         <div class="col-lg-3 no-padding">{{imp.size}} Size &nbsp; {{imp.dept_id}}</div>
         <div class="col-lg-4">
-          <div class="progress">
-            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
-              40
-            </div>
-            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
-              10
-            </div>
-          </div>
+          <app-progress-success-failure [success]="imp.improvements.success" [failure]="imp.improvements.failure"></app-progress-success-failure>
         </div>
       </div>
     </div>
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">Non-Purchase(Tried)</div>
       <div class="col-lg-12 row-dtl" *ngFor="let nonpur of nonPurchase">
-        <div class="col-lg-5 text-overflow" title="{{nonpur.product}}">1 &nbsp;
+        <div class="col-lg-5 text-overflow" title="{{nonpur.product}}">
           <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{nonpur.product}}</div>
         <div class="col-lg-3 no-padding">{{nonpur.size}} Size &nbsp; {{nonpur.dept_id}}</div>
         <div class="col-lg-4">
-          <div class="progress">
-            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
-              40
-            </div>
-            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
-              10
-            </div>
-          </div>
+          <app-progress-success-failure [success]="nonpur.non_purchase.success" [failure]="nonpur.non_purchase.failure"></app-progress-success-failure>
         </div>
       </div>
     </div>
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">Without Future</div>
       <div class="col-lg-12 row-dtl" *ngFor="let without of withoutfuture">
-        <div class="col-lg-5 text-overflow" title="{{without.product}}">1 &nbsp;
+        <div class="col-lg-5 text-overflow" title="{{without.product}}">
           <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{without.product}}</div>
         <div class="col-lg-3 no-padding">{{without.size}} Size &nbsp; {{without.dept_id}}</div>
         <div class="col-lg-4">
-          <div class="progress">
-            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
-              40
-            </div>
-            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
-              10
-            </div>
-          </div>
+          <app-progress-success-failure [success]="without.without_future.success" [failure]="without.without_future.failure"></app-progress-success-failure>
         </div>
       </div>
     </div>
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">New Suggestion</div>
       <div class="col-lg-12 row-dtl" *ngFor="let newsugg of newsuggestion">
-        <div class="col-lg-5 text-overflow" title="{{newsugg.product}}">1 &nbsp;
+        <div class="col-lg-5 text-overflow" title="{{newsugg.product}}">
           <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{newsugg.product}}</div>
         <div class="col-lg-3 no-padding">{{newsugg.size}} Size &nbsp; {{newsugg.dept_id}}</div>
         <div class="col-lg-4">
-          <div class="progress">
-            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
-              40
-            </div>
-            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
-              10
-            </div>
-          </div>
+          <app-progress-success-failure [success]="newsugg.new_suggestions.success" [failure]="newsugg.new_suggestions.failure"></app-progress-success-failure>
         </div>
       </div>
     </div>
@@ -160,66 +132,36 @@
 
 <ngx-datatable class="material" #myTable [rows]="rows" [headerHeight]="40" [columnMode]="'force'" [rowHeight]="'auto'" [footerHeight]="50"
   [limit]="10">
-  <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="id" name="#" [width]="50">
-    <ng-template let-row="row" ngx-datatable-cell-template>
-      {{row.id}}
-    </ng-template>
+  <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="p_id" name="#" [width]="75">
   </ngx-datatable-column>
-  <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="product" name="Part Number" [width]="400">
+  <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="product" name="Part Number" [width]="375">
     <ng-template let-row="row" ngx-datatable-cell-template>
       <div class="text-overflow" title="{{row.product}}"><img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;
         {{row.product}}</div>
     </ng-template>
   </ngx-datatable-column>
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="dept_id" name="Dep.ID">
-    <ng-template let-row="row" ngx-datatable-cell-template>
-      {{row.dept_id}}
-    </ng-template>
   </ngx-datatable-column>
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="points" name="Points">
-    <ng-template let-row="row" ngx-datatable-cell-template>
-      {{row.points}}
-    </ng-template>
   </ngx-datatable-column>
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="comments" name="Comments">
     <ng-template let-row="row" ngx-datatable-cell-template>
-      {{row.comments}}
+      {{row.comments[0]}} / {{row.comments[1]}}
     </ng-template>
   </ngx-datatable-column>
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="improvements" name="Improvement(s)">
     <ng-template let-row="row" ngx-datatable-cell-template>
-      <div class="progress">
-        <div class="progress-bar progress-cus" role="progressbar" style="width:30%">
-          30
-        </div>
-        <div class="progress-bar progress-red" role="progressbar" style="width:70%">
-          70
-        </div>
-      </div>
+      <app-progress-success-failure [success]="row.improvements.success" [failure]="row.improvements.failure"></app-progress-success-failure>
     </ng-template>
   </ngx-datatable-column>
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="non_purchase" name="Non-Purchase (Tried)">
     <ng-template let-row="row" ngx-datatable-cell-template>
-      <div class="progress">
-        <div class="progress-bar progress-cus" role="progressbar" style="width:50%">
-          50
-        </div>
-        <div class="progress-bar progress-red" role="progressbar" style="width:50%">
-          50
-        </div>
-      </div>
+        <app-progress-success-failure [success]="row.non_purchase.success" [failure]="row.non_purchase.failure"></app-progress-success-failure>
     </ng-template>
   </ngx-datatable-column>
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="without_future" name="Without Future">
     <ng-template let-row="row" ngx-datatable-cell-template>
-      <div class="progress">
-        <div class="progress-bar progress-cus" role="progressbar" style="width:65%">
-          65
-        </div>
-        <div class="progress-bar progress-red" role="progressbar" style="width:35%">
-          35
-        </div>
-      </div>
+      <app-progress-success-failure [success]="row.without_future.success" [failure]="row.without_future.failure"></app-progress-success-failure>
     </ng-template>
   </ngx-datatable-column>
 </ngx-datatable>

@@ -12,7 +12,7 @@ import * as _ from 'lodash';
   providers: [XlsxDataService]
 })
 
-export class VoiceofstoreComponent implements OnInit, AfterViewInit {
+export class VoiceofstoreComponent implements OnInit {
 
   subscription: Subscription[] = [];
   @ViewChild('myTable') table: DatatableComponent;
@@ -36,11 +36,11 @@ export class VoiceofstoreComponent implements OnInit, AfterViewInit {
   country = [
     {'id': 'usa', 'display': 'USA'},
     {'id': 'japna', 'display': 'Japan'},
-    {'id': 'india', 'display': 'India'},
-    {'id': 'malaysia', 'display': 'Malaysia'},
-    {'id': 'russia', 'display': 'Russia'},
-    {'id': 'singapore', 'display': 'Singapore'},
-    {'id': 'unitedkingdom', 'display': 'United Kingdom'}
+    // {'id': 'india', 'display': 'India'},
+    // {'id': 'malaysia', 'display': 'Malaysia'},
+    // {'id': 'russia', 'display': 'Russia'},
+    // {'id': 'singapore', 'display': 'Singapore'},
+    // {'id': 'unitedkingdom', 'display': 'United Kingdom'}
   ];
 
   category = [
@@ -105,24 +105,52 @@ export class VoiceofstoreComponent implements OnInit, AfterViewInit {
   ];
 
   suffleData = [];
+  filterJson: any = {};
 
   constructor(private xls: XlsxDataService) {}
 
   ngOnInit() {
-  }
-
-  ngAfterViewInit() {
     this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
+      this.xls.setRawData(data);
+    });
+    this.xls.getFilteredData().subscribe(data => {
       this.rows = data;
-      this.suffleData = this.rows;
+      this.suffleData = [...this.rows];
 
       const shuffled = this.suffleData.sort(function() {return .5 - Math.random()});
 
-      this.improvements = shuffled.slice(0, 5);
-      this.nonPurchase = shuffled.slice(25, 30);
-      this.withoutfuture = shuffled.slice(40, 45);
-      this.newsuggestion = shuffled.slice(55, 60);
+      this.improvements = data.sort((a,b) => b.improvements.success - a.improvements.success).slice(0, 5);
+      this.nonPurchase = data.sort((a,b) => b.non_purchase.success - a.non_purchase.success).slice(0, 5);
+      this.withoutfuture = data.sort((a,b) => b.without_future.success - a.without_future.success).slice(0, 5);
+      this.newsuggestion = data.sort((a,b) => b.new_suggestions.success - a.new_suggestions.success).slice(0, 5);
     });
+  }
+
+  toogleFilter(key, filter?) {
+    if(this.checkFilterExists(key, filter)) {
+      delete this.filterJson[key];
+    } else if(filter) {
+      this.filterJson[key] = filter;
+    }
+    this.xls.triggerFilter(this.filterJson);
+  }
+
+  filterButtonClass(key, filter?) {
+    if(this.checkFilterExists(key, filter)) {
+      return 'btn-primary';
+    }
+    return 'btn-default';
+  }
+
+  checkFilterExists(key, filter?) {
+    let filterKeyExists = this.filterJson && this.filterJson[key];
+    if(filterKeyExists) {
+      if(filter) {
+        return this.filterJson[key].toLowerCase() == filter.toLowerCase();
+      }
+      return true;
+    }
+    return false;
   }
 
 }
