@@ -94,11 +94,11 @@
 
 <ngx-datatable class="material" #myTable [rows]="rows" [headerHeight]="40" [columnMode]="'force'" [rowHeight]="'auto'"
   [footerHeight]="50" [limit]="10">
-  <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="p_id" name="#" [width]="75">
+  <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="p_id" name="#" [width]="75">
   </ngx-datatable-column>
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="product" name="Part Number" [width]="375">
     <ng-template let-row="row" ngx-datatable-cell-template>
-      <div class="text-overflow" title="{{row.product}}"><img src="assets/img/tshirt.svg" width="18px" height="18px" />
+      <div class="text-overflow" title="{{row.product}}"><img src="assets/img/{{row.icon}}" width="18px" height="18px" />
         &nbsp;
         {{row.product}}</div>
     </ng-template>
@@ -107,24 +107,24 @@
   </ngx-datatable-column>
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="points" name="Points">
   </ngx-datatable-column>
-  <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="comments" name="Comments">
+  <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="comments" name="Comments">
     <ng-template let-row="row" ngx-datatable-cell-template>
       {{row.comments[0]}} / {{row.comments[1]}}
     </ng-template>
   </ngx-datatable-column>
-  <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="improvements" name="Improvement(s)">
+  <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="improvements" name="Improvement(s)">
     <ng-template let-row="row" ngx-datatable-cell-template>
       <app-progress-success-failure [success]="row.improvements.success" [failure]="row.improvements.failure">
       </app-progress-success-failure>
     </ng-template>
   </ngx-datatable-column>
-  <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="non_purchase" name="Non-Purchase (Tried)">
+  <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="non_purchase" name="Non-Purchase (Tried)">
     <ng-template let-row="row" ngx-datatable-cell-template>
       <app-progress-success-failure [success]="row.non_purchase.success" [failure]="row.non_purchase.failure">
       </app-progress-success-failure>
     </ng-template>
   </ngx-datatable-column>
-  <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="without_future" name="Without Future">
+  <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="without_future" name="Without Future">
     <ng-template let-row="row" ngx-datatable-cell-template>
       <app-progress-success-failure [success]="row.without_future.success" [failure]="row.without_future.failure">
       </app-progress-success-failure>
