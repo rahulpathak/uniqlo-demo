@@ -82,49 +82,8 @@
     Voice of Store
   </div>
   <div class="col-lg-12 no-padding">
-    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
-      <div class="sub-heading">Improvements</div>
-      <div class="col-lg-12 row-dtl" *ngFor="let imp of improvements">
-        <div class="col-lg-5 text-overflow" title="{{imp.product}}">
-          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{imp.product}}</div>
-        <div class="col-lg-3 no-padding">{{imp.size}} Size &nbsp; {{imp.dept_id}}</div>
-        <div class="col-lg-4">
-          <app-progress-success-failure [success]="imp.improvements.success" [failure]="imp.improvements.failure"></app-progress-success-failure>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
-      <div class="sub-heading">Non-Purchase(Tried)</div>
-      <div class="col-lg-12 row-dtl" *ngFor="let nonpur of nonPurchase">
-        <div class="col-lg-5 text-overflow" title="{{nonpur.product}}">
-          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{nonpur.product}}</div>
-        <div class="col-lg-3 no-padding">{{nonpur.size}} Size &nbsp; {{nonpur.dept_id}}</div>
-        <div class="col-lg-4">
-          <app-progress-success-failure [success]="nonpur.non_purchase.success" [failure]="nonpur.non_purchase.failure"></app-progress-success-failure>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
-      <div class="sub-heading">Without Future</div>
-      <div class="col-lg-12 row-dtl" *ngFor="let without of withoutfuture">
-        <div class="col-lg-5 text-overflow" title="{{without.product}}">
-          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{without.product}}</div>
-        <div class="col-lg-3 no-padding">{{without.size}} Size &nbsp; {{without.dept_id}}</div>
-        <div class="col-lg-4">
-          <app-progress-success-failure [success]="without.without_future.success" [failure]="without.without_future.failure"></app-progress-success-failure>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
-      <div class="sub-heading">New Suggestion</div>
-      <div class="col-lg-12 row-dtl" *ngFor="let newsugg of newsuggestion">
-        <div class="col-lg-5 text-overflow" title="{{newsugg.product}}">
-          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{newsugg.product}}</div>
-        <div class="col-lg-3 no-padding">{{newsugg.size}} Size &nbsp; {{newsugg.dept_id}}</div>
-        <div class="col-lg-4">
-          <app-progress-success-failure [success]="newsugg.new_suggestions.success" [failure]="newsugg.new_suggestions.failure"></app-progress-success-failure>
-        </div>
-      </div>
+    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left" *ngFor="let box of VOSboxes;">
+      <app-voice-store-table [title]="box.title" [param]="box.param" limit="10"></app-voice-store-table>
     </div>
   </div>
 </div>
