@@ -13,6 +13,7 @@ import { MaterialDesignModule } from './material-design.module';
 import { VoiceofstoreComponent } from './voiceofstore/voiceofstore.component';
 import { VoiceofcustomerComponent } from './voiceofcustomer/voiceofcustomer.component';
   import { from } from 'rxjs';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { VoiceofcustomerComponent } from './voiceofcustomer/voiceofcustomer.comp
     HeaderComponent,
     SidenavComponent,
     VoiceofstoreComponent,
-    VoiceofcustomerComponent
+    VoiceofcustomerComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,
