@@ -85,9 +85,9 @@
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">Improvements</div>
       <div class="col-lg-12 row-dtl" *ngFor="let imp of improvements">
-        <div class="col-lg-5 text-overflow" title="{{imp.image}}"> 1 &nbsp;
-          <img src="{{imp.image}}" width="15px" height="15px" /> &nbsp;{{imp.product}}</div>
-        <div class="col-lg-3 no-padding-right">XS Size &nbsp; {{imp.dept_id}}</div>
+        <div class="col-lg-5 text-overflow" title="{{imp.product}}"> 1 &nbsp;
+          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{imp.product}}</div>
+        <div class="col-lg-3 no-padding">{{imp.size}} Size &nbsp; {{imp.dept_id}}</div>
         <div class="col-lg-4">
           <div class="progress">
             <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
@@ -103,9 +103,9 @@
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">Non-Purchase(Tried)</div>
       <div class="col-lg-12 row-dtl" *ngFor="let nonpur of nonPurchase">
-        <div class="col-lg-5 text-overflow" title="{{nonpur.image}}">1 &nbsp;
-          <img src="{{nonpur.image}}" width="15px" height="15px" /> &nbsp;{{nonpur.product}}</div>
-        <div class="col-lg-3 no-padding-right">XS Size &nbsp; {{nonpur.dept_id}}</div>
+        <div class="col-lg-5 text-overflow" title="{{nonpur.product}}">1 &nbsp;
+          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{nonpur.product}}</div>
+        <div class="col-lg-3 no-padding">{{nonpur.size}} Size &nbsp; {{nonpur.dept_id}}</div>
         <div class="col-lg-4">
           <div class="progress">
             <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
@@ -121,9 +121,9 @@
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">Without Future</div>
       <div class="col-lg-12 row-dtl" *ngFor="let without of withoutfuture">
-        <div class="col-lg-5 text-overflow" title="{{without.image}}">1 &nbsp;
-          <img src="{{without.image}}" width="15px" height="15px" /> &nbsp;{{without.product}}</div>
-        <div class="col-lg-3 no-padding-right">XS Size &nbsp; {{without.dept_id}}</div>
+        <div class="col-lg-5 text-overflow" title="{{without.product}}">1 &nbsp;
+          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{without.product}}</div>
+        <div class="col-lg-3 no-padding">{{without.size}} Size &nbsp; {{without.dept_id}}</div>
         <div class="col-lg-4">
           <div class="progress">
             <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
@@ -139,9 +139,9 @@
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">New Suggestion</div>
       <div class="col-lg-12 row-dtl" *ngFor="let newsugg of newsuggestion">
-        <div class="col-lg-5 text-overflow" title="{{newsugg.image}}">1 &nbsp;
-          <img src="{{newsugg.image}}" width="15px" height="15px" /> &nbsp;{{newsugg.product}}</div>
-        <div class="col-lg-3 no-padding-right">XS Size &nbsp; {{newsugg.dept_id}}</div>
+        <div class="col-lg-5 text-overflow" title="{{newsugg.product}}">1 &nbsp;
+          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{newsugg.product}}</div>
+        <div class="col-lg-3 no-padding">{{newsugg.size}} Size &nbsp; {{newsugg.dept_id}}</div>
         <div class="col-lg-4">
           <div class="progress">
             <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
@@ -158,7 +158,7 @@
 </div>
 <br>
 
-<ngx-datatable class="material" #myTable [rows]="rows" [columnMode]="'force'" [rowHeight]="'auto'" [footerHeight]="50"
+<ngx-datatable class="material" #myTable [rows]="rows" [headerHeight]="40" [columnMode]="'force'" [rowHeight]="'auto'" [footerHeight]="50"
   [limit]="10">
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="id" name="#" [width]="50">
     <ng-template let-row="row" ngx-datatable-cell-template>
@@ -167,7 +167,7 @@
   </ngx-datatable-column>
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="product" name="Part Number" [width]="400">
     <ng-template let-row="row" ngx-datatable-cell-template>
-      <div class="text-overflow" title="{{row.product}}"><img src="{{row.image}}" width="15px" height="15px" /> &nbsp;
+      <div class="text-overflow" title="{{row.product}}"><img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;
         {{row.product}}</div>
     </ng-template>
   </ngx-datatable-column>
