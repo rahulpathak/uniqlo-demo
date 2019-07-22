@@ -12,8 +12,9 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { MaterialDesignModule } from './material-design.module';
 import { VoiceofstoreComponent } from './voiceofstore/voiceofstore.component';
 import { VoiceofcustomerComponent } from './voiceofcustomer/voiceofcustomer.component';
-  import { from } from 'rxjs';
+import { from } from 'rxjs';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     Ng5SliderModule,
     MaterialDesignModule,
     HttpClientModule,

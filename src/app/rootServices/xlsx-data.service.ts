@@ -2,14 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import * as XLSX from 'xlsx';
 import { map } from 'rxjs/operators';
-import { BehaviorSubject, Observable, forkJoin, combineLatest } from 'rxjs';
+import { BehaviorSubject, Observable, combineLatest } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class XlsxDataService {
-  private rawData: BehaviorSubject<Array<any>> = new BehaviorSubject([]);
-  private filter$: BehaviorSubject<any> = new BehaviorSubject(null);
+  private rawData$: BehaviorSubject<Array<any>> = new BehaviorSubject([]);
+  private filter$: BehaviorSubject<any> = new BehaviorSubject({});
+
+  private percentageCols = ["improvements", "non_purchase", "without_future", "new_suggestions"];
 
   constructor(
     private http: HttpClient
@@ -17,15 +19,18 @@ export class XlsxDataService {
 
   getXlsxData(url: string) {
     return this.http.get(url, {responseType: 'arraybuffer'})
-            .pipe(map(data => this.xlsxToJson(data)));
+            .pipe(
+              map(data => this.xlsxToJson(data)),
+              map(data => this.doNeededCalculations(data))
+            );
   }
 
-  setRawData(data: Array<any>) {
-    this.rawData.next(data);
+  setRawData(data: Array<any>) {console.log(data);
+    this.rawData$.next(data);
   }
 
   getRawData(): Observable<Array<any>> {
-    return this.rawData.asObservable();
+    return this.rawData$.asObservable();
   }
 
   triggerFilter(filterJson) {
@@ -45,7 +50,7 @@ export class XlsxDataService {
   doFilterData(rawData, filterJson) {
     return rawData.filter(data => {
       for(let key in filterJson) {
-        if (data[key] === undefined || data[key] != filterJson[key])
+        if (data[key] === undefined || data[key].toLowerCase() != filterJson[key].toLowerCase())
           return false;
       }
       return true;
@@ -63,5 +68,35 @@ export class XlsxDataService {
     const first_sheet_name = workbook.SheetNames[0];
     const worksheet = workbook.Sheets[first_sheet_name];
     return XLSX.utils.sheet_to_json(worksheet, { raw: true });
+  }
+
+  doNeededCalculations(jsonData: Array<any>): Array<any> {
+    return jsonData.map(data => {
+      data = this.calculatePercentageByComma(data);
+      data = this.sperateByComma(data)
+      return data;
+    });
+  }
+
+  sperateByComma(data) {
+    ['images', 'comments'].forEach(key => {
+      if(data[key]) {
+        data[key] = data[key].split(",");
+      }
+    });
+    return data;
+  }
+
+  calculatePercentageByComma(data) {
+    this.percentageCols.forEach(key => {
+      if(data[key]) {
+        let colData = data[key].split(",");
+        data[key] = {
+          success: parseInt(colData[0]),
+          failure: parseInt(colData[1])
+        };
+      }
+    });
+    return data;
   }
 }

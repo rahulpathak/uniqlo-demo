@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { XlsxDataService } from './rootServices/xlsx-data.service';
 
 @Component({
     selector: 'app-root',
@@ -6,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+    loading: boolean;
    
-    constructor() { }
+    constructor(
+        private xls: XlsxDataService
+    ) { }
 
     ngOnInit() {
+        this.loading = false;
+        // this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
+        //     this.xls.setRawData(data);
+        //     this.loading = false;
+        // });
+        // this.xls.getRawData().subscribe(data => {console.log(data);});
     }
 }
