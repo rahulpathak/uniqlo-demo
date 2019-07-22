@@ -25,7 +25,7 @@
                 data-toggle="dropdown">Country
                 <span class="caret dropdown-position"></span></button>
               <ul class="dropdown-menu">
-                <li *ngFor="let ctry of country"><a (click)='changeCountry(ctry.id)'>{{ctry.display}}</a></li>
+                <li *ngFor="let ctry of country"><a>{{ctry.display}}</a></li>
               </ul>
             </div>
             <div class="dropdown inline-block">
@@ -33,9 +33,7 @@
                 data-toggle="dropdown">Category
                 <span class="caret dropdown-position"></span></button>
               <ul class="dropdown-menu">
-                <li><a>HTML</a></li>
-                <li><a>CSS</a></li>
-                <li><a>JavaScript</a></li>
+                <li *ngFor="let cat of category"><a>{{cat.display}}</a></li>
               </ul>
             </div>
             <div class="dropdown inline-block">
@@ -43,27 +41,21 @@
                 Category
                 <span class="caret dropdown-position"></span></button>
               <ul class="dropdown-menu">
-                <li><a>HTML</a></li>
-                <li><a>CSS</a></li>
-                <li><a>JavaScript</a></li>
+                <li *ngFor="let subcat of sub_category"><a>{{subcat.display}}</a></li>
               </ul>
             </div>
             <div class="dropdown inline-block">
               <button class="btn btn-default width-120 m-r-sm dropdown-toggle" type="button" data-toggle="dropdown">Age
                 <span class="caret dropdown-position"></span></button>
               <ul class="dropdown-menu">
-                <li><a>HTML</a></li>
-                <li><a>CSS</a></li>
-                <li><a>JavaScript</a></li>
+                <li *ngFor="let age of age_cat"><a>{{age.display}}</a></li>
               </ul>
             </div>
             <div class="dropdown inline-block">
               <button class="btn btn-default width-120 m-r-sm dropdown-toggle" type="button" data-toggle="dropdown">Size
                 <span class="caret dropdown-position"></span></button>
               <ul class="dropdown-menu">
-                <li><a>HTML</a></li>
-                <li><a>CSS</a></li>
-                <li><a>JavaScript</a></li>
+                <li *ngFor="let size of size_cat"><a>{{size.display}}</a></li>
               </ul>
             </div>
             <div class="dropdown inline-block">
@@ -71,18 +63,14 @@
                 data-toggle="dropdown">Fabric
                 <span class="caret dropdown-position"></span></button>
               <ul class="dropdown-menu">
-                <li><a>HTML</a></li>
-                <li><a>CSS</a></li>
-                <li><a>JavaScript</a></li>
+                <li *ngFor="let fab of fabric_cat"><a>{{fab.display}}</a></li>
               </ul>
             </div>
             <div class="dropdown inline-block">
               <button class="btn btn-default width-120 dropdown-toggle" type="button" data-toggle="dropdown">Color
                 <span class="caret dropdown-position"></span></button>
               <ul class="dropdown-menu">
-                <li><a>HTML</a></li>
-                <li><a>CSS</a></li>
-                <li><a>JavaScript</a></li>
+                <li *ngFor="let color of color_cat"><a>{{color.display}}</a></li>
               </ul>
             </div>
           </div>
@@ -116,48 +104,26 @@
             Comments
           </div>
         </div>
-        <div class="col-lg-12 row-dtl">
+        <div class="col-lg-12 row-dtl" *ngFor="let top of toprating">
           <div class="col-lg-1">
             1
           </div>
-          <div class="col-lg-4 text-overflow" title="420110 Cotton Relax Fit Crew Neck Long-Sleeve T-Shirt">
-            420110 Cotton Relax Fit Crew Neck Long-Sleeve T-Shirt
+          <div class="col-lg-4 text-overflow" title="{{top.product}}">
+            <img src="{{top.image}}" width="15px" height="15px" /> &nbsp; {{top.product}}
           </div>
           <div class="col-lg-2">
-            34
+            {{top.dept_id}}
           </div>
           <div class="col-lg-3">
             <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="value" aria-valuemin="0" aria-valuemax="100"
-                [ngStyle]="{'width.%': value}">
-                {{value}}
+              <div class="progress-bar" role="progressbar" aria-valuenow="top.evaluation" aria-valuemin="0"
+                aria-valuemax="100" [ngStyle]="{'width.%': top.evaluation}">
+                {{top.evaluation}}
               </div>
             </div>
           </div>
           <div class="col-lg-2">
-            28
-          </div>
-        </div>
-        <div class="col-lg-12 row-dtl">
-          <div class="col-lg-1">
-            2
-          </div>
-          <div class="col-lg-4">
-            420001 Means
-          </div>
-          <div class="col-lg-2">
-            34
-          </div>
-          <div class="col-lg-3">
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="value" aria-valuemin="0" aria-valuemax="100"
-                [ngStyle]="{'width.%': value}">
-                {{value}}
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            28
+            44
           </div>
         </div>
       </div>
@@ -182,48 +148,26 @@
             Comments
           </div>
         </div>
-        <div class="col-lg-12 row-dtl">
+        <div class="col-lg-12 row-dtl" *ngFor="let low of lowrating">
           <div class="col-lg-1">
             1
           </div>
-          <div class="col-lg-4">
-            4210001 Womens
+          <div class="col-lg-4 text-overflow" title="{{low.product}}">
+            <img src="{{low.image}}" width="15px" height="15px" /> &nbsp;{{low.product}}
           </div>
           <div class="col-lg-2">
-            27
+            {{low.dept_id}}
           </div>
           <div class="col-lg-3">
             <div class="progress">
-              <div class="progress-bar red" role="progressbar" aria-valuenow="value" aria-valuemin="0" aria-valuemax="100"
-                [ngStyle]="{'width.%': value}">
-                {{value}}
+              <div class="progress-bar red" role="progressbar" aria-valuenow="low.evaluation" aria-valuemin="0"
+                aria-valuemax="100" [ngStyle]="{'width.%': low.evaluation}">
+                {{low.evaluation}}
               </div>
             </div>
           </div>
           <div class="col-lg-2">
-            28
-          </div>
-        </div>
-        <div class="col-lg-12 row-dtl">
-          <div class="col-lg-1">
-            2
-          </div>
-          <div class="col-lg-4">
-            4210001 Womens
-          </div>
-          <div class="col-lg-2">
-            27
-          </div>
-          <div class="col-lg-3">
-            <div class="progress">
-              <div class="progress-bar red" role="progressbar" aria-valuenow="value" aria-valuemin="0" aria-valuemax="100"
-                [ngStyle]="{'width.%': value}">
-                {{value}}
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2">
-            28
+            21
           </div>
         </div>
       </div>
@@ -237,10 +181,10 @@
   <div class="col-lg-12 no-padding">
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">Improvements</div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5 text-overflow" title="420110 Cotton Relax Fit Crew Neck Long-Sleeve T-Shirt">1 &nbsp;
-          420110 Cotton Relax Fit Crew Neck Long-Sleeve T-Shirt</div>
-        <div class="col-lg-3">XS Size &nbsp; 34</div>
+      <div class="col-lg-12 row-dtl" *ngFor="let imp of improvements">
+        <div class="col-lg-5 text-overflow" title="{{imp.image}}"> 1 &nbsp;
+          <img src="{{imp.image}}" width="15px" height="15px" /> &nbsp;{{imp.product}}</div>
+        <div class="col-lg-3 no-padding">{{imp.size}} Size &nbsp; {{imp.dept_id}}</div>
         <div class="col-lg-4">
           <div class="progress">
             <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
@@ -252,58 +196,59 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">2 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
-      </div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">3 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
-      </div>
     </div>
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">Non-Purchase(Tried)</div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">1 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
-      </div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">2 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
-      </div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">3 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
+      <div class="col-lg-12 row-dtl" *ngFor="let nonpur of nonPurchase">
+        <div class="col-lg-5 text-overflow" title="{{nonpur.image}}">1 &nbsp;
+          <img src="{{nonpur.image}}" width="15px" height="15px" /> &nbsp;{{nonpur.product}}</div>
+        <div class="col-lg-3 no-padding">{{nonpur.size}} Size &nbsp; {{nonpur.dept_id}}</div>
+        <div class="col-lg-4">
+          <div class="progress">
+            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
+              40
+            </div>
+            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
+              10
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">Without Future</div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">1 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
-      </div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">2 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
-      </div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">3 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
+      <div class="col-lg-12 row-dtl" *ngFor="let without of withoutfuture">
+        <div class="col-lg-5 text-overflow" title="{{without.image}}">1 &nbsp;
+          <img src="{{without.image}}" width="15px" height="15px" /> &nbsp;{{without.product}}</div>
+        <div class="col-lg-3 no-padding">{{without.size}} Size &nbsp; {{without.dept_id}}</div>
+        <div class="col-lg-4">
+          <div class="progress">
+            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
+              40
+            </div>
+            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
+              10
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
       <div class="sub-heading">New Suggestion</div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">1 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
-      </div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">2 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
-      </div>
-      <div class="col-lg-12 row-dtl">
-        <div class="col-lg-5">3 &nbsp; 12323 Means</div>
-        <div class="col-lg-5">XS Size &nbsp; 34</div>
+      <div class="col-lg-12 row-dtl" *ngFor="let newsugg of newsuggestion">
+        <div class="col-lg-5 text-overflow" title="{{newsugg.image}}">1 &nbsp;
+          <img src="{{newsugg.image}}" width="15px" height="15px" /> &nbsp;{{newsugg.product}}</div>
+        <div class="col-lg-3 no-padding">{{newsugg.size}} Size &nbsp; {{newsugg.dept_id}}</div>
+        <div class="col-lg-4">
+          <div class="progress">
+            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
+              40
+            </div>
+            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
+              10
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

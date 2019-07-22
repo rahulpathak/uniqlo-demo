@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
@@ -9,6 +12,7 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { MaterialDesignModule } from './material-design.module';
 import { VoiceofstoreComponent } from './voiceofstore/voiceofstore.component';
 import { VoiceofcustomerComponent } from './voiceofcustomer/voiceofcustomer.component';
+  import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { VoiceofcustomerComponent } from './voiceofcustomer/voiceofcustomer.comp
     BrowserModule,
     AppRoutingModule,
     Ng5SliderModule,
-    MaterialDesignModule
+    MaterialDesignModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

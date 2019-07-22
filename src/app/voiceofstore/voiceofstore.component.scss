@@ -60,14 +60,8 @@ th.mat-sort-header-sorted {
     text-align: left;
 }
 
-.caret {
-    border-top: 6px dashed;
-}
-
-.dropdown-position {
-    position: absolute;
-    top: 12px;
-    right: 15px;
+.progress{
+    margin-bottom: 0px;
 }
 
 .progress-bar {
@@ -95,4 +89,8 @@ th.mat-sort-header-sorted {
     border-right: 1px solid #e7eaec;
     border-left: 1px solid #e7eaec;
     color: #5A5A5A;
+}
+
+.pager li>a, .pager li>span {
+    border: none;
 }
