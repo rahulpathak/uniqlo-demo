@@ -104,9 +104,9 @@
             Comments
           </div>
         </div>
-        <div class="col-lg-12 row-dtl" *ngFor="let top of toprating">
+        <div class="col-lg-12 row-dtl" *ngFor="let top of toprating; let index = index;">
           <div class="col-lg-1">
-            1
+            {{index + 1}}
           </div>
           <div class="col-lg-4 text-overflow no-padding" title="{{top.product}}">
             <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp; {{top.product}}
@@ -148,9 +148,9 @@
             Comments
           </div>
         </div>
-        <div class="col-lg-12 row-dtl" *ngFor="let low of lowrating">
+        <div class="col-lg-12 row-dtl" *ngFor="let low of lowrating; let index = index;">
           <div class="col-lg-1">
-            1
+            {{index + 1}}
           </div>
           <div class="col-lg-4 text-overflow no-padding" title="{{low.product}}">
             <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{low.product}}
