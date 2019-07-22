@@ -17,11 +17,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   country = [
     { 'id': 'usa', 'display': 'USA' },
     { 'id': 'japna', 'display': 'Japan' },
-    { 'id': 'india', 'display': 'India' },
-    { 'id': 'malaysia', 'display': 'Malaysia' },
-    { 'id': 'russia', 'display': 'Russia' },
-    { 'id': 'singapore', 'display': 'Singapore' },
-    { 'id': 'unitedkingdom', 'display': 'United Kingdom' }
+    // { 'id': 'india', 'display': 'India' },
+    // { 'id': 'malaysia', 'display': 'Malaysia' },
+    // { 'id': 'russia', 'display': 'Russia' },
+    // { 'id': 'singapore', 'display': 'Singapore' },
+    // { 'id': 'unitedkingdom', 'display': 'United Kingdom' }
   ];
 
   category = [
@@ -91,27 +91,68 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   newsuggestion = [];
   toprating = [];
   lowrating = [];
+  VOSboxes = [];
+  filterJson = {};
 
   constructor(private xls: XlsxDataService) { }
 
   ngOnInit() {
+    this.VOSboxes = [{
+      title: 'Improvements',
+      param: 'improvements'
+    },
+    {
+      title: 'Non-Purchase(Tried)',
+      param: 'non_purchase'
+    },{
+      title: 'Without Future',
+      param: 'without_future'
+    },{
+      title: 'New Suggestion',
+      param: 'new_suggestions'
+    }];
   }
 
   ngAfterViewInit() {
     this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
+      this.xls.setRawData(data);
+    });
 
-      const shuffled = data.sort(function() {return .5 - Math.random()});
-
-      this.improvements = shuffled.slice(80, 85);
-      this.nonPurchase = shuffled.slice(55, 60);
-      this.withoutfuture = shuffled.slice(70, 75);
-      this.newsuggestion = shuffled.slice(30, 35);
-      this.toprating = shuffled.slice(0, 5);
-      this.lowrating = shuffled.slice(10, 15);
+    this.xls.getFilteredData().subscribe(data => {
+      const sortByRating = data.sort((a,b) => b.evaluation - a.evaluation);
+      this.toprating = sortByRating.slice(0, 10);
+      this.lowrating = sortByRating.reverse().slice(0, 10);
     });
   }
 
-  // changeCountry(id) {
-  //   console.log(id);
-  // }
+  sumComments(row) {
+    return parseInt(row.comments[0]) + parseInt(row.comments[1]);
+  }
+  
+  toogleFilter(key, filter?) {
+    if(this.checkFilterExists(key, filter)) {
+      delete this.filterJson[key];
+    } else if(filter) {
+      this.filterJson[key] = filter;
+    }
+    this.xls.triggerFilter(this.filterJson);
+  }
+
+  filterButtonClass(key, filter?) {
+    if(this.checkFilterExists(key, filter)) {
+      return 'btn-primary';
+    }
+    return 'btn-default';
+  }
+
+  checkFilterExists(key, filter?) {
+    let filterKeyExists = this.filterJson && this.filterJson[key];
+    if(filterKeyExists) {
+      if(filter) {
+        return this.filterJson[key].toLowerCase() == filter.toLowerCase();
+      }
+      return true;
+    }
+    return false;
+  }
 }

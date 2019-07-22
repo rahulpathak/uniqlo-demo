@@ -6,8 +6,8 @@
       <div class="row">
         <div class="col-lg-12 no-padding">
           <div class="col-lg-3">
-            <button type="button" class="btn btn-default width-75 m-r-sm">Women</button>
-            <button type="button" class="btn btn-default width-75 m-r-sm">Men</button>
+              <button type="button" (click)="toogleFilter('department', 'women')" [ngClass]="filterButtonClass('department', 'women')" class="btn width-75 m-r-sm">Women</button>
+              <button type="button" (click)="toogleFilter('department', 'men')" [ngClass]="filterButtonClass('department', 'men')" class="btn width-75 m-r-sm">Men</button>
             <div class="dropdown inline-block">
               <button class="btn btn-default width-75 text-left-align dropdown-toggle" type="button"
                 data-toggle="dropdown">Kids
@@ -25,7 +25,7 @@
                 data-toggle="dropdown">Country
                 <span class="caret dropdown-position"></span></button>
               <ul class="dropdown-menu">
-                <li *ngFor="let ctry of country"><a>{{ctry.display}}</a></li>
+                <li *ngFor="let ctry of country" (click)="toogleFilter('country', ctry.display)"><a>{{ctry.display}}</a></li>
               </ul>
             </div>
             <div class="dropdown inline-block">
@@ -117,13 +117,13 @@
           <div class="col-lg-3">
             <div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuenow="top.evaluation" aria-valuemin="0"
-                aria-valuemax="100" [ngStyle]="{'width.%': top.evaluation}">
+                aria-valuemax="100" [style.width.%]="(top.evaluation / 5) * 100">
                 {{top.evaluation}}
               </div>
             </div>
           </div>
           <div class="col-lg-2 text-center">
-            44
+              {{sumComments(top)}}
           </div>
         </div>
       </div>
@@ -161,13 +161,13 @@
           <div class="col-lg-3">
             <div class="progress">
               <div class="progress-bar red" role="progressbar" aria-valuenow="low.evaluation" aria-valuemin="0"
-                aria-valuemax="100" [ngStyle]="{'width.%': low.evaluation}">
+                aria-valuemax="100" [style.width.%]="(low.evaluation / 5) * 100">
                 {{low.evaluation}}
               </div>
             </div>
           </div>
           <div class="col-lg-2 text-center">
-            21
+            {{sumComments(low)}}
           </div>
         </div>
       </div>
@@ -179,77 +179,8 @@
 </div>
 <div class="row">
   <div class="col-lg-12 no-padding">
-    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
-      <div class="sub-heading">Improvements</div>
-      <div class="col-lg-12 row-dtl" *ngFor="let imp of improvements">
-        <div class="col-lg-5 text-overflow" title="{{imp.image}}"> 1 &nbsp;
-          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{imp.product}}</div>
-        <div class="col-lg-3 no-padding">{{imp.size}} Size &nbsp; {{imp.dept_id}}</div>
-        <div class="col-lg-4">
-          <div class="progress">
-            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
-              40
-            </div>
-            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
-              10
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
-      <div class="sub-heading">Non-Purchase(Tried)</div>
-      <div class="col-lg-12 row-dtl" *ngFor="let nonpur of nonPurchase">
-        <div class="col-lg-5 text-overflow" title="{{nonpur.image}}">1 &nbsp;
-          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{nonpur.product}}</div>
-        <div class="col-lg-3 no-padding">{{nonpur.size}} Size &nbsp; {{nonpur.dept_id}}</div>
-        <div class="col-lg-4">
-          <div class="progress">
-            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
-              40
-            </div>
-            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
-              10
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
-      <div class="sub-heading">Without Future</div>
-      <div class="col-lg-12 row-dtl" *ngFor="let without of withoutfuture">
-        <div class="col-lg-5 text-overflow" title="{{without.image}}">1 &nbsp;
-          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{without.product}}</div>
-        <div class="col-lg-3 no-padding">{{without.size}} Size &nbsp; {{without.dept_id}}</div>
-        <div class="col-lg-4">
-          <div class="progress">
-            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
-              40
-            </div>
-            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
-              10
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left">
-      <div class="sub-heading">New Suggestion</div>
-      <div class="col-lg-12 row-dtl" *ngFor="let newsugg of newsuggestion">
-        <div class="col-lg-5 text-overflow" title="{{newsugg.image}}">1 &nbsp;
-          <img src="assets/img/tshirt.svg" width="18px" height="18px" /> &nbsp;{{newsugg.product}}</div>
-        <div class="col-lg-3 no-padding">{{newsugg.size}} Size &nbsp; {{newsugg.dept_id}}</div>
-        <div class="col-lg-4">
-          <div class="progress">
-            <div class="progress-bar progress-cus" role="progressbar" style="width:60%">
-              40
-            </div>
-            <div class="progress-bar progress-red" role="progressbar" style="width:40%">
-              10
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left" *ngFor="let box of VOSboxes;">
+      <app-voice-store-table [title]="box.title" [param]="box.param" limit="10"></app-voice-store-table>
     </div>
   </div>
 </div>

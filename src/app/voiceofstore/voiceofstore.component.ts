@@ -12,7 +12,7 @@ import * as _ from 'lodash';
   providers: [XlsxDataService]
 })
 
-export class VoiceofstoreComponent implements OnInit {
+export class VoiceofstoreComponent implements OnInit, AfterViewInit {
 
   subscription: Subscription[] = [];
   @ViewChild('myTable') table: DatatableComponent;
@@ -106,23 +106,33 @@ export class VoiceofstoreComponent implements OnInit {
 
   suffleData = [];
   filterJson: any = {};
+  VOSboxes = [];
 
   constructor(private xls: XlsxDataService) {}
 
   ngOnInit() {
+    this.VOSboxes = [{
+      title: 'Improvements',
+      param: 'improvements'
+    },
+    {
+      title: 'Non-Purchase(Tried)',
+      param: 'non_purchase'
+    },{
+      title: 'Without Future',
+      param: 'without_future'
+    },{
+      title: 'New Suggestion',
+      param: 'new_suggestions'
+    }];
+  }
+
+  ngAfterViewInit() {
     this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
       this.xls.setRawData(data);
     });
     this.xls.getFilteredData().subscribe(data => {
       this.rows = data;
-      this.suffleData = [...this.rows];
-
-      const shuffled = this.suffleData.sort(function() {return .5 - Math.random()});
-
-      this.improvements = data.sort((a,b) => b.improvements.success - a.improvements.success).slice(0, 5);
-      this.nonPurchase = data.sort((a,b) => b.non_purchase.success - a.non_purchase.success).slice(0, 5);
-      this.withoutfuture = data.sort((a,b) => b.without_future.success - a.without_future.success).slice(0, 5);
-      this.newsuggestion = data.sort((a,b) => b.new_suggestions.success - a.new_suggestions.success).slice(0, 5);
     });
   }
 
