@@ -1,0 +1,22 @@
+.product-heading {
+    background-color: #333F73;
+    color: #fff;
+    padding: 9px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.box-content {
+    box-shadow: 0px 0px 1px #d2d2d2;
+    height: 200px;
+    margin: 20px 0;
+    padding: 15px;
+}
+
+.content-heading {
+    color: #445499;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #445499;
+}
