@@ -9,12 +9,12 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'vos', component: VoiceofstoreComponent },
   { path: 'voc', component: VoiceofcustomerComponent },
-  { path: 'product-view', loadChildren: './product-view/product-view.module#ProductViewModule'}
+  { path: 'product-view/:id', loadChildren: './product-view/product-view.module#ProductViewModule'}
 ];
 
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes, {useHash: true, scrollPositionRestoration: 'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

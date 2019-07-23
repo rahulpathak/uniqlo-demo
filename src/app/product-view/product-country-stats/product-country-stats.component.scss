@@ -1,0 +1,30 @@
+.flag-icon {
+    width: 2.4em;
+    line-height: 1.8em;
+}
+
+.product-country-list.card {
+    padding: 0;
+    .panel-heading {
+        background-color: darkblue;
+        color: white;
+    }
+
+    .accordion-toggle {
+        position: relative;
+        &:before {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+        }
+    }
+    .accordion-toggle[aria-expanded="true"]:before {
+        content: "\f107";
+        font: normal normal normal 14px/1 FontAwesome;
+    }
+    
+    .accordion-toggle[aria-expanded="false"]:before {
+        content: '\f106';
+        font: normal normal normal 14px/1 FontAwesome;
+    }
+}

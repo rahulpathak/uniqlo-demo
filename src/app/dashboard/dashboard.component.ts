@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { XlsxDataService } from '../rootServices/xlsx-data.service';
 import { Options } from 'ng5-slider';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -94,7 +95,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   VOSboxes = [];
   filterJson = {};
 
-  constructor(private xls: XlsxDataService) { }
+  constructor(
+    private xls: XlsxDataService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.VOSboxes = [{
@@ -123,6 +127,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       this.toprating = sortByRating.slice(0, 10);
       this.lowrating = sortByRating.reverse().slice(0, 10);
     });
+  }
+
+  goToProductView(product) {
+    this.router.navigate(['/', 'product-view', product.p_id]);
   }
 
   displayTwoDigitsDecimal(number) {

@@ -1,7 +1,13 @@
 <accordion [isAnimated]="true">
-  <accordion-group isOpen="true" *ngFor="let stat of country_stats; let index = index">
+  <accordion-group isOpen="true" *ngFor="let stats of country_stats; let index = index" panelClass="product-country-list">
     <div accordion-heading>
-      <div class="box-title">{{stat.country}}</div>
+      <span class="country-checkbox">
+        <input type="checkbox" (click)="clickCountrySelection(stats, $event)" [checked]="stats.checked" />
+      </span>
+      <span>
+        <span [class]="'flag-icon flag-icon-' + stats.code"></span>
+        {{stats.country}}
+      </span>
     </div>
   </accordion-group>
 </accordion>

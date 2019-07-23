@@ -104,7 +104,7 @@
             Comments
           </div>
         </div>
-        <div class="col-lg-12 row-dtl" *ngFor="let top of toprating; let index = index;">
+        <div class="col-lg-12 row-dtl" *ngFor="let top of toprating; let index = index;" (click)="goToProductView(top)">
           <div class="col-lg-1">
             {{index + 1}}
           </div>
@@ -148,7 +148,7 @@
             Comments
           </div>
         </div>
-        <div class="col-lg-12 row-dtl" *ngFor="let low of lowrating; let index = index;">
+        <div class="col-lg-12 row-dtl" *ngFor="let low of lowrating; let index = index;" (click)="goToProductView(low)">
           <div class="col-lg-1">
             {{index + 1}}
           </div>

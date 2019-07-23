@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { XlsxDataService } from 'src/app/rootServices/xlsx-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-voice-store-table',
@@ -14,13 +15,18 @@ export class VoiceStoreTableComponent implements OnInit {
   rows = [];
 
   constructor(
-    private xls: XlsxDataService
+    private xls: XlsxDataService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.xls.getFilteredData().subscribe(data => {
       this.rows = data.sort((a,b) => b[this.param].success - a[this.param].success).slice(0, this.limit);
     });
+  }
+
+  goToProductView(product) {
+    this.router.navigate(['/', 'product-view', product.p_id]);
   }
 
   getSuccess(row) {

@@ -4,6 +4,7 @@ import { DatatableComponent } from '@swimlane/ngx-datatable';
 import { XlsxDataService } from '../rootServices/xlsx-data.service';
 import { Subscription } from 'rxjs/Subscription';
 import * as _ from 'lodash';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-voiceofstore',
@@ -108,7 +109,10 @@ export class VoiceofstoreComponent implements OnInit, AfterViewInit {
   filterJson: any = {};
   VOSboxes = [];
 
-  constructor(private xls: XlsxDataService) {}
+  constructor(
+    private xls: XlsxDataService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.VOSboxes = [{
@@ -134,6 +138,12 @@ export class VoiceofstoreComponent implements OnInit, AfterViewInit {
     this.xls.getFilteredData().subscribe(data => {
       this.rows = data;
     });
+  }
+
+  selectProduct(event) {
+    if(event.type == 'click') {
+      this.router.navigate(['/', 'product-view', event.row.p_id]);
+    }
   }
 
   toogleFilter(key, filter?) {
