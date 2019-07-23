@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-product-country-stats',
   templateUrl: './product-country-stats.component.html',
-  styleUrls: ['./product-country-stats.component.css']
+  styleUrls: ['./product-country-stats.component.css'],
 })
 export class ProductCountryStatsComponent implements OnInit {
   country_stats;
@@ -14,7 +14,7 @@ export class ProductCountryStatsComponent implements OnInit {
 
       {
   
-        "country": "Japan",
+        "country": "JAPAN",
   
         "voc": [
   
