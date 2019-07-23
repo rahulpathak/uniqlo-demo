@@ -25,7 +25,7 @@ export class XlsxDataService {
             );
   }
 
-  setRawData(data: Array<any>) {console.log(data);
+  setRawData(data: Array<any>) {
     this.rawData$.next(data);
   }
 
