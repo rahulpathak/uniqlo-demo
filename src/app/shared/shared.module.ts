@@ -13,7 +13,7 @@ import { VoiceStoreTableComponent } from './voice-store-table/voice-store-table.
     ProgressSuccessFailureComponent, VoiceStoreTableComponent
   ],
   providers: [
-    XlsxDataService
+    
   ]
 })
 export class SharedModule { }
