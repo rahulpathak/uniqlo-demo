@@ -152,7 +152,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   filterButtonClass(key, filter?) {
     if(this.checkFilterExists(key, filter)) {
-      return 'btn-primary';
+      return 'btn-active';
     }
     return 'btn-default';
   }

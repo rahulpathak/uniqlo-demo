@@ -3,13 +3,16 @@
     panelClass="product-country-list">
     <div accordion-heading>
       <span class="country-checkbox">
-        <input type="checkbox" (click)="clickCountrySelection(stats, $event)" [checked]="stats.checked" />
+        <label class="container">
+          <input type="checkbox" (click)="clickCountrySelection(stats, $event)" checked="checked"
+            [checked]="stats.checked">
+          <span class="checkmark"></span>
+        </label>
       </span>
-      <span>
+      <span style="padding-left: 30px;">
         <span [class]="'flag-icon flag-icon-' + stats.code"></span>
         {{stats.country}}
       </span>
-      <div>{{stat.country}}</div>
     </div>
     <div class="row">
       <div class="col-lg-12 no-padding">
@@ -53,8 +56,6 @@
         </div>
         <div class="col-lg-4">
           <div class="border-box">
-
-
             <div class="sub-heading">Voice of Store</div>
             <div class="col-lg-12 row-heading">
               <div class="col-lg-1">
@@ -71,8 +72,13 @@
               <div class="col-lg-1">
                 1
               </div>
-              <div class="col-lg-9">
+              <div class="col-lg-6">
                 jee
+              </div>
+              <div class="col-lg-3">
+                <div class="best">
+                  BEST
+                </div>
               </div>
               <div class="col-lg-2 text-center">
                 36
@@ -82,8 +88,13 @@
               <div class="col-lg-1">
                 1
               </div>
-              <div class="col-lg-9">
+              <div class="col-lg-6">
                 jee
+              </div>
+              <div class="col-lg-3">
+                <div class="worst">
+                  WORST
+                </div>
               </div>
               <div class="col-lg-2 text-center">
                 36

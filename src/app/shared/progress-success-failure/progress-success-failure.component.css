@@ -1,5 +1,6 @@
 .progress {
     margin-bottom: 0px;
+    border-right: 0px;
 }
 
 .progress-bar {
@@ -7,9 +8,9 @@
 }
 
 .progress-cus {
-    background-color: #41BBED;
+    background-color: #B86A10;
 }
 
 .progress-red {
-    background-color: #E05F65;
+    background-color: #3495BD;
 }

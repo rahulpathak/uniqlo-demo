@@ -6,17 +6,12 @@
       <div class="row">
         <div class="col-lg-12 no-padding">
           <div class="col-lg-3">
-              <button type="button" (click)="toogleFilter('department', 'women')" [ngClass]="filterButtonClass('department', 'women')" class="btn width-75 m-r-sm">Women</button>
-              <button type="button" (click)="toogleFilter('department', 'men')" [ngClass]="filterButtonClass('department', 'men')" class="btn width-75 m-r-sm">Men</button>
+            <button type="button" (click)="toogleFilter('department', 'women')"
+              [ngClass]="filterButtonClass('department', 'women')" class="btn width-75 m-r-sm">Women</button>
+            <button type="button" (click)="toogleFilter('department', 'men')"
+              [ngClass]="filterButtonClass('department', 'men')" class="btn width-75 m-r-sm">Men</button>
             <div class="dropdown inline-block">
-              <button class="btn btn-default width-75 text-left-align dropdown-toggle" type="button"
-                data-toggle="dropdown">Kids
-                <span class="caret dropdown-position"></span></button>
-              <ul class="dropdown-menu">
-                <li><a>Boys</a></li>
-                <li><a>Girls</a></li>
-                <li><a>Baby</a></li>
-              </ul>
+              <button class="btn width-95" type="button">Kids / Baby</button>
             </div>
           </div>
           <div class="col-lg-9">
@@ -25,7 +20,8 @@
                 data-toggle="dropdown">Country
                 <span class="caret dropdown-position"></span></button>
               <ul class="dropdown-menu">
-                <li *ngFor="let ctry of country" (click)="toogleFilter('country', ctry.display)"><a>{{ctry.display}}</a></li>
+                <li *ngFor="let ctry of country" (click)="toogleFilter('country', ctry.display)">
+                  <a>{{ctry.display}}</a></li>
               </ul>
             </div>
             <div class="dropdown inline-block">
@@ -79,10 +75,11 @@
     </div>
   </div>
 </div>
-<div class="heading">
-  Voice of Customer
-</div>
+<br>
 <div class="row">
+  <div class="col-lg-12 box-heading">
+    Voice of Customer
+  </div>
   <div class="col-lg-12 no-padding">
     <div class="col-lg-6 box-color no-padding-left">
       <div class="col-lg-12 no-padding border-all">
@@ -123,7 +120,7 @@
             </div>
           </div>
           <div class="col-lg-2 text-center">
-              {{sumComments(top)}}
+            {{sumComments(top)}}
           </div>
         </div>
       </div>
@@ -174,13 +171,15 @@
     </div>
   </div>
 </div>
-<div class="heading">
-  Voice of Store
-</div>
+<br>
 <div class="row">
+  <div class="col-lg-12 box-heading">
+    Voice of Store
+  </div>
   <div class="col-lg-12 no-padding">
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left" *ngFor="let box of VOSboxes;">
       <app-voice-store-table [title]="box.title" [param]="box.param" limit="10"></app-voice-store-table>
     </div>
   </div>
 </div>
+<br>

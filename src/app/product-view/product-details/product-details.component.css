@@ -20,3 +20,21 @@
     padding-bottom: 10px;
     border-bottom: 1px solid #445499;
 }
+
+.btn-primary {
+    background-color: #333F73;
+    color: #f4f4f4;
+    border-radius: 0px;
+    min-width: 110px;
+    margin-bottom: 10px;
+    border: 0px;
+}
+
+.btn-primary:active {
+    background-color: #777f9e;
+    color: #f4f4f4;
+}
+
+.text-right {
+    text-align: right;
+}

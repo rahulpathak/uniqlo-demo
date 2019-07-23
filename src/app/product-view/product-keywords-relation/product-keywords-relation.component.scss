@@ -2,30 +2,35 @@
     .panel {
         background-color: transparent;
     }
-    & > .panel {
-        margin: 10px 0px ; 
-        
+
+    &>.panel {
+        margin: 10px 0px;
+
         .card {
-            margin: 10px 0px ; 
+            margin: 10px 0px;
             position: relative;
-            border-color: #222;
+            border-color: #333F73;
             border-radius: 0px;
-             
-            border-bottom-width: 0px;          
+            border-bottom-width: 0px;
         }
+
         .panel-heading {
             background-color: transparent;
             border: none;
             padding: 0;
+
             .box-title {
                 position: absolute;
                 top: -11px;
                 left: 15px;
                 line-height: 20px;
                 padding: 2px 15px;
-                background-color: darkblue;
+                background-color: #333F73;
                 color: white;
+                min-width: 90px;
+                text-align: center;
             }
+
             &:after {
                 content: "+";
                 display: block;
@@ -36,37 +41,48 @@
                 line-height: 20px;
                 width: 20px;
                 padding: 0;
-                background-color: darkblue;
+                background-color: #333F73;
                 color: white;
                 text-align: center;
+                font-size: 20px;
             }
         }
+
         .panel-body {
             border: none;
             padding: 15px 15px 10px;
         }
     }
+
     .panel-open {
         .card {
             border-bottom-width: 1px;
         }
+
         .panel-heading:after {
             content: "-";
+            font-size: 20px;
         }
     }
 }
+
 ul.keywords-relation-list {
     list-style: none;
     padding: 0;
     margin: 0;
-    & > li {
+
+    &>li {
         float: left;
-        margin: 5px 10px 5px 0;        
+        margin: 5px 10px 5px 0;
     }
-    & > li > div{
+
+    &>li>div {
         padding: 5px 5px;
-        background-color: aquamarine;
+        background-color: #99A5D9;
+        color: #1B1B1B;
+        font-size: 11px;
     }
+
     &:after {
         content: " ";
         width: 0;
