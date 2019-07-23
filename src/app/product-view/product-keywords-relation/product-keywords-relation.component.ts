@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product-keywords-relation',
@@ -7,35 +7,10 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class ProductKeywordsRelationComponent implements OnInit {
-  keywords;
+  @Input('keywords') keywords;
   constructor() { }
 
   ngOnInit() {
-    this.keywords = [{  
-      "item": "Pocket",  
-      "keywords": [{
-        "keyword": "Cigarette",
-        "count": 25
-      }, {
-        "keyword": "Work/Business",
-        "count": 25
-      }, {
-        "keyword": "Pen/Pencil",
-        "count": 18
-      }, {
-        "keyword": "Mobile",
-        "count": 10
-      }]
-    }, {
-      "item": "Collar",
-      "keywords": [{
-        "keyword": "Turtle Neck",
-        "count": 15
-      }, {
-        "keyword": "V Neck",
-        "count": 3
-      }]
-    }];
   }
 
 }
