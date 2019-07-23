@@ -1,0 +1,7 @@
+<accordion [isAnimated]="true">
+  <accordion-group isOpen="true" *ngFor="let stat of country_stats; let index = index">
+    <div accordion-heading>
+      <div class="box-title">{{stat.country}}</div>
+    </div>
+  </accordion-group>
+</accordion>

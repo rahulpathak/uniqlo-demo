@@ -1,0 +1,76 @@
+.box-accordion {
+    .panel {
+        background-color: transparent;
+    }
+    & > .panel {
+        margin: 10px 0px ; 
+        
+        .card {
+            margin: 10px 0px ; 
+            position: relative;
+            border-color: #222;
+            border-radius: 0px;
+             
+            border-bottom-width: 0px;          
+        }
+        .panel-heading {
+            background-color: transparent;
+            border: none;
+            padding: 0;
+            .box-title {
+                position: absolute;
+                top: -11px;
+                left: 15px;
+                line-height: 20px;
+                padding: 2px 15px;
+                background-color: darkblue;
+                color: white;
+            }
+            &:after {
+                content: "+";
+                display: block;
+                position: absolute;
+                top: -11px;
+                right: 15px;
+                width: 20px;
+                line-height: 20px;
+                width: 20px;
+                padding: 0;
+                background-color: darkblue;
+                color: white;
+                text-align: center;
+            }
+        }
+        .panel-body {
+            border: none;
+            padding: 15px 15px 10px;
+        }
+    }
+    .panel-open {
+        .card {
+            border-bottom-width: 1px;
+        }
+        .panel-heading:after {
+            content: "-";
+        }
+    }
+}
+ul.keywords-relation-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    & > li {
+        float: left;
+        margin: 5px 10px 5px 0;        
+    }
+    & > li > div{
+        padding: 5px 5px;
+        background-color: aquamarine;
+    }
+    &:after {
+        content: " ";
+        width: 0;
+        display: block;
+        clear: both;
+    }
+}

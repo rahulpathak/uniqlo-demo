@@ -13,8 +13,8 @@ import { MaterialDesignModule } from './material-design.module';
 import { VoiceofstoreComponent } from './voiceofstore/voiceofstore.component';
 import { VoiceofcustomerComponent } from './voiceofcustomer/voiceofcustomer.component';
 import { from } from 'rxjs';
-import { ProductDetailsComponent } from './product-details/product-details.component';
 import { SharedModule } from './shared/shared.module';
+import { AccordionModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,7 @@ import { SharedModule } from './shared/shared.module';
     HeaderComponent,
     SidenavComponent,
     VoiceofstoreComponent,
-    VoiceofcustomerComponent,
-    ProductDetailsComponent
+    VoiceofcustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +33,8 @@ import { SharedModule } from './shared/shared.module';
     MaterialDesignModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    AccordionModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

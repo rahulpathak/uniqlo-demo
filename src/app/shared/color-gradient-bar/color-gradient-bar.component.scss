@@ -1,0 +1,15 @@
+ul.color-gradient-bar {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    & > li {
+        float: left;
+    }
+    &:after {
+        content: " ";
+        display: block;
+        width: 0;
+        clear: both;
+    }
+}
