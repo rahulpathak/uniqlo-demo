@@ -25,7 +25,7 @@ export class XlsxDataService {
             );
   }
 
-  setRawData(data: Array<any>) {
+  setRawData(data: Array<any>) {console.log(data);
     this.rawData$.next(data);
   }
 
@@ -97,6 +97,17 @@ export class XlsxDataService {
         };
       }
     });
+    return data;
+  }
+
+  convertDetailsJson(data) {
+    console.log(data);
+    try {
+      const details = JSON.parse(data.details);
+      data.details = details;
+    } catch {
+      data.details = false;
+    }console.log(data);
     return data;
   }
 }

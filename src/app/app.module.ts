@@ -12,7 +12,6 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { MaterialDesignModule } from './material-design.module';
 import { VoiceofstoreComponent } from './voiceofstore/voiceofstore.component';
 import { VoiceofcustomerComponent } from './voiceofcustomer/voiceofcustomer.component';
-import { from } from 'rxjs';
 import { SharedModule } from './shared/shared.module';
 import { AccordionModule } from 'ngx-bootstrap';
 

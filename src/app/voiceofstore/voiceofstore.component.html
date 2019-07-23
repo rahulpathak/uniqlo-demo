@@ -93,7 +93,7 @@
 <br>
 
 <ngx-datatable class="material" #myTable [rows]="rows" [headerHeight]="40" [columnMode]="'force'" [rowHeight]="'auto'"
-  [footerHeight]="50" [limit]="10">
+  [footerHeight]="50" [limit]="10" (activate)="selectProduct($event)">
   <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="p_id" name="#" [width]="75">
   </ngx-datatable-column>
   <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="product" name="Part Number" [width]="375">

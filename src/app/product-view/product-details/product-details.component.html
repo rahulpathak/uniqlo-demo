@@ -1,6 +1,6 @@
 <div style="padding: 15px 5px;">
   <div class="col-lg-12 no-padding white-bg">
-    <div class="product-heading">Product Name</div>
+    <div class="product-heading">{{product.product}}</div>
     <div class="col-lg-3">
       <div class="box-content">
         Img
@@ -18,7 +18,7 @@
         <div class="content-heading">
           Keyword Relationship
         </div>
-        <app-product-keywords-relation></app-product-keywords-relation>
+        <app-product-keywords-relation *ngIf="product.details" [keywords]="product.details.keyword_relationship"></app-product-keywords-relation>
       </div>
     </div>
   </div>

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-product-country-stats',
   templateUrl: './product-country-stats.component.html',
-  styleUrls: ['./product-country-stats.component.css'],
+  styleUrls: ['./product-country-stats.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProductCountryStatsComponent implements OnInit {
   country_stats;
@@ -14,7 +15,8 @@ export class ProductCountryStatsComponent implements OnInit {
 
       {
   
-        "country": "JAPAN",
+        "country": "Japan",
+        'code': 'jp',
   
         "voc": [
   
@@ -77,6 +79,7 @@ export class ProductCountryStatsComponent implements OnInit {
       {
   
         "country": "USA",
+        "code": "us",
   
         "voc": [
   
@@ -137,6 +140,14 @@ export class ProductCountryStatsComponent implements OnInit {
       }
   
     ];
+
+    this.country_stats.map(x => {x.checked = true; return x;})
+  }
+
+  clickCountrySelection(stats, event) {
+    event.stopPropagation();
+    stats.checked = !stats.checked;
+    console.log(this.country_stats);
   }
 
 }
