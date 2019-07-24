@@ -126,7 +126,7 @@ export class VoiceofstoreComponent implements OnInit, AfterViewInit {
       title: 'Without Future',
       param: 'without_future'
     },{
-      title: 'New Suggestion',
+      title: 'New Suggestions',
       param: 'new_suggestions'
     }];
   }
