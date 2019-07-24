@@ -1,26 +1,4 @@
-.full-page-wrapper {
-    &.open-side-nav {
-        height: 100%;
-        overflow: hidden;
-        .navbar-static-side {
-            width: 100%;
-            .sidebar-collapse .metismenu {
-                width: 86px !important;
-            }
-        }
-
-        .navbar-static-top {
-            .menu-icon {
-                .fa-times {
-                    display: inline;
-                }
-                .fa-bars {
-                    display: none;
-                }
-            }
-        }
-    }  
-    
+.full-page-wrapper {    
     .navbar-static-top {
         .menu-icon {
             .fa-times {
@@ -31,4 +9,13 @@
             }
         }
     }
+
+    .page-wrapper {
+        display: flex;
+        align-items: stretch;
+        .side-nav-wrapper {
+            min-width: 86px;
+            background-color: #303D74;
+        }
+    }    
 }
