@@ -1,0 +1,34 @@
+.full-page-wrapper {
+    &.open-side-nav {
+        height: 100%;
+        overflow: hidden;
+        .navbar-static-side {
+            width: 100%;
+            .sidebar-collapse .metismenu {
+                width: 86px !important;
+            }
+        }
+
+        .navbar-static-top {
+            .menu-icon {
+                .fa-times {
+                    display: inline;
+                }
+                .fa-bars {
+                    display: none;
+                }
+            }
+        }
+    }  
+    
+    .navbar-static-top {
+        .menu-icon {
+            .fa-times {
+                display: none;
+            }
+            .fa-bars {
+                display: inline;
+            }
+        }
+    }
+}

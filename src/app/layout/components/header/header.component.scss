@@ -1,0 +1,31 @@
+.navbar-static-top {
+    $height: 45px;
+    height: $height;
+    min-height: $height;
+    .right-icons {
+        position: relative;
+        height: $height;
+        box-sizing: border-box;
+        padding: 12px 0;
+    }
+
+    .header-text{
+        color: #AD2C32;
+        font-size: 24px;
+        line-height: 25px;
+        padding: 10px 0;
+        text-align: center;
+        box-sizing: border-box;
+        height: $height;
+    }
+
+    .menu-icon {
+        height: $height;
+        box-sizing: border-box;
+        padding: 10px;
+        line-height: 25px;
+        width: 45px;
+        text-align: center;
+        cursor: pointer;
+    }
+}
