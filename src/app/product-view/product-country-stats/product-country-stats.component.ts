@@ -144,6 +144,10 @@ export class ProductCountryStatsComponent implements OnInit {
     this.country_stats.map(x => {x.checked = true; return x;})
   }
 
+  getCountryImageName(country) {
+    return 'assets/img/' + country.toLowerCase().replace(" ", "-") + '.png';
+  }
+
   clickCountrySelection(stats, event) {
     event.stopPropagation();
     stats.checked = !stats.checked;
