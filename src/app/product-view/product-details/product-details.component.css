@@ -1,9 +1,14 @@
 .product-heading {
-    background-color: #333F73;
+    background-color: #303D74;
     color: #fff;
     padding: 9px;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
+}
+
+.global-width {
+    width: 24px;
+    height: 24px;
 }
 
 .box-content {
@@ -22,12 +27,20 @@
 }
 
 .btn-primary {
-    background-color: #333F73;
+    background-color: #5B68D3;
     color: #f4f4f4;
     border-radius: 0px;
     min-width: 110px;
     margin-bottom: 10px;
     border: 0px;
+}
+
+.compare {
+    width: 196px;
+}
+
+.print-icon{
+    height: 21px;
 }
 
 .btn-primary:active {

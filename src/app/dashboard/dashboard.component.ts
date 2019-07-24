@@ -11,10 +11,6 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
 
-  value = 50;
-
-  headerHeading = 'rahul'
-
   country = [
     { 'id': 'usa', 'display': 'USA' },
     { 'id': 'japan', 'display': 'Japan' },

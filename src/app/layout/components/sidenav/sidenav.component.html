@@ -1,33 +1,114 @@
-<nav class="navbar-default navbar-static-side" role="navigation">
+<nav class="navbar-default" role="navigation">
   <div class="sidebar-collapse">
     <ul class="nav metismenu" id="side-menu" #sideMenu>
-      <li>
-        <img src="assets/img/uniqlo.logo.png" style="height:40px;padding:5px;" />
+      <li class="no_hover">
+        <a class="no_hover">
+          <i class="user_img"></i>
+          <span class="nav-label">Hanako Yamade</span>
+          <i class="notifaction"></i>
+        </a>
       </li>
       <li routerLinkActive="active">
         <a [routerLink]="['/dashboard']">
-          <span class="dashboard"></span>
-          <span class="nav-label">Dashboad</span>
+          <i class="dashboard"></i>
+          <span class="nav-label">Dashboard</span>
         </a>
       </li>
       <li routerLinkActive="active">
         <a [routerLink]="['/voc']">
-          <div class="voc"></div>
-          <span class="nav-label">VOC</span>
+          <i class="voc"></i>
+          <span class="nav-label">Voice of Customer</span>
         </a>
       </li>
       <li routerLinkActive="active">
         <a [routerLink]="['/vos']">
-          <div class="voc"></div>
-          <span class="nav-label">VOS</span>
+          <i class="voc"></i>
+          <span class="nav-label">Voice of Store</span>
         </a>
       </li>
-      <li routerLinkActive="active">
+      <li>
         <a [routerLink]="['']">
-          <div class="mi"></div>
-          <span class="nav-label">MI</span>
+          <i class="mi"></i>
+          <span class="nav-label">Market Information</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['']">
+          <i class="setting"></i>
+          <span class="nav-label">Setting</span>
         </a>
       </li>
     </ul>
+    <br>
+    <br>
+    <br>
+    <div class="filter-box">
+      <div class="filter-text">
+        <i class="filter-icon"></i>
+        <span class="nav-label-position">Filters</span>
+      </div>
+      <div class="button-box">
+        <button type="button" class="btn width-75 m-r-sm">Men</button>
+        <button type="button" class="btn width-75 m-r-sm">Women</button>
+        <button type="button" class="btn width-95">Kids / Baby</button>
+      </div>
+      <div style="padding: 0px 10px 20px 10px">
+        <div class="dropdown">
+          <button class="btn btn-default full-width dropdown-toggle" type="button" data-toggle="dropdown">All
+            <span class="caret dropdown-position"></span></button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let ctry of country">
+              <a>{{ctry.display}}</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-default full-width dropdown-toggle" type="button" data-toggle="dropdown">Category
+            <span class="caret dropdown-position"></span></button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let cat of category"><a>{{cat.display}}</a></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-default full-width dropdown-toggle" type="button" data-toggle="dropdown">Sub
+            Category
+            <span class="caret dropdown-position"></span></button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let subcat of sub_category"><a>{{subcat.display}}</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="dropdown inline-block issue-info">
+            <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" data-toggle="dropdown">Age
+              <span class="caret dropdown-position"></span></button>
+            <ul class="dropdown-menu">
+              <li *ngFor="let age of age_cat"><a>{{age.display}}</a></li>
+            </ul>
+          </div>
+          <div class="dropdown inline-block issue-info">
+            <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" data-toggle="dropdown">Size
+              <span class="caret dropdown-position"></span></button>
+            <ul class="dropdown-menu">
+              <li *ngFor="let size of size_cat"><a>{{size.display}}</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div class="dropdown inline-block issue-info">
+            <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" data-toggle="dropdown">Fabric
+              <span class="caret dropdown-position"></span></button>
+            <ul class="dropdown-menu">
+              <li *ngFor="let fab of fabric_cat"><a>{{fab.display}}</a></li>
+            </ul>
+          </div>
+          <div class="dropdown inline-block issue-info">
+            <button class="btn btn-default full-width dropdown-toggle" type="button" data-toggle="dropdown">Color
+              <span class="caret dropdown-position"></span></button>
+            <ul class="dropdown-menu">
+              <li *ngFor="let color of color_cat"><a>{{color.display}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>

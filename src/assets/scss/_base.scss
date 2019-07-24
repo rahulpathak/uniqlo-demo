@@ -1790,6 +1790,7 @@ body.mini-navbar.fixed-sidebar .logo-element {
   height: 30px;
   margin: 0 auto;
   margin-bottom: 5px;
+  display: inline-block;
 }
 
 .mi{
@@ -1800,6 +1801,98 @@ body.mini-navbar.fixed-sidebar .logo-element {
   height: 30px;
   margin: 0 auto;
   margin-bottom: 5px;
+  display: inline-block;
+}
+
+.setting{
+  background: url('assets/img/settings.svg') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 32px;
+  height: 30px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.user_img {
+  background: url('assets/img/user_img.png') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 32px;
+  height: 30px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.notifaction {
+  background: url('assets/img/notifications.svg') no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  float: right;
+  position: relative;
+  top: 5px;
+}
+
+.link-external {
+  background: url('assets/img/link-external.svg') no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  float: right;
+  position: relative;
+  top: -5px;
+}
+
+.compare-icon {
+  background: url('assets/img/compare.svg') no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  left: -10px;
+}
+
+.export-icon {
+  background: url('assets/img/export.svg') no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 21px;
+  margin: 0 7px;
+  position: relative;
+  top: -2px;
+  left: -2px;
+}
+
+.down-arrow {
+  background: url('assets/img/down_arrow.svg') no-repeat;
+  background-size: contain;
+  width: 63px;
+  height: 60px;
+  position: relative;
+  display: inline-block;
+}
+
+.up-arrow {
+  background: url('assets/img/up_arrow.svg') no-repeat;
+  background-size: contain;
+  width: 63px;
+  height: 60px;
+  position: relative;
+  display: inline-block;
+}
+
+.filter-icon {
+  background: url('assets/img/filter.svg') no-repeat;
+  background-size: contain;
+  width: 43px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
 }
 
 .caret {
