@@ -1,35 +1,42 @@
-<div style="padding: 15px 5px;" class="row">
-  <div class="col-lg-12 no-padding white-bg">
-    <div class="product-heading">{{product.product}}
-    </div>
-    <div class="col-lg-3">
-      <div class="box-content">
-        Img
+<div style="padding: 25px 40px">
+  <div class="row">
+    <div class="col-lg-12 no-padding white-bg">
+      <div class="product-heading">{{product.product}}
       </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="box-content">
-        <div class="content-heading">
-          High Level Recommendation
+      <div class="col-lg-3">
+        <div class="box-content">
+          <div class="img-row">
+            <div class="img-column" *ngFor="let img of product.images let i = index">
+              <img src="{{img}}" style="width: 100%" *ngIf="i < 4" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="box-content">
+          <div class="content-heading">
+            High Level Recommendation
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="box-content">
+          <div class="content-heading">
+            Keyword Relationship
+          </div>
+          <app-product-keywords-relation *ngIf="product.details" [keywords]="product.details.keyword_relationship">
+          </app-product-keywords-relation>
         </div>
       </div>
     </div>
-    <div class="col-lg-5">
-      <div class="box-content">
-        <div class="content-heading">
-          Keyword Relationship
-        </div>
-        <app-product-keywords-relation *ngIf="product.details" [keywords]="product.details.keyword_relationship"></app-product-keywords-relation>
+    <br>
+    <div class="col-lg-12 white-bg m-t-md p-m">
+      <div class="text-right">
+        <button type="button" class="btn btn-primary m-r-md">Print</button>
+        <button type="button" class="btn btn-primary m-r-md">Export</button>
+        <button type="button" class="btn btn-primary">Collapse All</button>
       </div>
+      <app-product-country-stats></app-product-country-stats>
     </div>
-  </div>
-  <br>
-  <div class="col-lg-12 white-bg m-t-md p-m">
-    <div class="text-right">
-      <button type="button" class="btn btn-primary m-r-md">Print</button>
-      <button type="button" class="btn btn-primary m-r-md">Export</button>
-      <button type="button" class="btn btn-primary">Collapse All</button>
-    </div>
-    <app-product-country-stats></app-product-country-stats>
   </div>
 </div>

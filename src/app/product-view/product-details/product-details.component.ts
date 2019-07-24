@@ -21,6 +21,7 @@ export class ProductDetailsComponent implements OnInit {
     this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
       this.xls.setRawData(data);
     });
+    console.log(this.product);
 
     combineLatest(this.xls.getRawData(), this.route.paramMap).pipe(
       map(([products, param]) => {

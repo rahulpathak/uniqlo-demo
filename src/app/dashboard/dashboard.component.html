@@ -1,7 +1,7 @@
 <!-- <ng5-slider class="custom-slider" [(value)]="value" [options]="options"></ng5-slider> -->
 <div class="row">
   <div class="col-lg-12 no-padding">
-    <div class="wrapper wrapper-content white-bg">
+    <div class="wrapper wrapper-content white-bg text-center">
       <!-- <ng-content select="[dashboard-body-locator]"></ng-content> -->
       <div class="row">
         <div class="col-lg-12 no-padding">
@@ -75,110 +75,113 @@
     </div>
   </div>
 </div>
-<br>
-<div class="row">
-  <div class="col-lg-12 box-heading">
-    Voice of Customer
-  </div>
-  <div class="col-lg-12 no-padding">
-    <div class="col-lg-6 box-color no-padding-left">
-      <div class="col-lg-12 no-padding border-all">
-        <div class="sub-heading">Opportunities: Product with Top Rating</div>
-        <div class="col-lg-12 row-heading">
-          <div class="col-lg-1">
-            Id
-          </div>
-          <div class="col-lg-4 no-padding">
-            Part Number
-          </div>
-          <div class="col-lg-2 text-center">
-            Dep ID
-          </div>
-          <div class="col-lg-3">
-            Evaluation(Average)
-          </div>
-          <div class="col-lg-2 text-center">
-            Comments
-          </div>
-        </div>
-        <div class="col-lg-12 row-dtl" *ngFor="let top of toprating; let index = index;" (click)="goToProductView(top)">
-          <div class="col-lg-1">
-            {{index + 1}}
-          </div>
-          <div class="col-lg-4 text-overflow no-padding" title="{{top.product}}">
-            <img src="assets/img/{{top.icon}}" width="18px" height="18px" /> &nbsp; {{top.product}}
-          </div>
-          <div class="col-lg-2 text-center">
-            {{top.dept_id}}
-          </div>
-          <div class="col-lg-3">
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" aria-valuenow="top.evaluation" aria-valuemin="0"
-                aria-valuemax="100" [style.width.%]="(top.evaluation / 5) * 100">
-                {{displayTwoDigitsDecimal(top.evaluation)}}
-              </div>
+<div style="padding: 25px 40px">
+  <div class="row">
+    <div class="col-lg-12 box-heading">
+      Voice of Customer
+    </div>
+    <div class="col-lg-12 no-padding">
+      <div class="col-lg-6 box-color no-padding-left">
+        <div class="col-lg-12 no-padding border-all">
+          <div class="sub-heading">Opportunities: Product with Top Rating</div>
+          <div class="col-lg-12 row-heading">
+            <div class="col-lg-1">
+              Id
+            </div>
+            <div class="col-lg-4 no-padding">
+              Part Number
+            </div>
+            <div class="col-lg-2 text-center">
+              Dep ID
+            </div>
+            <div class="col-lg-3">
+              Evaluation(Average)
+            </div>
+            <div class="col-lg-2 text-center">
+              Comments
             </div>
           </div>
-          <div class="col-lg-2 text-center">
-            {{sumComments(top)}}
+          <div class="col-lg-12 row-dtl" *ngFor="let top of toprating; let index = index;"
+            (click)="goToProductView(top)">
+            <div class="col-lg-1">
+              {{index + 1}}
+            </div>
+            <div class="col-lg-4 text-overflow no-padding" title="{{top.product}}">
+              <img src="assets/img/{{top.icon}}" width="18px" height="18px" /> &nbsp; {{top.product}}
+            </div>
+            <div class="col-lg-2 text-center">
+              {{top.dept_id}}
+            </div>
+            <div class="col-lg-3">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="top.evaluation" aria-valuemin="0"
+                  aria-valuemax="100" [style.width.%]="(top.evaluation / 5) * 100">
+                  {{displayTwoDigitsDecimal(top.evaluation)}}
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 text-center">
+              {{sumComments(top)}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 box-color no-padding-right">
+        <div class="col-lg-12 no-padding border-all">
+          <div class="sub-heading">Risk: Product with Low Rating</div>
+          <div class="col-lg-12 row-heading">
+            <div class="col-lg-1">
+              Id
+            </div>
+            <div class="col-lg-4 no-padding">
+              Part Number
+            </div>
+            <div class="col-lg-2 text-center">
+              Dep ID
+            </div>
+            <div class="col-lg-3">
+              Evaluation(Average)
+            </div>
+            <div class="col-lg-2 text-center">
+              Comments
+            </div>
+          </div>
+          <div class="col-lg-12 row-dtl" *ngFor="let low of lowrating; let index = index;"
+            (click)="goToProductView(low)">
+            <div class="col-lg-1">
+              {{index + 1}}
+            </div>
+            <div class="col-lg-4 text-overflow no-padding" title="{{low.product}}">
+              <img src="assets/img/{{low.icon}}" width="18px" height="18px" /> &nbsp;{{low.product}}
+            </div>
+            <div class="col-lg-2 text-center">
+              {{low.dept_id}}
+            </div>
+            <div class="col-lg-3">
+              <div class="progress">
+                <div class="progress-bar red" role="progressbar" aria-valuenow="low.evaluation" aria-valuemin="0"
+                  aria-valuemax="100" [style.width.%]="(low.evaluation / 5) * 100">
+                  {{displayTwoDigitsDecimal(low.evaluation)}}
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 text-center">
+              {{sumComments(low)}}
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-lg-6 box-color no-padding-right">
-      <div class="col-lg-12 no-padding border-all">
-        <div class="sub-heading">Risk: Product with Low Rating</div>
-        <div class="col-lg-12 row-heading">
-          <div class="col-lg-1">
-            Id
-          </div>
-          <div class="col-lg-4 no-padding">
-            Part Number
-          </div>
-          <div class="col-lg-2 text-center">
-            Dep ID
-          </div>
-          <div class="col-lg-3">
-            Evaluation(Average)
-          </div>
-          <div class="col-lg-2 text-center">
-            Comments
-          </div>
-        </div>
-        <div class="col-lg-12 row-dtl" *ngFor="let low of lowrating; let index = index;" (click)="goToProductView(low)">
-          <div class="col-lg-1">
-            {{index + 1}}
-          </div>
-          <div class="col-lg-4 text-overflow no-padding" title="{{low.product}}">
-            <img src="assets/img/{{low.icon}}" width="18px" height="18px" /> &nbsp;{{low.product}}
-          </div>
-          <div class="col-lg-2 text-center">
-            {{low.dept_id}}
-          </div>
-          <div class="col-lg-3">
-            <div class="progress">
-              <div class="progress-bar red" role="progressbar" aria-valuenow="low.evaluation" aria-valuemin="0"
-                aria-valuemax="100" [style.width.%]="(low.evaluation / 5) * 100">
-                {{displayTwoDigitsDecimal(low.evaluation)}}
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-2 text-center">
-            {{sumComments(low)}}
-          </div>
-        </div>
-      </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-lg-12 box-heading">
+      Voice of Store
     </div>
-  </div>
-</div>
-<br>
-<div class="row">
-  <div class="col-lg-12 box-heading">
-    Voice of Store
-  </div>
-  <div class="col-lg-12 no-padding">
-    <div class="col-lg-3 box-color border-all no-padding-right no-padding-left" *ngFor="let box of VOSboxes;">
-      <app-voice-store-table [title]="box.title" [param]="box.param" limit="10"></app-voice-store-table>
+    <div class="col-lg-12 no-padding">
+      <div class="col-lg-3 box-color border-all no-padding-right no-padding-left" *ngFor="let box of VOSboxes;">
+        <app-voice-store-table [title]="box.title" [param]="box.param" limit="10"></app-voice-store-table>
+      </div>
     </div>
   </div>
 </div>

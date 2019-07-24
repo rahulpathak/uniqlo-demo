@@ -1,5 +1,8 @@
 <div [class]="'full-page-wrapper ' + showMenuClass">
   <app-header (clickMenuToggle)="toggleSideMenu($event)"></app-header>
-  <router-outlet></router-outlet>
+  <div style="background-color: #ECECEC">
+      <router-outlet></router-outlet>
+  </div>
+ 
   <app-sidenav></app-sidenav>
 </div>

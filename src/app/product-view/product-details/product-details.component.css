@@ -8,7 +8,7 @@
 
 .box-content {
     box-shadow: 0px 0px 1px #d2d2d2;
-    height: 200px;
+    /* height: 200px; */
     margin: 20px 0;
     padding: 15px;
 }
@@ -37,4 +37,20 @@
 
 .text-right {
     text-align: right;
+}
+
+.img-row {
+    display: -ms-flexbox;
+    /* IE 10 */
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* IE 10 */
+    flex-wrap: wrap;
+}
+
+/* Create two equal columns that sits next to each other */
+.img-column {
+    -ms-flex: 50%;
+    /* IE 10 */
+    flex: 50%;
 }
