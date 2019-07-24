@@ -2,15 +2,22 @@
     $height: 45px;
     height: $height;
     min-height: $height;
+    background-color: blue;
     .right-icons {
         position: relative;
         height: $height;
         box-sizing: border-box;
         padding: 12px 0;
+        color: #ffffff;
+        font-size: 18px;
+
+        .fa {
+            margin: 0 7px;
+        }
     }
 
     .header-text{
-        color: #AD2C32;
+        color: #ffffff;
         font-size: 24px;
         line-height: 25px;
         padding: 10px 0;
