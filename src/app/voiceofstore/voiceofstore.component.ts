@@ -36,7 +36,7 @@ export class VoiceofstoreComponent implements OnInit, AfterViewInit {
 
   country = [
     {'id': 'usa', 'display': 'USA'},
-    {'id': 'japna', 'display': 'Japan'},
+    {'id': 'japan', 'display': 'Japan'},
     // {'id': 'india', 'display': 'India'},
     // {'id': 'malaysia', 'display': 'Malaysia'},
     // {'id': 'russia', 'display': 'Russia'},
@@ -46,22 +46,22 @@ export class VoiceofstoreComponent implements OnInit, AfterViewInit {
 
   category = [
     {'id': 'tops', 'display': 'Tops'},
-    {'id': 'outerwear', 'display': 'Outewear'},
+    {'id': 'outerwear', 'display': 'Outerwear'},
     {'id': 'bottoms', 'display': 'Bottoms'},
     {'id': 'activewear', 'display': 'Activewear'},
     {'id': 'dnj', 'display': 'Dressess and Jumpsuits'},
-    {'id': 'accandshoes', 'display': 'Accesspries and Shoes'}
+    {'id': 'accandshoes', 'display': 'Accessories and Shoes'}
   ];
 
   sub_category = [
     {'id': 'jeans', 'display': 'Jeans'},
     {'id': 'tshirts', 'display': 'T-Shirts'},
-    {'id': 'dshirt', 'display': 'Dress Shirt'},
-    {'id': 'shirtandblouse', 'display': 'Shirts and Blouses'},
+    {'id': 'dshirts', 'display': 'Dress Shirt'},
+    {'id': 'shirtsandblouses', 'display': 'Shirts and Blouses'},
     {'id': 'shorts', 'display': 'Shorts'},
     {'id': 'pants', 'display': 'Pants'},
-    {'id': 'jakets', 'display': 'Jackets'},
-    {'id': 'pshirt', 'display': 'Polo Shirt'},
+    {'id': 'jackets', 'display': 'Jackets'},
+    {'id': 'pshirts', 'display': 'Polo Shirt'},
     {'id': 'pullovers', 'display': 'Pullovers'}
   ];
 
