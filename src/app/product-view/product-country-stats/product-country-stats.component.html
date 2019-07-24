@@ -9,8 +9,8 @@
           <span class="checkmark"></span>
         </label>
       </span>
-      <span style="padding-left: 35px;">
-        <span [class]="'flag-icon flag-icon-' + stats.code"></span>
+      <span style="padding-left: 25px;">
+        <img [src]="getCountryImageName(stats.country)" height="20" width="auto" />
         {{stats.country}}
       </span>
     </div>
