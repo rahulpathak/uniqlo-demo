@@ -14,11 +14,10 @@ export class AppComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.loading = false;
-        // this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
-        //     this.xls.setRawData(data);
-        //     this.loading = false;
-        // });
-        // this.xls.getRawData().subscribe(data => {console.log(data);});
+        this.loading = true;
+        this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
+            this.xls.setRawData(data);
+            this.loading = false;
+        });
     }
 }
