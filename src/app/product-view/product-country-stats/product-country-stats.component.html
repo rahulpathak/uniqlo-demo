@@ -1,13 +1,10 @@
 <accordion [isAnimated]="true">
-  <accordion-group isOpen="true" *ngFor="let stats of product.details?.comments; let index = index"
+  <accordion-group isOpen="true" *ngFor="let stats of product.details?.comments; let index = index;"
     panelClass="product-country-list">
     <div accordion-heading>
-      <span class="country-checkbox">
-        <label class="container">
-          <input type="checkbox" (click)="clickCountrySelection(stats, $event)" checked="checked"
-            [checked]="stats.checked">
-          <span class="checkmark"></span>
-        </label>
+      <span class="country-checkbox" (click)="clickCountrySelection(stats, $event)">
+        <input type="checkbox" [checked]="stats.checked" />
+        <span class="checkmark"></span>
       </span>
       <span style="padding-left: 25px;">
         <img [src]="getCountryImageName(stats.country)" height="20" width="auto" />
