@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit, AfterViewInit {
-  toprating;
-  lowrating;
-  VOSboxes;
+export class DashboardComponent implements OnInit {
+  toprating = [];
+  lowrating = [];
+  VOSboxes = [];
 
   constructor(
     private xls: XlsxDataService,
@@ -32,9 +32,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       title: 'New Suggestion',
       param: 'new_suggestions'
     }];
-  }
-
-  ngAfterViewInit() {
+    
     this.xls.getFilteredData().subscribe(data => {
       const sortByRating = data.sort((a,b) => b.evaluation - a.evaluation);
       this.toprating = sortByRating.slice(0, 10);
