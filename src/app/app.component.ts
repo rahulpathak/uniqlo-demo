@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { XlsxDataService } from './rootServices/xlsx-data.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
     selector: 'app-root',
@@ -8,6 +9,11 @@ import { XlsxDataService } from './rootServices/xlsx-data.service';
 })
 export class AppComponent implements OnInit {
     loading: boolean;
+
+    loadingConfig = {
+        primaryColour: '#dd0031', secondaryColour: '#006ddd', tertiaryColour: '#dd0031', 
+        backdropBorderRadius: '3px', backdropBackgroundColour: 'rgba(0,0,0,0.6)'
+    };
    
     constructor(
         private xls: XlsxDataService

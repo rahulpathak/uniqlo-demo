@@ -8,9 +8,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
-  toprating = [];
-  lowrating = [];
-  VOSboxes = [];
+  toprating;
+  lowrating;
+  VOSboxes;
 
   constructor(
     private xls: XlsxDataService,
