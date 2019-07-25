@@ -3,15 +3,15 @@
     panelClass="product-country-list">
     <div accordion-heading>
       <span class="country-checkbox">
-        <label class="container">
+        <label class="checkbox-block">
           <input type="checkbox" (click)="clickCountrySelection(stats, $event)" checked="checked"
             [checked]="stats.checked">
           <span class="checkmark"></span>
         </label>
       </span>
-      <span style="padding-left: 25px;">
+      <span style="padding-left: 30px;">
         <img [src]="getCountryImageName(stats.country)" height="20" width="auto" />
-        {{stats.country}}
+        <span style="padding-left: 12px;">{{stats.country}}</span>
       </span>
     </div>
     <div class="row">
@@ -27,6 +27,7 @@
             <app-product-market-info [product]="product" [item]="stats.market_information"></app-product-market-info>
           </div>
           <div class="col-lg-12">
+            <div class="key-heading">Keyword Analytics</div>
             <app-product-keywords-relation 
             *ngIf="product.details" [keywords]="product.details.keyword_relationship">
             </app-product-keywords-relation>
