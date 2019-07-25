@@ -1708,18 +1708,6 @@ body.mini-navbar.fixed-sidebar .logo-element {
   pointer-events: none;
 }
 
-.login-icon {
-  background: url('assets/img/user_male2.svg') no-repeat;
-  background-size: contain;
-  vertical-align: middle;
-  width: 18px;
-  height: 18px;
-  display: -ms-grid;
-  display: -webkit-box;
-  display: -moz-box;
-  display: inline-block;
-  margin: 0 7px;
-}
 .globle-icon{
   background: url('assets/img/globe.svg') no-repeat;
   background-size: contain;
@@ -1783,7 +1771,18 @@ body.mini-navbar.fixed-sidebar .logo-element {
 }
 
 .voc{
-  background: url('assets/img/message.svg') no-repeat;
+  background: url('assets/img/voice_of_customer.svg') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 32px;
+  height: 30px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.vos{
+  background: url('assets/img/voice_of_store.svg') no-repeat;
   background-size: contain;
   vertical-align: middle;
   width: 32px;

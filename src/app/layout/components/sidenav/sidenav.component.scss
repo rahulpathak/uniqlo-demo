@@ -135,3 +135,12 @@ a:focus {
         }
     }
 }
+
+.disabled {
+    pointer-events:none;
+    opacity:0.6;
+}
+
+.padding-right {
+    padding-right: 5px;
+}
