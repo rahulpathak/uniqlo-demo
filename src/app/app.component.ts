@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { XlsxDataService } from './rootServices/xlsx-data.service';
-import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
     selector: 'app-root',
