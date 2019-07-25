@@ -25,7 +25,7 @@ export class XlsxDataService {
             );
   }
 
-  setRawData(data: Array<any>) {console.log(data);
+  setRawData(data: Array<any>) {
     this.rawData$.next(data);
   }
 
@@ -101,13 +101,12 @@ export class XlsxDataService {
   }
 
   convertDetailsJson(data) {
-    console.log(data);
     try {
       const details = JSON.parse(data.details);
       data.details = details;
-    } catch {
+    } catch(err) {console.log(err.message);
       data.details = false;
-    }console.log(data);
+    }
     return data;
   }
 }
