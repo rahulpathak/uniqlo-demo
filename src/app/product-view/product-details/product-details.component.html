@@ -13,19 +13,19 @@
       </div>
     </div>
     <div class="col-lg-4">
-      <div class="box-content">
+      <div class="box-content" style="height: 224px;">
         <div class="content-heading">
           High Level Recommendation
         </div>
-        {{product.recommendations}}
+        <div class="p-t-md">{{product.recommendations}}</div>
       </div>
     </div>
     <div class="col-lg-5">
-      <div class="box-content">
+      <div class="box-content" style="height: 224px;">
         <div class="content-heading">
           Product Details
         </div>       
-        {{product.product_details}} 
+        <div class="p-t-md">{{product.product_details}}</div>
       </div>
     </div>
   </div>
@@ -42,6 +42,7 @@
           <app-product-market-info [product]="product" [item]="getFirstCommentItem('market_information')"></app-product-market-info>
         </div>
         <div class="col-lg-12">
+          <div class="sub-heading">Keyword Analytics</div>
           <app-product-keywords-relation 
           *ngIf="product.details" [keywords]="product.details.keyword_relationship">
           </app-product-keywords-relation>
