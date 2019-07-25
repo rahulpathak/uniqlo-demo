@@ -13,6 +13,7 @@ import { VoiceofcustomerComponent } from './voiceofcustomer/voiceofcustomer.comp
 import { SharedModule } from './shared/shared.module';
 import { AccordionModule, BsDropdownModule } from 'ngx-bootstrap';
 import { LayoutModule } from './layout/layout.module';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LayoutModule } from './layout/layout.module';
     BrowserAnimationsModule,
     NgxDatatableModule,
     AccordionModule.forRoot(),
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    NgxLoadingModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
