@@ -1,0 +1,29 @@
+<div class="border-box">
+    <div class="sub-heading">Voice of Customer
+      <i class="link-external"></i>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="col-lg-1 row-heading">
+          Id
+        </div>
+        <div class="col-lg-9 row-heading">
+          Comments(s)
+        </div>
+        <div class="col-lg-2 row-heading text-center">
+          Count
+        </div>
+      </div>
+      <div class="col-lg-12" *ngFor="let item of items; let index = index;">
+        <div class="col-lg-1 row-dtl">
+          {{index + 1}}
+        </div>
+        <div class="col-lg-9 row-dtl">
+          <div class="text-overflow">{{item.comment}}</div>
+        </div>
+        <div class="col-lg-2 row-dtl text-center">
+          {{item.count}}
+        </div>
+      </div>
+    </div>
+  </div>

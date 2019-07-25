@@ -21,7 +21,6 @@ export class ProductDetailsComponent implements OnInit {
     this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
       this.xls.setRawData(data);
     });
-    console.log(this.product);
 
     combineLatest(this.xls.getRawData(), this.route.paramMap).pipe(
       map(([products, param]) => {
@@ -33,7 +32,14 @@ export class ProductDetailsComponent implements OnInit {
         }
       }),
       map(x => this.xls.convertDetailsJson(x))
-    ).subscribe(product => {console.log(product);this.product = product;});
+    ).subscribe(product => this.product = product);
+  }
+
+  getFirstCommentItem(key) {
+    if(this.product && this.product.details && this.product.details.comments && this.product.details.comments.length > 0) {
+      return this.product.details.comments[0][key];
+    }
+    return false;
   }
 
 }

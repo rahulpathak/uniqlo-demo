@@ -7,12 +7,32 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ColorGradientBarComponent implements OnInit {
   @Input('height') height: number;
-  colors;
+  styles;
+  colors: Array<any>;
+  total: number;
 
   constructor() { }
 
   ngOnInit() {
-    this.colors = ['red', 'salmon', 'pink', 'green', 'blue', 'yellow', 'red', 'salmon', 'pink', 'green', 'blue', 'yellow'];
+    this.styles = {
+      fontColor: "#222222",
+      fontSize: "10px"
+    };
+    this.colors = [{
+      backgroundColor: '#FF0000',
+      value: 30
+    }, {
+      backgroundColor: '#CDCDCD',
+      value: 20
+    }, {
+      backgroundColor: '#48BAE3',
+      value: 50
+    }];
+    this.total = this.colors.map(x => x.value).reduce((x,y) => (x + y));
+  }
+
+  percentageWidth(value) {
+    return (value / this.total) * 100;
   }
 
 }

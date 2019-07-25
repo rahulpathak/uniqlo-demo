@@ -15,11 +15,14 @@
         align-items: stretch;
         .side-nav-wrapper {
             min-width: 290px;
+            max-width: 290px;
             background-color: #303D74;
         }
-    }    
-}
 
-.page-content-wrapper {
-    background-color: #f4f4f4;
+        .page-content-wrapper {
+            width: calc(100% - 290px);
+            max-width: calc(100% - 290px);
+            background-color: #f4f4f4;
+        }
+    }    
 }

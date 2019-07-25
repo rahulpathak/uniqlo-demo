@@ -1,4 +1,10 @@
-<ul class="color-gradient-bar">
-  <li *ngFor="let color of colors;" [style.height.px]="height" 
-    [style.background-color]="color" [style.width.%]="(1 / colors.length) * 100"></li>
-</ul>
+<div class="color-gradient-bar">
+  <div *ngFor="let color of colors;" 
+    [style.height.px]="height" 
+    [style.line-height.px]="height" 
+    [ngStyle]="styles" 
+    [style.background-color]="color.backgroundColor" 
+    [style.width.%]="percentageWidth(color.value)">
+      {{color.value}}
+  </div>
+</div>

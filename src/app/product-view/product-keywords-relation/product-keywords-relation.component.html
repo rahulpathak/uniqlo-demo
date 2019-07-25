@@ -1,4 +1,4 @@
-<accordion [isAnimated]="true" class="box-accordion" closeOthers="true">
+<!-- <accordion [isAnimated]="true" class="box-accordion" closeOthers="true">
   <accordion-group [isOpen]="index == 0" *ngFor="let keyword of keywords; let index = index">
     <div accordion-heading>
       <div class="box-title">{{keyword.item}}</div>
@@ -6,8 +6,19 @@
     <ul class="keywords-relation-list">
       <li *ngFor="let item of keyword.keywords">
         <div>{{item.count}} {{item.keyword}}</div>
-        <app-color-gradient-bar height="5"></app-color-gradient-bar>
+        
       </li>
     </ul>
   </accordion-group>
-</accordion>
+</accordion> -->
+<div class="keywords-list">
+  <div class="keyword-items" *ngFor="let keyword of keywords;">
+    <div class="primary-keyword">
+      <div class="primary-keyword-title">{{keyword.item}} 100</div>
+      <app-color-gradient-bar height="10"></app-color-gradient-bar>
+    </div>
+    <div class="keyword-item" *ngFor="let item of keyword.keywords">
+      {{item.count}} {{item.keyword}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="border-box">
+    <div class="sub-heading">Market Information
+      <i class="link-external"></i>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="col-lg-4">
+          <img [src]="product?.image" style="width: 100%; height: auto;" />
+        </div>
+        <div class="col-lg-4">
+          <i class="up-arrow"></i>
+          {{item?.positive}}%
+        </div>
+        <div class="col-lg-4">
+          <i class="down-arrow"></i>
+          {{item?.negative}}%
+        </div>
+      </div>
+    </div>
+  </div>

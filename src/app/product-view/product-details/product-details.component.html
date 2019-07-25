@@ -23,9 +23,27 @@
       <div class="box-content">
         <div class="content-heading">
           Product Details
+        </div>        
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="white-bg row" style="margin: 0;">
+        <div class="col-lg-4">
+          <app-product-voc-list [items]="getFirstCommentItem('voc')"></app-product-voc-list>
         </div>
-        <!-- <app-product-keywords-relation *ngIf="product.details" [keywords]="product.details.keyword_relationship">
-        </app-product-keywords-relation> -->
+        <div class="col-lg-4">
+          <app-product-vos-list [items]="getFirstCommentItem('vos')"></app-product-vos-list>
+        </div>
+        <div class="col-lg-4">
+          <app-product-market-info [product]="product" [item]="getFirstCommentItem('market_information')"></app-product-market-info>
+        </div>
+        <div class="col-lg-12">
+          <app-product-keywords-relation 
+          *ngIf="product.details" [keywords]="product.details.keyword_relationship">
+          </app-product-keywords-relation>
+        </div>
       </div>
     </div>
   </div>
@@ -40,6 +58,6 @@
         <i class="export-icon pull-left"></i>Export</button>
       <button type="button" class="btn btn-primary">Collapse All</button>
     </div>
-    <app-product-country-stats></app-product-country-stats>
+    <app-product-country-stats [product]="product"></app-product-country-stats>
   </div>
 </div>
