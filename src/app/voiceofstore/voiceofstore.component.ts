@@ -1,16 +1,14 @@
 import { Component, OnInit, ViewChild, AfterViewInit, AfterViewChecked, ChangeDetectorRef } from '@angular/core';
 import { MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 import { DatatableComponent } from '@swimlane/ngx-datatable';
-import { XlsxDataService } from '../rootServices/xlsx-data.service';
-import { Subscription } from 'rxjs/Subscription';
+import { XlsxDataService } from 'src/app/rootServices/xlsx-data.service';
 import * as _ from 'lodash';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-voiceofstore',
   templateUrl: './voiceofstore.component.html',
-  styleUrls: ['./voiceofstore.component.scss'],
-  providers: [XlsxDataService]
+  styleUrls: ['./voiceofstore.component.scss']
 })
 
 export class VoiceofstoreComponent implements OnInit, AfterViewInit, AfterViewChecked {
@@ -135,9 +133,9 @@ export class VoiceofstoreComponent implements OnInit, AfterViewInit, AfterViewCh
   }
 
   ngAfterViewInit() {
-    this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
-      this.xls.setRawData(data);
-    });
+    // this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
+    //   this.xls.setRawData(data);
+    // });
     this.xls.getFilteredData().subscribe(data => {
       this.rows = data;
     });

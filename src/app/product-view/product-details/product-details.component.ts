@@ -11,17 +11,12 @@ import { map } from 'rxjs/operators';
 })
 export class ProductDetailsComponent implements OnInit {
   product: any = {};
-  rows
   constructor(
     private xls: XlsxDataService,
     private route:ActivatedRoute
   ) { }
 
-  ngOnInit() {    
-    this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
-      this.xls.setRawData(data);
-    });
-
+  ngOnInit() { 
     combineLatest(this.xls.getRawData(), this.route.paramMap).pipe(
       map(([products, param]) => {
         if(param && products.length > 0 && param.get("id")) {

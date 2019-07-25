@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, RouterEvent, NavigationStart } from '@angular/router';
+import { XlsxDataService } from 'src/app/rootServices/xlsx-data.service';
 
 @Component({
   selector: 'app-full-page',
@@ -11,14 +12,15 @@ export class FullPageComponent implements OnInit {
   showMenuClass: string = '';
 
   constructor(
-    private router: Router
-  ) {
-    router.events.subscribe((event: RouterEvent) => {
-      this.navigationInterceptor(event)
-    })
+    private router: Router,
+    private xls: XlsxDataService
+  ) {    
   }
 
   ngOnInit() {
+    this.router.events.subscribe((event: RouterEvent) => {
+      this.navigationInterceptor(event)
+    });
   }
 
   toggleSideMenu(show) {

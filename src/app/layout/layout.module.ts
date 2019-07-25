@@ -4,15 +4,18 @@ import { RouterModule } from '@angular/router';
 import { FullPageComponent } from './components/full-page/full-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { BsDropdownModule } from 'ngx-bootstrap';
+import { FilterBoxComponent } from './filter-box/filter-box.component';
 
 @NgModule({
   declarations: [
     FullPageComponent, 
     HeaderComponent,
-    SidenavComponent
+    SidenavComponent,
+    FilterBoxComponent
   ],
   imports: [
-    CommonModule, RouterModule
+    CommonModule, RouterModule, BsDropdownModule
   ],
   exports: [
     FullPageComponent

@@ -11,7 +11,7 @@ import { MaterialDesignModule } from './material-design.module';
 import { VoiceofstoreComponent } from './voiceofstore/voiceofstore.component';
 import { VoiceofcustomerComponent } from './voiceofcustomer/voiceofcustomer.component';
 import { SharedModule } from './shared/shared.module';
-import { AccordionModule } from 'ngx-bootstrap';
+import { AccordionModule, BsDropdownModule } from 'ngx-bootstrap';
 import { LayoutModule } from './layout/layout.module';
 
 @NgModule({
@@ -31,7 +31,8 @@ import { LayoutModule } from './layout/layout.module';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxDatatableModule,
-    AccordionModule.forRoot()
+    AccordionModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
