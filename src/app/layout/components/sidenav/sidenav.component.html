@@ -14,7 +14,7 @@
           <span class="nav-label">Dashboard</span>
         </a>
       </li>
-      <li routerLinkActive="active">
+      <li routerLinkActive="active" class="disabled">
         <a [routerLink]="['/voc']">
           <i class="voc"></i>
           <span class="nav-label">Voice of Customer</span>
@@ -22,18 +22,18 @@
       </li>
       <li routerLinkActive="active">
         <a [routerLink]="['/vos']">
-          <i class="voc"></i>
+          <i class="vos"></i>
           <span class="nav-label">Voice of Store</span>
         </a>
       </li>
-      <li>
-        <a [routerLink]="['']">
+      <li class="disabled">
+        <a>
           <i class="mi"></i>
           <span class="nav-label">Market Information</span>
         </a>
       </li>
-      <li>
-        <a [routerLink]="['']">
+      <li class="disabled">
+        <a>
           <i class="setting"></i>
           <span class="nav-label">Setting</span>
         </a>
@@ -77,14 +77,14 @@
           </ul>
         </div>
         <div>
-          <div class="dropdown inline-block issue-info">
+          <div class="dropdown inline-block issue-info padding-right">
             <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" data-toggle="dropdown">Age
               <span class="caret dropdown-position"></span></button>
             <ul class="dropdown-menu">
               <li *ngFor="let age of age_cat"><a>{{age.display}}</a></li>
             </ul>
           </div>
-          <div class="dropdown inline-block issue-info">
+          <div class="dropdown inline-block issue-info p-l-xs">
             <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" data-toggle="dropdown">Size
               <span class="caret dropdown-position"></span></button>
             <ul class="dropdown-menu">
@@ -93,14 +93,14 @@
           </div>
         </div>
         <div>
-          <div class="dropdown inline-block issue-info">
+          <div class="dropdown inline-block issue-info padding-right">
             <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" data-toggle="dropdown">Fabric
               <span class="caret dropdown-position"></span></button>
             <ul class="dropdown-menu">
               <li *ngFor="let fab of fabric_cat"><a>{{fab.display}}</a></li>
             </ul>
           </div>
-          <div class="dropdown inline-block issue-info">
+          <div class="dropdown inline-block issue-info p-l-xs">
             <button class="btn btn-default full-width dropdown-toggle" type="button" data-toggle="dropdown">Color
               <span class="caret dropdown-position"></span></button>
             <ul class="dropdown-menu">
