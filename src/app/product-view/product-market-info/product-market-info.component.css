@@ -1,0 +1,8 @@
+.arrow-text{
+    position: relative;
+}
+
+.arrow-text span{
+    position: absolute;
+    top: 25px;
+}
