@@ -101,6 +101,9 @@ export class XlsxDataService {
   }
 
   convertDetailsJson(data) {
+    if(typeof data.details == 'object') {
+      return data;
+    }
     try {
       const details = JSON.parse(data.details);
       data.details = details;
