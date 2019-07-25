@@ -1,4 +1,4 @@
-<div class="filter-box">
+<div class="filter-box" *ngIf="!hideFilter">
   <div class="filter-text">
     <i class="filter-icon"></i>
     <span class="nav-label-position">Filters</span>
@@ -24,21 +24,21 @@
     </div>
     <div class="dropdown" dropdown>
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
-        {{checkFilterExists('category') ? filterJson.category : "Category"}}
+        {{checkFilterExists('category_dummy') ? filterJson.category_dummy : "Category"}}
         <span class="caret dropdown-position"></span></button>
       <ul *dropdownMenu class="dropdown-menu">
-        <li (click)="toogleFilter('category')" *ngIf="checkFilterExists('category')"><a>All</a></li>
-        <li *ngFor="let cat of category" (click)="triggerFilter('category', cat.display)">
+        <li (click)="toogleFilter('category_dummy')" *ngIf="checkFilterExists('category_dummy')"><a>All</a></li>
+        <li *ngFor="let cat of category" (click)="triggerFilter('category_dummy', cat.display)">
           <a>{{cat.display}}</a></li>
       </ul>
     </div>
     <div class="dropdown" dropdown>
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
-        {{checkFilterExists('sub_category') ? filterJson.sub_category : "Sub Category"}}
+        {{checkFilterExists('sub_category_dummy') ? filterJson.sub_category_dummy : "Sub Category"}}
         <span class="caret dropdown-position"></span></button>
       <ul *dropdownMenu class="dropdown-menu">
-        <li (click)="toogleFilter('sub_category')" *ngIf="checkFilterExists('sub_category')"><a>All</a></li>
-        <li *ngFor="let subcat of sub_category" (click)="triggerFilter('sub_category', subcat.display)">
+        <li (click)="toogleFilter('sub_category_dummy')" *ngIf="checkFilterExists('sub_category_dummy')"><a>All</a></li>
+        <li *ngFor="let subcat of sub_category" (click)="triggerFilter('sub_category_dummy', subcat.display)">
           <a>{{subcat.display}}</a></li>
       </ul>
     </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { XlsxDataService } from 'src/app/rootServices/xlsx-data.service';
+import { Router, NavigationEnd, RouterEvent, ActivatedRoute } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-filter-box',
@@ -80,12 +82,21 @@ export class FilterBoxComponent implements OnInit {
   ];
 
   filterJson = {};
+  hideFilter: boolean = true;
 
   constructor(
-    private xls: XlsxDataService
+    private xls: XlsxDataService,
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
+    this.hideFilter = this.route.snapshot.firstChild.data.hideFilter;
+    this.router.events.pipe(
+      filter((e: RouterEvent) => e instanceof NavigationEnd)
+    ).subscribe((e:RouterEvent) => {
+      this.hideFilter = this.route.snapshot.firstChild.data.hideFilter;
+    });
   }
 
   toogleFilter(key, filter?) {

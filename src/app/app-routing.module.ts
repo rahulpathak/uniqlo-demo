@@ -14,7 +14,13 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'vos', component: VoiceofstoreComponent },
       { path: 'voc', component: VoiceofcustomerComponent },
-      { path: 'product-view/:id', loadChildren: './product-view/product-view.module#ProductViewModule'}
+      { 
+        path: 'product-view/:id', 
+        loadChildren: './product-view/product-view.module#ProductViewModule',
+        data: {
+          hideFilter: true
+        }
+      }
     ]
   }  
 ];
