@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { XlsxDataService } from 'src/app/rootServices/xlsx-data.service';
 import { Router, NavigationEnd, RouterEvent, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { BsDropdownDirective } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-filter-box',
@@ -84,6 +85,8 @@ export class FilterBoxComponent implements OnInit {
   filterJson = {};
   hideFilter: boolean = true;
 
+  @ViewChildren(BsDropdownDirective, { read: ElementRef }) dropdowns !: QueryList<ElementRef>;
+
   constructor(
     private xls: XlsxDataService,
     private router: Router,
@@ -96,7 +99,19 @@ export class FilterBoxComponent implements OnInit {
       filter((e: RouterEvent) => e instanceof NavigationEnd)
     ).subscribe((e:RouterEvent) => {
       this.hideFilter = this.route.snapshot.firstChild.data.hideFilter;
+      this.clearAllFilter();
     });
+  }
+
+  isShowDropUp(index) {
+    if(!this.dropdowns) return false;
+    const dropDown: ElementRef = this.dropdowns.toArray()[index];
+    if(!dropDown || !dropDown.nativeElement.classList.contains('open')) return false;
+    const rect = dropDown.nativeElement.getBoundingClientRect();
+    if(window.innerHeight < (rect.top + 250)) {
+      return true;
+    }
+    return false;
   }
 
   toogleFilter(key, filter?) {
@@ -105,6 +120,16 @@ export class FilterBoxComponent implements OnInit {
     } else if(filter) {
       this.filterJson[key] = filter;
     }
+    this.xls.triggerFilter(this.filterJson);
+  }
+
+  clearAllFilter() {
+    this.filterJson = {};
+    this.xls.triggerFilter(this.filterJson);
+  }
+
+  clearFilter(key) {
+    delete this.filterJson[key];
     this.xls.triggerFilter(this.filterJson);
   }
 

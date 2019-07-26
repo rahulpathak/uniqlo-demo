@@ -12,7 +12,7 @@
       (click)="toogleFilter('department')">Kids / Baby</button>
   </div>
   <div style="padding: 0px 10px 20px 10px">
-    <div class="dropdown" dropdown>
+    <div class="dropdown" dropdown [dropup]="isShowDropUp(0)">
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
         {{checkFilterExists('country') ? filterJson.country : "Country"}}
         <span class="caret dropdown-position"></span></button>
@@ -22,7 +22,7 @@
           <a>{{ctry.display}}</a></li>
       </ul>
     </div>
-    <div class="dropdown" dropdown>
+    <div class="dropdown" dropdown [dropup]="isShowDropUp(1)">
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
         {{checkFilterExists('category_dummy') ? filterJson.category_dummy : "Category"}}
         <span class="caret dropdown-position"></span></button>
@@ -32,7 +32,7 @@
           <a>{{cat.display}}</a></li>
       </ul>
     </div>
-    <div class="dropdown" dropdown>
+    <div class="dropdown" dropdown [dropup]="isShowDropUp(2)">
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
         {{checkFilterExists('sub_category_dummy') ? filterJson.sub_category_dummy : "Sub Category"}}
         <span class="caret dropdown-position"></span></button>
@@ -43,7 +43,7 @@
       </ul>
     </div>
     <div>
-      <div class="dropdown inline-block issue-info padding-right" dropdown>
+      <div class="dropdown inline-block issue-info padding-right" dropdown [dropup]="isShowDropUp(3)">
         <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" dropdownToggle>
           {{checkFilterExists('age_dummy') ? filterJson.age_dummy : "Age"}}
           <span class="caret dropdown-position"></span></button>
@@ -53,7 +53,7 @@
             <a>{{age.display}}</a></li>
         </ul>
       </div>
-      <div class="dropdown inline-block issue-info p-l-xs" dropdown>
+      <div class="dropdown inline-block issue-info p-l-xs" dropdown [dropup]="isShowDropUp(4)">
         <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" dropdownToggle>
           {{checkFilterExists('size_dummy') ? filterJson.size_dummy : "Size"}}
           <span class="caret dropdown-position"></span></button>
@@ -65,7 +65,7 @@
       </div>
     </div>
     <div>
-      <div class="dropdown inline-block issue-info padding-right" dropdown>
+      <div class="dropdown inline-block issue-info padding-right" dropdown [dropup]="isShowDropUp(5)">
         <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" dropdownToggle>
           {{checkFilterExists('fab_dummy') ? filterJson.fab_dummy : "Fabric"}}
           <span class="caret dropdown-position"></span></button>
@@ -75,7 +75,7 @@
             <a>{{fab.display}}</a></li>
         </ul>
       </div>
-      <div class="dropdown inline-block issue-info p-l-xs" dropdown>
+      <div class="dropdown inline-block issue-info p-l-xs" dropdown [dropup]="isShowDropUp(6)">
         <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
           {{checkFilterExists('color_dummy') ? filterJson.color_dummy : "Color"}}
           <span class="caret dropdown-position"></span></button>
