@@ -29,13 +29,13 @@
     }
 
     .accordion-toggle[aria-expanded="true"]:before {
-        content: "\f107";
+        content: "\f106";
         font: normal normal normal 14px/1 FontAwesome;
         font-size: 20px;
     }
 
     .accordion-toggle[aria-expanded="false"]:before {
-        content: '\f106';
+        content: '\f107';
         font: normal normal normal 14px/1 FontAwesome;
         font-size: 20px;
     }
