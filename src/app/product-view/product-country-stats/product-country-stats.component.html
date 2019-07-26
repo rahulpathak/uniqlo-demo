@@ -1,6 +1,20 @@
-<accordion [isAnimated]="true">
-  <accordion-group isOpen="true" *ngFor="let stats of product.details?.comments; let index = index;"
-    panelClass="product-country-list">
+<div class="text-right">
+    <button type="button" class="btn btn-primary compare m-r-md">
+     <i class="compare-icon"></i> Compare Keywords</button>
+    <button type="button" class="btn btn-primary m-r-md">
+      <i class="print-icon pull-left"></i>Print</button>
+    <button type="button" class="btn btn-primary m-r-md">
+      <i class="export-icon pull-left"></i>Export</button>
+    <button type="button" class="btn btn-primary" (click)="toggleAll()">
+      {{ openAll ? 'Collapse All' : 'Expand All' }}
+    </button>
+  </div>
+  <accordion [isAnimated]="true">
+  <accordion-group 
+      *ngFor="let stats of product.details?.comments; let index = index;" 
+      [isOpen]="stats.opened" 
+      (isOpenChange)="onOpenChangePanel($event, stats)" 
+      panelClass="product-country-list">
     <div accordion-heading>
       <span class="country-checkbox" (click)="clickCountrySelection(stats, $event)">
         <input type="checkbox" [checked]="stats.checked" />
