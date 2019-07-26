@@ -39,7 +39,7 @@
     width: 196px;
 }
 
-.print-icon{
+.print-icon {
     height: 21px;
 }
 
@@ -75,4 +75,12 @@
     color: #5a5a5a;
     border-bottom: 0px;
     font-weight: 600;
+}
+
+.box-height {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
 }

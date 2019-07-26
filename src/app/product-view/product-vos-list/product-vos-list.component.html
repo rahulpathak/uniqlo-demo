@@ -18,10 +18,10 @@
         <div class="col-lg-1 no-padding-right">
           {{index + 1}}
         </div>
-        <div class="col-lg-6">
-          {{item.comment}}
+        <div class="col-lg-6 text-height" style="-webkit-box-orient: vertical;">
+          <span title="{{item.comment}}">{{item.comment}}</span>
         </div>
-        <div class="col-lg-3">
+        <div class="col-lg-3 no-padding">
           <div class="best" *ngIf="index == 0">
             BEST
           </div>
