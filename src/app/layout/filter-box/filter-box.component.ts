@@ -12,8 +12,8 @@ import { BsDropdownDirective } from 'ngx-bootstrap';
 export class FilterBoxComponent implements OnInit {
 
   country = [
-    { 'id': 'usa', 'display': 'USA' },
     { 'id': 'japan', 'display': 'Japan' },
+    { 'id': 'usa', 'display': 'USA' }
     // { 'id': 'india', 'display': 'India' },
     // { 'id': 'malaysia', 'display': 'Malaysia' },
     // { 'id': 'russia', 'display': 'Russia' },
@@ -22,24 +22,24 @@ export class FilterBoxComponent implements OnInit {
   ];
 
   category = [
-    { 'id': 'tops', 'display': 'Tops' },
-    { 'id': 'outerwear', 'display': 'Outerwear' },
-    { 'id': 'bottoms', 'display': 'Bottoms' },
+    { 'id': 'accandshoes', 'display': 'Accessories and Shoes' },
     { 'id': 'activewear', 'display': 'Activewear' },
+    { 'id': 'bottoms', 'display': 'Bottoms' },
     { 'id': 'dnj', 'display': 'Dresses and Jumpsuits' },
-    { 'id': 'accandshoes', 'display': 'Accessories and Shoes' }
+    { 'id': 'outerwear', 'display': 'Outerwear' },
+    { 'id': 'tops', 'display': 'Tops' }
   ];
 
   sub_category = [
-    { 'id': 'jeans', 'display': 'Jeans' },
-    { 'id': 'tshirts', 'display': 'T-Shirts' },
     { 'id': 'dshirts', 'display': 'Dress Shirt' },
-    { 'id': 'shirtsandblouses', 'display': 'Shirts and Blouses' },
-    { 'id': 'shorts', 'display': 'Shorts' },
-    { 'id': 'pants', 'display': 'Pants' },
     { 'id': 'jackets', 'display': 'Jackets' },
+    { 'id': 'jeans', 'display': 'Jeans' },
+    { 'id': 'pants', 'display': 'Pants' },
     { 'id': 'pshirts', 'display': 'Polo Shirt' },
-    { 'id': 'pullovers', 'display': 'Pullovers' }
+    { 'id': 'pullovers', 'display': 'Pullovers' },
+    { 'id': 'tshirts', 'display': 'T-Shirts' },
+    { 'id': 'shirtsandblouses', 'display': 'Shirts and Blouses' },
+    { 'id': 'shorts', 'display': 'Shorts' }
   ];
 
   age_cat = [
@@ -62,13 +62,13 @@ export class FilterBoxComponent implements OnInit {
   ];
 
   fabric_cat = [
+    { 'id': 'canvas', 'display': 'Canvas' },
     { 'id': 'cotton', 'display': 'Cotton' },
     { 'id': 'jersey', 'display': 'Jersey' },
-    { 'id': 'linen', 'display': 'Linen' },
-    { 'id': 'silk', 'display': 'Silk' },
-    { 'id': 'canvas', 'display': 'Canvas' },
-    { 'id': 'lycra', 'display': 'Lycra' },
     { 'id': 'lace', 'display': 'Lace' },
+    { 'id': 'linen', 'display': 'Linen' },
+    { 'id': 'lycra', 'display': 'Lycra' },
+    { 'id': 'silk', 'display': 'Silk' },
     { 'id': 'velvet', 'display': 'Velvet' }
   ];
 
@@ -76,10 +76,10 @@ export class FilterBoxComponent implements OnInit {
     { 'id': 'black', 'display': 'Black' },
     { 'id': 'blue', 'display': 'Blue' },
     { 'id': 'brown', 'display': 'Brown' },
-    { 'id': 'white', 'display': 'White' },
-    { 'id': 'yellow', 'display': 'Yellow' },
+    { 'id': 'pink', 'display': 'Pink' },
     { 'id': 'orange', 'display': 'Orange' },
-    { 'id': 'pink', 'display': 'Pink' }
+    { 'id': 'white', 'display': 'White' },
+    { 'id': 'yellow', 'display': 'Yellow' }
   ];
 
   filterJson = {};
@@ -149,7 +149,7 @@ export class FilterBoxComponent implements OnInit {
     let filterKeyExists = this.filterJson && this.filterJson[key];
     if(filterKeyExists) {
       if(filter) {
-        return this.filterJson[key].toLowerCase() == filter.toLowerCase();
+        return this.filterJson[key].toLowerCase() === filter.toLowerCase();
       }
       return true;
     }

@@ -179,3 +179,25 @@
     border-bottom: 0px;
     font-weight: 600;
 }
+
+.btn.keybutton, .btn.keybutton:hover, .btn.keybutton:focus, .btn.keybutton:visited {
+    background-color: #5B68D3;
+    color: #f4f4f4;
+    border-radius: 0px;
+    min-width: 110px;
+    margin-bottom: 10px;
+    border: 0px;
+}
+
+.compare {
+    width: 196px;
+}
+
+.print-icon {
+    height: 21px;
+}
+
+.btn.keybutton:active {
+    background-color: #777f9e;
+    color: #f4f4f4;
+}
