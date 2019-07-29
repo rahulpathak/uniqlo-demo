@@ -11,26 +11,14 @@ import { XlsxDataService } from 'src/app/rootServices/xlsx-data.service';
 export class FullPageComponent implements OnInit {
   showMenuClass: string = '';
 
-  constructor(
-    private router: Router,
-    private xls: XlsxDataService
-  ) {    
+  constructor() {    
   }
 
   ngOnInit() {
-    this.router.events.subscribe((event: RouterEvent) => {
-      this.navigationInterceptor(event)
-    });
   }
 
   toggleSideMenu(show) {
-    this.showMenuClass = show ? 'open-side-nav' : '';
-  }
-
-  navigationInterceptor(event: RouterEvent): void {
-    if (event instanceof NavigationStart) {
-      this.toggleSideMenu(false);
-    }
+    this.showMenuClass = !show ? 'hide-side-nav' : '';
   }
 
 }

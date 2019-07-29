@@ -1,11 +1,32 @@
-.full-page-wrapper {    
+.full-page-wrapper {
+    &.hide-side-nav {
+        .navbar-static-top {
+            .menu-icon {
+                .fa-times {
+                    display: none;
+                }
+                .fa-bars {
+                    display: inline;
+                }
+            }
+        }
+        .page-wrapper {
+            .side-nav-wrapper {
+                margin-left: -290px;
+                transform: rotateY(100deg);
+            }
+            .page-content-wrapper {
+                width: 100%;
+            }
+        }
+    }
     .navbar-static-top {
         .menu-icon {
             .fa-times {
-                display: none;
+                display: inline;
             }
             .fa-bars {
-                display: inline;
+                display: none;
             }
         }
     }
@@ -13,17 +34,20 @@
     .page-wrapper {
         display: flex;
         align-items: stretch;
+        perspective: 1500px;
         .side-nav-wrapper {
             min-width: 290px;
             max-width: 290px;
             min-height: calc(100% - 45px);
             background-color: #303D74;
+            transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);  
+            transform-origin: botttom left;          
         }
 
         .page-content-wrapper {
             width: calc(100% - 290px);
-            max-width: calc(100% - 290px);
             background-color: #f4f4f4;
+            transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
         }
     }    
 }
