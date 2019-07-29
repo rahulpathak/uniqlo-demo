@@ -35,19 +35,6 @@
     border: 0px;
 }
 
-.compare {
-    width: 196px;
-}
-
-.print-icon {
-    height: 21px;
-}
-
-.btn-primary:active {
-    background-color: #777f9e;
-    color: #f4f4f4;
-}
-
 .text-right {
     text-align: right;
 }
