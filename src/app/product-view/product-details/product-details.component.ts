@@ -11,6 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class ProductDetailsComponent implements OnInit {
   product: any = {};
+  link = false;
   constructor(
     private xls: XlsxDataService,
     private route:ActivatedRoute

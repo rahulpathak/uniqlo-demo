@@ -29,13 +29,13 @@
       <div class="col-lg-12 no-padding">
         <div class="row">
           <div class="col-lg-4">
-            <app-product-voc-list [productId]="product.p_id" [country]="stats?.country?.toLowerCase()" [items]="stats.voc"></app-product-voc-list>
+            <app-product-voc-list [productId]="product.p_id" [link]="link" [country]="stats?.country?.toLowerCase()" [items]="stats.voc"></app-product-voc-list>
           </div>
           <div class="col-lg-4">
-            <app-product-vos-list [productId]="product.p_id" [country]="stats?.country?.toLowerCase()" [items]="stats.vos"></app-product-vos-list>
+            <app-product-vos-list [productId]="product.p_id" [link]="link" [country]="stats?.country?.toLowerCase()" [items]="stats.vos"></app-product-vos-list>
           </div>
           <div class="col-lg-4">
-            <app-product-market-info [product]="product" [country]="stats?.country?.toLowerCase()" [item]="stats.market_information"></app-product-market-info>
+            <app-product-market-info [product]="product" [link]="link" [country]="stats?.country?.toLowerCase()" [item]="stats.market_information"></app-product-market-info>
           </div>
           <div class="col-lg-12">
             <div class="key-heading">Keyword Analytics</div>

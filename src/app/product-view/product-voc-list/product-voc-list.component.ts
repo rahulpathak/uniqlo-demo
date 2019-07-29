@@ -9,6 +9,7 @@ export class ProductVocListComponent implements OnInit {
   @Input('productId') productId;
   @Input('country') country;
   @Input('items') items;
+  @Input('link') link;
 
   constructor() { }
 

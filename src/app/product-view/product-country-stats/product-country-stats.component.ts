@@ -8,6 +8,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 })
 export class ProductCountryStatsComponent implements OnInit {
   @Input('product') product;
+  link = true;
   openAll: boolean;
 
   constructor() { }

@@ -1,6 +1,6 @@
 <div class="border-box" style="height: 218px;">
   <div class="sub-heading">Market Information
-      <a [routerLink]="['/', 'mi']"><i class="link-external"></i></a>
+      <a *ngIf="link" [routerLink]="['/', 'mi']"><i class="link-external"></i></a>
   </div>
   <div class="row">
     <div class="col-lg-12">

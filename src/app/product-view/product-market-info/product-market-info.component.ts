@@ -9,6 +9,8 @@ export class ProductMarketInfoComponent implements OnInit {
   @Input('product') product;
   @Input('country') country;
   @Input('item') item;
+  @Input('link') link;
+  
 
   constructor() { }
 
