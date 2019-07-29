@@ -6,6 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./product-vos-list.component.css']
 })
 export class ProductVosListComponent implements OnInit {
+  @Input('productId') productId;
+  @Input('country') country;
   @Input('items') items;
 
   constructor() { }
