@@ -2,6 +2,7 @@
     &.hide-side-nav {
         .navbar-static-top {
             .menu-icon {
+                background-color: transparent !important;
                 .fa-times {
                     display: none;
                 }
