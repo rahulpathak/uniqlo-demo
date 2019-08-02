@@ -1,0 +1,27 @@
+.filter-list-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 10px 0px;
+    border: 1px solid #e7eaec;
+    margin-bottom: 15px;    
+    .filter-item {
+        position: relative;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 5px 35px 5px 10px;
+        border: 1px solid #556AC1;
+        border-radius: 15px;
+        line-height: 1.5em;
+        text-transform: capitalize;
+        &:last-child {
+            margin-right: 0px;
+        }
+        .close-icon {
+            position: absolute;
+            top: 2px;
+            right: 5px;
+            color: #556AC1;
+            font-size: 2em;
+        }
+    }
+}

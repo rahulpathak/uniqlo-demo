@@ -1,0 +1,12 @@
+<div class="row" *ngIf="hideFilter || isFilterEmpty()">
+  <div class="col-lg-12 no-padding">
+    <div class="filter-list-wrapper">
+      <ng-container *ngFor="let item of filterJson | keyvalue">
+        <div class="filter-item" *ngFor="let filter of item.value">
+          {{ filter }}
+          <i class="fa fa-times-circle close-icon"></i>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
