@@ -4,7 +4,7 @@
       <ng-container *ngFor="let item of filterJson | keyvalue">
         <div class="filter-item" *ngFor="let filter of item.value">
           {{ filter }}
-          <i class="fa fa-times-circle close-icon"></i>
+          <i class="fa fa-times-circle close-icon" (click)="toogleFilter(item.key, filter)"></i>
         </div>
       </ng-container>
     </div>
