@@ -1,10 +1,9 @@
 .filter-box {
-    border-top: 1px solid #f4f4f4;
-    border-bottom: 1px solid #f4f4f4;
 
     .filter-text {
         padding: 10px 20px;
         color: #f4f4f4;
+        background-color: #42539A;
 
         .nav-label-position {
             padding-left: 10px;
@@ -53,6 +52,13 @@
             width: 100%;
             max-height: 200px;
             overflow-y: auto;
+            li a {
+                color: #000000; 
+            }
+            li.active > a {
+                background-color: #D7DCF0;
+                color: #000000; 
+            }
         }
     }
 

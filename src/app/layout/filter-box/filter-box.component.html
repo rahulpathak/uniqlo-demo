@@ -5,83 +5,83 @@
   </div>
   <div class="button-box">
     <button type="button" class="btn width-75 m-r-sm" 
-      (click)="toogleFilter('department', 'men')" [ngClass]="filterButtonClass('department', 'men')">Men</button>
+      (click)="toogleFilter('department', 'men')" [ngClass]="filterActiveClass('department', 'men')">Men</button>
     <button type="button" class="btn width-75 m-r-sm" 
-      (click)="toogleFilter('department', 'women')" [ngClass]="filterButtonClass('department', 'women')">Women</button>
+      (click)="toogleFilter('department', 'women')" [ngClass]="filterActiveClass('department', 'women')">Women</button>
     <button type="button" class="btn width-95"
-      (click)="toogleFilter('department')">Kids / Baby</button>
+      (click)="clearFilter('department')">Kids / Baby</button>
   </div>
   <div style="padding: 0px 10px 20px 10px">
-    <div class="dropdown" dropdown [dropup]="isShowDropUp(0)">
+    <div class="dropdown" dropdown [dropup]="isShowDropUp(0)" insideClick="true" autoClose="true">
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
-        {{checkFilterExists('country') ? filterJson.country : "Country"}}
+        Country
         <span class="caret dropdown-position"></span></button>
       <ul *dropdownMenu class="dropdown-menu">
-        <li (click)="toogleFilter('country')" *ngIf="checkFilterExists('country')"><a>All</a></li>
-        <li *ngFor="let ctry of country" (click)="triggerFilter('country', ctry.display)">
+        <li (click)="clearFilter('country')"><a>All</a></li>
+        <li *ngFor="let ctry of country" (click)="toogleFilter('country', ctry.display)" [ngClass]="filterActiveClass('country', ctry.display)">
           <a>{{ctry.display}}</a></li>
       </ul>
     </div>
-    <div class="dropdown" dropdown [dropup]="isShowDropUp(1)">
+    <div class="dropdown" dropdown [dropup]="isShowDropUp(1)" insideClick="true" autoClose="true">
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
-        {{checkFilterExists('category_dummy') ? filterJson.category_dummy : "Category"}}
+        Category
         <span class="caret dropdown-position"></span></button>
       <ul *dropdownMenu class="dropdown-menu">
-        <li (click)="toogleFilter('category_dummy')" *ngIf="checkFilterExists('category_dummy')"><a>All</a></li>
-        <li *ngFor="let cat of category" (click)="triggerFilter('category_dummy', cat.display)">
+        <li (click)="clearFilter('category_dummy')"><a>All</a></li>
+        <li *ngFor="let cat of category" (click)="toogleFilter('category_dummy', cat.display)" [ngClass]="filterActiveClass('category_dummy', cat.display)">
           <a>{{cat.display}}</a></li>
       </ul>
     </div>
-    <div class="dropdown" dropdown [dropup]="isShowDropUp(2)">
+    <div class="dropdown" dropdown [dropup]="isShowDropUp(2)" insideClick="true" autoClose="true">
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
-        {{checkFilterExists('sub_category_dummy') ? filterJson.sub_category_dummy : "Sub Category"}}
+        Sub Category
         <span class="caret dropdown-position"></span></button>
       <ul *dropdownMenu class="dropdown-menu">
-        <li (click)="toogleFilter('sub_category_dummy')" *ngIf="checkFilterExists('sub_category_dummy')"><a>All</a></li>
-        <li *ngFor="let subcat of sub_category" (click)="triggerFilter('sub_category_dummy', subcat.display)">
+        <li (click)="clearFilter('sub_category_dummy')"><a>All</a></li>
+        <li *ngFor="let subcat of sub_category" (click)="toogleFilter('sub_category_dummy', subcat.display)" [ngClass]="filterActiveClass('sub_category_dummy', subcat.display)">
           <a>{{subcat.display}}</a></li>
       </ul>
     </div>
     <div>
-      <div class="dropdown inline-block issue-info padding-right" dropdown [dropup]="isShowDropUp(3)">
+      <div class="dropdown inline-block issue-info padding-right" dropdown [dropup]="isShowDropUp(3)" insideClick="true" autoClose="true">
         <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" dropdownToggle>
-          {{checkFilterExists('age_dummy') ? filterJson.age_dummy : "Age"}}
+          Age
           <span class="caret dropdown-position"></span></button>
         <ul *dropdownMenu class="dropdown-menu">
-          <li (click)="toogleFilter('age_dummy')" *ngIf="checkFilterExists('age_dummy')"><a>All</a></li>
-          <li *ngFor="let age of age_cat" (click)="triggerFilter('age_dummy', age.display)">
+          <li (click)="clearFilter('age_dummy')"><a>All</a></li>
+          <li *ngFor="let age of age_cat" (click)="toogleFilter('age_dummy', age.display)" [ngClass]="filterActiveClass('age_dummy', age.display)">
             <a>{{age.display}}</a></li>
         </ul>
       </div>
-      <div class="dropdown inline-block issue-info p-l-xs" dropdown [dropup]="isShowDropUp(4)">
+      <div class="dropdown inline-block issue-info p-l-xs" dropdown [dropup]="isShowDropUp(4)" insideClick="true" autoClose="true">
         <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" dropdownToggle>
-          {{checkFilterExists('size_dummy') ? filterJson.size_dummy : "Size"}}
+          Size
           <span class="caret dropdown-position"></span></button>
         <ul *dropdownMenu class="dropdown-menu">
-          <li (click)="toogleFilter('size_dummy')" *ngIf="checkFilterExists('size_dummy')"><a>All</a></li>
-          <li *ngFor="let size of size_cat" (click)="triggerFilter('size_dummy', size.display)">
+          <li (click)="clearFilter('size_dummy')"><a>All</a></li>
+          <li *ngFor="let size of size_cat" (click)="toogleFilter('size_dummy', size.display)" [ngClass]="filterActiveClass('size_dummy', size.display)">
             <a>{{size.display}}</a></li>
         </ul>
       </div>
     </div>
     <div>
-      <div class="dropdown inline-block issue-info padding-right" dropdown [dropup]="isShowDropUp(5)">
+      <div class="dropdown inline-block issue-info padding-right" dropdown [dropup]="isShowDropUp(5)" insideClick="true" autoClose="true">
         <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" dropdownToggle>
-          {{checkFilterExists('fab_dummy') ? filterJson.fab_dummy : "Fabric"}}
+          Fabric
           <span class="caret dropdown-position"></span></button>
         <ul *dropdownMenu class="dropdown-menu">
-          <li (click)="toogleFilter('fab_dummy')" *ngIf="checkFilterExists('fab_dummy')"><a>All</a></li>
-          <li *ngFor="let fab of fabric_cat" (click)="triggerFilter('fab_dummy', fab.display)">
+          <li (click)="clearFilter('fab_dummy')"><a>All</a></li>
+          <li *ngFor="let fab of fabric_cat" (click)="toogleFilter('fab_dummy', fab.display)" [ngClass]="filterActiveClass('fab_dummy', fab.display)">
             <a>{{fab.display}}</a></li>
         </ul>
       </div>
-      <div class="dropdown inline-block issue-info p-l-xs" dropdown [dropup]="isShowDropUp(6)">
+      <div class="dropdown inline-block issue-info p-l-xs" dropdown [dropup]="isShowDropUp(6)" insideClick="true" autoClose="true">
         <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
-          {{checkFilterExists('color_dummy') ? filterJson.color_dummy : "Color"}}
+          Color
           <span class="caret dropdown-position"></span></button>
         <ul *dropdownMenu class="dropdown-menu">
-          <li (click)="toogleFilter('color_dummy')" *ngIf="checkFilterExists('color_dummy')"><a>All</a></li>
-          <li *ngFor="let color of color_cat" (click)="triggerFilter('color_dummy', color.display)">
+          <li (click)="clearFilter('color_dummy')"><a>All</a></li>
+          <li *ngFor="let color of color_cat" (click)="toogleFilter('color_dummy', color.display)" [ngClass]="filterActiveClass('color_dummy', color.display)">
             <a>{{color.display}}</a></li>
         </ul>
       </div>

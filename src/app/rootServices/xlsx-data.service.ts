@@ -50,8 +50,8 @@ export class XlsxDataService {
   doFilterData(rawData, filterJson) {
     return rawData.filter(data => {
       for(let key in filterJson) {
-        if(!key.endsWith("_dummy")) {
-          if (data[key] === undefined || data[key].toLowerCase() != filterJson[key].toLowerCase())
+        if(!key.endsWith("_dummy") && filterJson[key].length > 0) {
+          if (data[key] === undefined || !filterJson[key].some(x => x.toLowerCase() === data[key].toLowerCase()))
             return false;
         }
       }

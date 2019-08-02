@@ -115,10 +115,13 @@ export class FilterBoxComponent implements OnInit {
   }
 
   toogleFilter(key, filter?) {
+    if(!this.filterJson[key]) {
+      this.filterJson[key] = [];
+    }
     if(this.checkFilterExists(key, filter)) {
-      delete this.filterJson[key];
+      this.filterJson[key] = this.filterJson[key].filter(x => x.toLowerCase() != filter.toLowerCase());
     } else if(filter) {
-      this.filterJson[key] = filter;
+      this.filterJson[key].push(filter);
     }
     this.xls.triggerFilter(this.filterJson);
   }
@@ -129,16 +132,11 @@ export class FilterBoxComponent implements OnInit {
   }
 
   clearFilter(key) {
-    delete this.filterJson[key];
+    this.filterJson[key] = [];
     this.xls.triggerFilter(this.filterJson);
   }
 
-  triggerFilter(key, filter) {
-    this.filterJson[key] = filter;
-    this.xls.triggerFilter(this.filterJson);
-  }
-
-  filterButtonClass(key, filter?) {
+  filterActiveClass(key, filter?) {
     if(this.checkFilterExists(key, filter)) {
       return 'active';
     }
@@ -146,10 +144,10 @@ export class FilterBoxComponent implements OnInit {
   }
 
   checkFilterExists(key, filter?) {
-    let filterKeyExists = this.filterJson && this.filterJson[key];
+    let filterKeyExists = this.filterJson && this.filterJson[key] && this.filterJson[key].length > 0;
     if(filterKeyExists) {
       if(filter) {
-        return this.filterJson[key].toLowerCase() === filter.toLowerCase();
+        return this.filterJson[key].some(x => x.toLowerCase() === filter.toLowerCase());
       }
       return true;
     }
