@@ -52,3 +52,31 @@
         }
     }    
 }
+
+.ngx-datatable.material .datatable-footer .datatable-pager a {
+    border: none;
+    color: #ACB6E1;
+    font-size: 14px;
+}
+.ngx-datatable.material .datatable-footer .datatable-pager li.active a {
+    background-color: transparent;
+    color: #000000;
+}
+.datatable-icon-prev:before {    
+    content: "<< FIRST";
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.datatable-icon-left:before {
+    content: "< PREV";
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+.datatable-icon-right:before {
+    content: "NEXT > ";
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.datatable-icon-skip:before {
+    content: "LAST >>";
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
