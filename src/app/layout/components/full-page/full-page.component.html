@@ -2,7 +2,9 @@
   <app-header (clickMenuToggle)="toggleSideMenu($event)"></app-header>
   <div class="page-wrapper">
     <div class="side-nav-wrapper">
-      <app-sidenav></app-sidenav>
+      <div class="side-nav-inner-wrapper" #sideNav>
+        <app-sidenav></app-sidenav>
+      </div>
     </div>
     <div class="page-content-wrapper">
       <div class="row" style="margin: 0;">

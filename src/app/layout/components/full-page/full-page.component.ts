@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Router, RouterEvent, NavigationStart } from '@angular/router';
-import { XlsxDataService } from 'src/app/rootServices/xlsx-data.service';
+import { Component, OnInit, ViewEncapsulation, Inject, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
+import { WINDOW } from 'src/app/shared/services/window.services';
 
 @Component({
   selector: 'app-full-page',
@@ -9,9 +9,13 @@ import { XlsxDataService } from 'src/app/rootServices/xlsx-data.service';
   encapsulation: ViewEncapsulation.None
 })
 export class FullPageComponent implements OnInit {
+  @ViewChild('sideNav') sideNav: ElementRef;
   showMenuClass: string = '';
 
-  constructor() {    
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(WINDOW) private window: Window
+  ) {    
   }
 
   ngOnInit() {
@@ -19,6 +23,19 @@ export class FullPageComponent implements OnInit {
 
   toggleSideMenu(show) {
     this.showMenuClass = !show ? 'hide-side-nav' : '';
+  }
+
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    const offset = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
+    const sideNavBound: DOMRect = this.sideNav.nativeElement.getBoundingClientRect();
+    console.log(offset, this.window.innerHeight, sideNavBound);
+    let sidenavtop = offset - 45;
+    if(this.window.innerHeight < (sideNavBound.height + 45)) {
+      sidenavtop = sidenavtop + this.window.innerHeight - sideNavBound.height;
+    }
+    sidenavtop = sidenavtop > 0 ? sidenavtop : 0;
+    this.sideNav.nativeElement.style.top = sidenavtop + "px";
   }
 
 }

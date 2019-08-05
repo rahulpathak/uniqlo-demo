@@ -34,15 +34,22 @@
 
     .page-wrapper {
         display: flex;
-        align-items: stretch;
-        perspective: 1500px;
-        .side-nav-wrapper {
+        perspective: 1500px;        
+        .side-nav-wrapper { 
+            position: relative;           
             min-width: 290px;
             max-width: 290px;
             min-height: calc(100% - 45px);
             background-color: #303D74;
             transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);  
-            transform-origin: botttom left;          
+            transform-origin: botttom left;   
+            .side-nav-inner-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                transition: all 0.05s ease;
+            }       
         }
 
         .page-content-wrapper {
