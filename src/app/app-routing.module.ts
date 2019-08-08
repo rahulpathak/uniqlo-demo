@@ -13,8 +13,7 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent,
         data: {
-          hideFilter: true,
-          navHeightAll: false
+          hideFilter: true
         }
       },
       { path: 'vos', component: VoiceofstoreComponent },

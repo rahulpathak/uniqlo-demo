@@ -83,3 +83,13 @@ a:focus {
 .padding-right {
     padding-right: 5px;
 }
+
+.navbar-default {
+    display: flex;
+    flex-direction: column;
+}
+
+.with-filter-box .sidebar-wrapper {
+    height: calc(100vh - 413px - 45px);
+    overflow: auto;
+}
