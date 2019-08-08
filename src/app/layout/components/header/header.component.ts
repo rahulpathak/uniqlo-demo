@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.showMenu = false;
+    this.showMenu = true;
     this.toggleMenu();
   }
 
