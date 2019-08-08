@@ -1,6 +1,6 @@
-<nav class="navbar-default" role="navigation">
-  <div class="sidebar-collapse" >
-    <ul class="nav metismenu" id="side-menu" #sideMenu>
+<nav class="navbar-default" role="navigation" [class.with-filter-box]="!hideFilter">
+  <div class="sidebar-wrapper" #sideMenu>
+    <ul class="nav metismenu" id="side-menu">
       <li class="no_hover">
         <a class="no_hover">
           <i class="user_img"></i>
@@ -38,7 +38,9 @@
           <span class="nav-label">Setting</span>
         </a>
       </li>
-    </ul>
+    </ul>    
+  </div>
+  <div class="filter-box-wrapper">
     <app-filter-box></app-filter-box>
   </div>
 </nav>
