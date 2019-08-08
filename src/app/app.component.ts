@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
         primaryColour: '#dd0031', secondaryColour: '#006ddd', tertiaryColour: '#dd0031', 
         backdropBorderRadius: '3px', backdropBackgroundColour: 'rgba(0,0,0,0.6)'
     };
-   
+
     constructor(
         private xls: XlsxDataService
     ) { }

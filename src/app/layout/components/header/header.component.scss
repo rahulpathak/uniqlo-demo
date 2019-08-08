@@ -2,6 +2,9 @@
     $height: 45px;
     height: $height;
     min-height: $height;
+    position: fixed;
+    top: 0px;
+    width: 100%;
     background: rgb(87,108,194);
     background: linear-gradient(90deg, rgba(87,108,194,1) 0%, rgba(140,154,212,1) 100%);
     color: #ffffff;

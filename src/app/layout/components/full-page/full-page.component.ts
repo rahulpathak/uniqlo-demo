@@ -15,7 +15,7 @@ export class FullPageComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) private document: Document,
     @Inject(WINDOW) private window: Window
-  ) {    
+  ) {
   }
 
   ngOnInit() {
@@ -25,17 +25,19 @@ export class FullPageComponent implements OnInit {
     this.showMenuClass = !show ? 'hide-side-nav' : '';
   }
 
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-    const offset = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
-    const sideNavBound: DOMRect = this.sideNav.nativeElement.getBoundingClientRect();
-    console.log(offset, this.window.innerHeight, sideNavBound);
-    let sidenavtop = offset - 45;
-    if(this.window.innerHeight < (sideNavBound.height + 45)) {
-      sidenavtop = sidenavtop + this.window.innerHeight - sideNavBound.height;
-    }
-    sidenavtop = sidenavtop > 0 ? sidenavtop : 0;
-    this.sideNav.nativeElement.style.top = sidenavtop + "px";
-  }
+  // @HostListener("window:scroll", [])
+  // onWindowScroll() {
+  //   const offset = this.window.pageYOffset || this.document.documentElement.scrollTop || this.document.body.scrollTop || 0;
+  //   const sideNavBound: DOMRect = this.sideNav.nativeElement.getBoundingClientRect();
+  //   // console.log(offset, this.window.innerHeight, sideNavBound);
+  //   let sidenavtop = offset + 45;
+  //   console.log(sidenavtop);
+  //   if (this.window.innerHeight < (sideNavBound.height + 45)) {
+  //     sidenavtop = sidenavtop + this.window.innerHeight - sideNavBound.height;
+  //   }
+  //   sidenavtop = sidenavtop > 0 ? sidenavtop : 0;
+  //   console.log(sidenavtop);
+  //   this.sideNav.nativeElement.style.top = sidenavtop + "px";
+  // }
 
 }

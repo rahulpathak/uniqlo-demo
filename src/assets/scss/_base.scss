@@ -1721,6 +1721,21 @@ body.mini-navbar.fixed-sidebar .logo-element {
   margin: 0 7px;
 }
 
+.globle1-icon{
+  background: url('assets/img/globe_1.svg') no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  display: -ms-grid;
+  display: -webkit-box;
+  display: -moz-box;
+  display: inline-block;
+  margin: 0 7px;
+  position: relative;
+  top: -3px;
+}
+
 .trans-icon{
   background: url('assets/img/translate.svg') no-repeat;
   background-size: contain;

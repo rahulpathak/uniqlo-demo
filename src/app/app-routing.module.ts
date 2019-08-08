@@ -11,19 +11,21 @@ const routes: Routes = [
     path: '', 
     component: FullPageComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent,
+        data: {
+          hideFilter: true,
+          navHeightAll: false
+        }
+      },
       { path: 'vos', component: VoiceofstoreComponent },
       { path: 'voc', component: VoiceofcustomerComponent },
       { path: 'mi', component: VoiceofcustomerComponent },
-      { 
-        path: 'product-view/:id', 
-        loadChildren: './product-view/product-view.module#ProductViewModule',
-        data: {
-          hideFilter: true
-        }
+      {
+        path: 'product-view/:id',
+        loadChildren: './product-view/product-view.module#ProductViewModule'
       }
     ]
-  }  
+  }
 ];
 
 @NgModule({
