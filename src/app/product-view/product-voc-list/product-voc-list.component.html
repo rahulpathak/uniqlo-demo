@@ -1,29 +1,33 @@
 <div class="border-box">
-    <div class="sub-heading">Voice of Customer
-        <a *ngIf="link" [routerLink]="['/', 'voc']"><i class="link-external"></i></a>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="col-lg-1 row-heading no-padding-right">
-          Id
-        </div>
-        <div class="col-lg-9 row-heading">
-          Comment(s)
-        </div>
-        <div class="col-lg-2 row-heading text-center">
-          Count
-        </div>
+  <div class="sub-heading">
+    <!-- Voice of Store -->
+    店の声
+    <a *ngIf="link" [routerLink]="['/', 'voc']"><i class="link-external"></i></a>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-lg-1 row-heading no-padding-right">
+        Id
       </div>
-      <div class="col-lg-12" *ngFor="let item of items; let index = index;">
-        <div class="col-lg-1 row-dtl no-padding-right">
-          {{index + 1}}
-        </div>
-        <div class="col-lg-9 row-dtl">
-          <div class="text-overflow">{{item.comment}}</div>
-        </div>
-        <div class="col-lg-2 row-dtl text-center">
-          {{item.count}}
-        </div>
+      <div class="col-lg-8 row-heading">
+        <!-- Comment(s) -->
+        コメント
+      </div>
+      <div class="col-lg-3 row-heading text-center">
+        <!-- Count -->
+        カウント
+      </div>
+    </div>
+    <div class="col-lg-12" *ngFor="let item of items; let index = index;">
+      <div class="col-lg-1 row-dtl no-padding-right">
+        {{index + 1}}
+      </div>
+      <div class="col-lg-8 row-dtl">
+        <div class="text-overflow">{{item.comment}}</div>
+      </div>
+      <div class="col-lg-3 row-dtl text-center">
+        {{item.count}}
       </div>
     </div>
   </div>
+</div>

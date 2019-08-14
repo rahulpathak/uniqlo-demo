@@ -39,17 +39,21 @@ export class VoiceofstoreComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.VOSboxes = [{
-      title: 'Improvements',
+      // title: 'Improvements',
+      title: '改善点',
       param: 'improvements'
     },
     {
-      title: 'Non-Purchase(Tried)',
+      // title: 'Non-Purchase(Tried)',
+      title: '非購入（試用）',
       param: 'non_purchase'
-    }, {
-      title: 'Without Future',
+    },{
+      // title: 'Without Future',
+      title: '未来なし',
       param: 'without_future'
-    }, {
-      title: 'New Suggestions',
+    },{
+      // title: 'New Suggestion',
+      title: '新しい提案',
       param: 'new_suggestions'
     }];
     

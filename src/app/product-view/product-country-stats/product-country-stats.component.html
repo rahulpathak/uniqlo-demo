@@ -1,18 +1,18 @@
 <div class="text-right">
-    <button type="button" class="btn keybutton keybutton compare m-r-md">
-     <i class="compare-icon"></i> Compare Keywords</button>
-    <button type="button" class="btn keybutton m-r-md">
-      <i class="export-icon pull-left"></i>Export</button>
-    <button type="button" class="btn keybutton" (click)="toggleAll()">
-      {{ openAll ? 'Collapse All' : 'Expand All' }}
-    </button>
-  </div>
-  <accordion [isAnimated]="true">
-  <accordion-group 
-      *ngFor="let stats of product.details?.comments; let index = index;" 
-      [isOpen]="stats.opened" 
-      (isOpenChange)="onOpenChangePanel($event, stats)" 
-      panelClass="product-country-list">
+  <!-- Compare Keywords -->
+  <button type="button" class="btn keybutton keybutton compare m-r-md">
+    <i class="compare-icon"></i> キーワードを比較</button>
+  <button type="button" class="btn keybutton m-r-md">
+    <!-- Export -->
+    <i class="export-icon pull-left"></i>輸出する</button>
+  <button type="button" class="btn keybutton" (click)="toggleAll()">
+    <!-- {{ openAll ? 'Collapse All' : 'Expand All' }} -->
+    {{ openAll ? 'すべて折りたたむ' : 'すべて展開' }}
+  </button>
+</div>
+<accordion [isAnimated]="true">
+  <accordion-group *ngFor="let stats of product.details?.comments; let index = index;" [isOpen]="stats.opened"
+    (isOpenChange)="onOpenChangePanel($event, stats)" panelClass="product-country-list">
     <div accordion-heading>
       <span class="country-checkbox" (click)="clickCountrySelection(stats, $event)">
         <input type="checkbox" [checked]="stats.checked" />
@@ -27,18 +27,23 @@
       <div class="col-lg-12 no-padding">
         <div class="row">
           <div class="col-lg-4">
-            <app-product-voc-list [productId]="product.p_id" [link]="link" [country]="stats?.country?.toLowerCase()" [items]="stats.voc"></app-product-voc-list>
+            <app-product-voc-list [productId]="product.p_id" [link]="link" [country]="stats?.country?.toLowerCase()"
+              [items]="stats.voc"></app-product-voc-list>
           </div>
           <div class="col-lg-4">
-            <app-product-vos-list [productId]="product.p_id" [link]="link" [country]="stats?.country?.toLowerCase()" [items]="stats.vos"></app-product-vos-list>
+            <app-product-vos-list [productId]="product.p_id" [link]="link" [country]="stats?.country?.toLowerCase()"
+              [items]="stats.vos"></app-product-vos-list>
           </div>
           <div class="col-lg-4">
-            <app-product-market-info [product]="product" [link]="link" [country]="stats?.country?.toLowerCase()" [item]="stats.market_information"></app-product-market-info>
+            <app-product-market-info [product]="product" [link]="link" [country]="stats?.country?.toLowerCase()"
+              [item]="stats.market_information"></app-product-market-info>
           </div>
           <div class="col-lg-12">
-            <div class="key-heading">Keyword Analytics</div>
-            <app-product-keywords-relation 
-            *ngIf="product.details" [keywords]="product.details.keyword_relationship">
+            <div class="key-heading">
+              <!-- Keyword Analytics -->
+              キーワード分析
+            </div>
+            <app-product-keywords-relation *ngIf="product.details" [keywords]="product.details.keyword_relationship">
             </app-product-keywords-relation>
           </div>
         </div>

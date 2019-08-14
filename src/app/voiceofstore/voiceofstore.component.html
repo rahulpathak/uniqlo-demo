@@ -76,7 +76,8 @@
 <div #tableWrapper>
   <div class="row">
     <div class="col-lg-12 box-heading">
-      Voice of Store
+      <!-- Voice of Store -->
+      店の声
     </div>
     <div class="col-lg-12 no-padding">
       <div class="col-lg-3 box-color border-all no-padding-right no-padding-left" *ngFor="let box of VOSboxes;">
@@ -88,7 +89,8 @@
   <div class="row">
     <div class="col-lg-12 no-padding">
       <div class="box-heading">
-        Individual Products
+        <!-- Individual Products -->
+        個々の製品
       </div>
     </div>
     <div class="col-lg-12 no-padding">
@@ -96,7 +98,8 @@
         [rowHeight]="'auto'" [footerHeight]="50" [limit]="10" (activate)="selectProduct($event)">
         <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="p_id" name="#" [width]="120">
         </ngx-datatable-column>
-        <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="product" name="Part Number" [width]="375">
+        <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="product" name="品番" [width]="375">
+          <!-- Part Number -->
           <ng-template let-row="row" ngx-datatable-cell-template>
             <div class="text-overflow" title="{{row.product}}"><img src="assets/img/{{row.icon}}" width="18px"
                 height="18px" />
@@ -104,40 +107,47 @@
               <span class="cursor">{{row.product}}</span></div>
           </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="dept_id" name="Dep.ID" [width]="120">
+        <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="dept_id" name="出発ID" [width]="120">
+          <!-- Dep.ID -->
           <ng-template let-row="row" ngx-datatable-cell-template>
             <div class="text-center">{{row.dept_id}}</div>
           </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="points" name="Points">
+        <ngx-datatable-column [resizeable]="false" [sortable]="true" prop="points" name="ポイント">
+          <!-- Points -->
           <ng-template let-row="row" ngx-datatable-cell-template>
             <div class="text-overflow" title="{{row.points}}">{{row.points}}</div>
           </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="comments" name="Comments">
+        <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="comments" name="コメント">
+          <!-- Comments -->
           <ng-template let-row="row" ngx-datatable-cell-template>
             {{row.comments[0]}} / {{row.comments[1]}}
           </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="improvements" name="Improvements">
+        <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="improvements" name="改善点">
+          <!-- Improvements -->
           <ng-template let-row="row" ngx-datatable-cell-template>
             <app-progress-success-failure [success]="row.improvements.success" [failure]="row.improvements.failure">
             </app-progress-success-failure>
           </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="non_purchase" name="Non-Purchase (Tried)">
+        <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="non_purchase" name="非購入（試用）">
+          <!-- Non-Purchase (Tried) -->
           <ng-template let-row="row" ngx-datatable-cell-template>
             <app-progress-success-failure [success]="row.non_purchase.success" [failure]="row.non_purchase.failure">
             </app-progress-success-failure>
           </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="without_future" name="Without Future">
+        <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="without_future" name="未来なし">
+          <!-- Without Future -->
           <ng-template let-row="row" ngx-datatable-cell-template>
             <app-progress-success-failure [success]="row.without_future.success" [failure]="row.without_future.failure">
             </app-progress-success-failure>
           </ng-template>
         </ngx-datatable-column>
-        <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="new_suggestions" name="New Suggestions">
+        <ngx-datatable-column [resizeable]="false" [sortable]="false" prop="new_suggestions" name="新しい提案">
+          <!-- New Suggestions -->
           <ng-template let-row="row" ngx-datatable-cell-template>
             <app-progress-success-failure [success]="row.new_suggestions.success"
               [failure]="row.new_suggestions.failure">

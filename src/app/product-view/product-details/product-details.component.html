@@ -1,7 +1,10 @@
 <div class="row">
   <div class="col-lg-12 no-padding white-bg">
     <div class="product-heading">{{product.product}}
-      <div class="pull-left"><i class="globle1-icon global-width"></i> Global</div>      
+      <div class="pull-left"><i class="globle1-icon global-width"></i>
+        <!-- Global -->
+        グローバル
+      </div>
     </div>
     <div class="col-lg-3">
       <div class="box-content">
@@ -15,17 +18,21 @@
     <div class="col-lg-4">
       <div class="box-content" style="height: 224px;">
         <div class="content-heading">
-          High Level Recommendation
+          <!-- High Level Recommendation -->
+          高レベルの推奨事項
         </div>
-        <div class="p-t-md box-height" title="{{product.recommendations}}" style="-webkit-box-orient: vertical;">{{product.recommendations}}</div>
+        <div class="p-t-md box-height" title="{{product.recommendations}}" style="-webkit-box-orient: vertical;">
+          {{product.recommendations}}</div>
       </div>
     </div>
     <div class="col-lg-5">
       <div class="box-content" style="height: 224px;">
         <div class="content-heading">
-          Product Details
-        </div>       
-        <div class="p-t-md box-height" title="{{product.product_details}}" style="-webkit-box-orient: vertical;">{{product.product_details}}</div>
+          <!-- Product Details -->
+          製品詳細
+        </div>
+        <div class="p-t-md box-height" title="{{product.product_details}}" style="-webkit-box-orient: vertical;">
+          {{product.product_details}}</div>
       </div>
     </div>
   </div>
@@ -33,18 +40,23 @@
     <div class="col-lg-12">
       <div class="white-bg row" style="margin: 0;">
         <div class="col-lg-4">
-          <app-product-voc-list [productId]="product.p_id" [link]="link" country="global" [items]="getFirstCommentItem('voc')"></app-product-voc-list>
+          <app-product-voc-list [productId]="product.p_id" [link]="link" country="global"
+            [items]="getFirstCommentItem('voc')"></app-product-voc-list>
         </div>
         <div class="col-lg-4">
-          <app-product-vos-list [productId]="product.p_id" [link]="link" country="global" [items]="getFirstCommentItem('vos')"></app-product-vos-list>
+          <app-product-vos-list [productId]="product.p_id" [link]="link" country="global"
+            [items]="getFirstCommentItem('vos')"></app-product-vos-list>
         </div>
         <div class="col-lg-4">
-          <app-product-market-info [product]="product" [link]="link" country="global" [item]="getFirstCommentItem('market_information')"></app-product-market-info>
+          <app-product-market-info [product]="product" [link]="link" country="global"
+            [item]="getFirstCommentItem('market_information')"></app-product-market-info>
         </div>
         <div class="col-lg-12">
-          <div class="sub-heading">Keyword Analytics</div>
-          <app-product-keywords-relation 
-          *ngIf="product.details" [keywords]="product.details.keyword_relationship">
+          <div class="sub-heading">
+            <!-- Keyword Analytics -->
+            キーワード分析
+          </div>
+          <app-product-keywords-relation *ngIf="product.details" [keywords]="product.details.keyword_relationship">
           </app-product-keywords-relation>
         </div>
       </div>

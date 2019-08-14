@@ -21,25 +21,67 @@ export class FilterBoxComponent implements OnInit {
     // { 'id': 'unitedkingdom', 'display': 'United Kingdom' }
   ];
 
+  // category = [
+  //   { 'id': 'accandshoes', 'display': 'Accessories and Shoes' },
+  //   { 'id': 'activewear', 'display': 'Activewear' },
+  //   { 'id': 'bottoms', 'display': 'Bottoms' },
+  //   { 'id': 'dnj', 'display': 'Dresses and Jumpsuits' },
+  //   { 'id': 'outerwear', 'display': 'Outerwear' },
+  //   { 'id': 'tops', 'display': 'Tops' }
+  // ];
+
+  // sub_category = [
+  //   { 'id': 'dshirts', 'display': 'Dress Shirt' },
+  //   { 'id': 'jackets', 'display': 'Jackets' },
+  //   { 'id': 'jeans', 'display': 'Jeans' },
+  //   { 'id': 'pants', 'display': 'Pants' },
+  //   { 'id': 'pshirts', 'display': 'Polo Shirt' },
+  //   { 'id': 'pullovers', 'display': 'Pullovers' },
+  //   { 'id': 'tshirts', 'display': 'T-Shirts' },
+  //   { 'id': 'shirtsandblouses', 'display': 'Shirts and Blouses' },
+  //   { 'id': 'shorts', 'display': 'Shorts' }
+  // ];
+
+  // fabric_cat = [
+  //   { 'id': 'canvas', 'display': 'Canvas' },
+  //   { 'id': 'cotton', 'display': 'Cotton' },
+  //   { 'id': 'jersey', 'display': 'Jersey' },
+  //   { 'id': 'lace', 'display': 'Lace' },
+  //   { 'id': 'linen', 'display': 'Linen' },
+  //   { 'id': 'lycra', 'display': 'Lycra' },
+  //   { 'id': 'silk', 'display': 'Silk' },
+  //   { 'id': 'velvet', 'display': 'Velvet' }
+  // ];
+
+  // color_cat = [
+  //   { 'id': 'black', 'display': 'Black' },
+  //   { 'id': 'blue', 'display': 'Blue' },
+  //   { 'id': 'brown', 'display': 'Brown' },
+  //   { 'id': 'pink', 'display': 'Pink' },
+  //   { 'id': 'orange', 'display': 'Orange' },
+  //   { 'id': 'white', 'display': 'White' },
+  //   { 'id': 'yellow', 'display': 'Yellow' }
+  // ];
+
   category = [
-    { 'id': 'accandshoes', 'display': 'Accessories and Shoes' },
-    { 'id': 'activewear', 'display': 'Activewear' },
-    { 'id': 'bottoms', 'display': 'Bottoms' },
-    { 'id': 'dnj', 'display': 'Dresses and Jumpsuits' },
-    { 'id': 'outerwear', 'display': 'Outerwear' },
-    { 'id': 'tops', 'display': 'Tops' }
+    { 'id': 'accandshoes', 'display': 'アクセサリーと靴' },
+    { 'id': 'activewear', 'display': 'アクティブウェア' },
+    { 'id': 'bottoms', 'display': 'ボトムス' },
+    { 'id': 'dnj', 'display': 'ドレスとジャンプスーツ' },
+    { 'id': 'outerwear', 'display': 'アウターウェア' },
+    { 'id': 'tops', 'display': 'トップス' }
   ];
 
   sub_category = [
-    { 'id': 'dshirts', 'display': 'Dress Shirt' },
-    { 'id': 'jackets', 'display': 'Jackets' },
-    { 'id': 'jeans', 'display': 'Jeans' },
-    { 'id': 'pants', 'display': 'Pants' },
-    { 'id': 'pshirts', 'display': 'Polo Shirt' },
-    { 'id': 'pullovers', 'display': 'Pullovers' },
-    { 'id': 'tshirts', 'display': 'T-Shirts' },
-    { 'id': 'shirtsandblouses', 'display': 'Shirts and Blouses' },
-    { 'id': 'shorts', 'display': 'Shorts' }
+    { 'id': 'dshirts', 'display': 'ドレスシャツ' },
+    { 'id': 'jackets', 'display': 'ジャケット' },
+    { 'id': 'jeans', 'display': 'ジーンズ' },
+    { 'id': 'pants', 'display': 'パンツ' },
+    { 'id': 'pshirts', 'display': 'ポロシャツ' },
+    { 'id': 'pullovers', 'display': 'プルオーバー' },
+    { 'id': 'tshirts', 'display': 'Tシャツ' },
+    { 'id': 'shirtsandblouses', 'display': 'シャツとブラウス' },
+    { 'id': 'shorts', 'display': 'ショートパンツ' }
   ];
 
   age_cat = [
@@ -62,24 +104,24 @@ export class FilterBoxComponent implements OnInit {
   ];
 
   fabric_cat = [
-    { 'id': 'canvas', 'display': 'Canvas' },
-    { 'id': 'cotton', 'display': 'Cotton' },
-    { 'id': 'jersey', 'display': 'Jersey' },
-    { 'id': 'lace', 'display': 'Lace' },
-    { 'id': 'linen', 'display': 'Linen' },
-    { 'id': 'lycra', 'display': 'Lycra' },
-    { 'id': 'silk', 'display': 'Silk' },
-    { 'id': 'velvet', 'display': 'Velvet' }
+    { 'id': 'canvas', 'display': 'キャンバス' },
+    { 'id': 'cotton', 'display': 'コットン' },
+    { 'id': 'jersey', 'display': 'ジャージー' },
+    { 'id': 'lace', 'display': 'レース' },
+    { 'id': 'linen', 'display': 'リネン' },
+    { 'id': 'lycra', 'display': 'ライクラ' },
+    { 'id': 'silk', 'display': 'シルク' },
+    { 'id': 'velvet', 'display': 'ベルベット' }
   ];
 
   color_cat = [
-    { 'id': 'black', 'display': 'Black' },
-    { 'id': 'blue', 'display': 'Blue' },
-    { 'id': 'brown', 'display': 'Brown' },
-    { 'id': 'pink', 'display': 'Pink' },
-    { 'id': 'orange', 'display': 'Orange' },
-    { 'id': 'white', 'display': 'White' },
-    { 'id': 'yellow', 'display': 'Yellow' }
+    { 'id': 'black', 'display': 'ブラック' },
+    { 'id': 'blue', 'display': '青' },
+    { 'id': 'brown', 'display': '褐色' },
+    { 'id': 'pink', 'display': 'ピンク' },
+    { 'id': 'orange', 'display': 'オレンジ' },
+    { 'id': 'white', 'display': '白' },
+    { 'id': 'yellow', 'display': '黄' }
   ];
 
   filterJson = {};
@@ -97,30 +139,30 @@ export class FilterBoxComponent implements OnInit {
     this.hideFilter = this.route.snapshot.firstChild.data.hideFilter;
     this.router.events.pipe(
       filter((e: RouterEvent) => e instanceof NavigationEnd)
-    ).subscribe((e:RouterEvent) => {
+    ).subscribe((e: RouterEvent) => {
       this.hideFilter = this.route.snapshot.firstChild.data.hideFilter;
       this.clearAllFilter();
     });
   }
 
   isShowDropUp(index) {
-    if(!this.dropdowns) return false;
+    if (!this.dropdowns) return false;
     const dropDown: ElementRef = this.dropdowns.toArray()[index];
-    if(!dropDown || !dropDown.nativeElement.classList.contains('open')) return false;
+    if (!dropDown || !dropDown.nativeElement.classList.contains('open')) return false;
     const rect = dropDown.nativeElement.getBoundingClientRect();
-    if(window.innerHeight < (rect.top + 250)) {
+    if (window.innerHeight < (rect.top + 250)) {
       return true;
     }
     return false;
   }
 
   toogleFilter(key, filter?) {
-    if(!this.filterJson[key]) {
+    if (!this.filterJson[key]) {
       this.filterJson[key] = [];
     }
-    if(this.checkFilterExists(key, filter)) {
+    if (this.checkFilterExists(key, filter)) {
       this.filterJson[key] = this.filterJson[key].filter(x => x.toLowerCase() != filter.toLowerCase());
-    } else if(filter) {
+    } else if (filter) {
       this.filterJson[key].push(filter);
     }
     this.xls.triggerFilter(this.filterJson);
@@ -137,7 +179,7 @@ export class FilterBoxComponent implements OnInit {
   }
 
   filterActiveClass(key, filter?) {
-    if(this.checkFilterExists(key, filter)) {
+    if (this.checkFilterExists(key, filter)) {
       return 'active';
     }
     return '';
@@ -145,8 +187,8 @@ export class FilterBoxComponent implements OnInit {
 
   checkFilterExists(key, filter?) {
     let filterKeyExists = this.filterJson && this.filterJson[key] && this.filterJson[key].length > 0;
-    if(filterKeyExists) {
-      if(filter) {
+    if (filterKeyExists) {
+      if (filter) {
         return this.filterJson[key].some(x => x.toLowerCase() === filter.toLowerCase());
       }
       return true;

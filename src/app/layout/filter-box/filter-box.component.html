@@ -1,87 +1,108 @@
 <div class="filter-box" *ngIf="!hideFilter">
   <div class="filter-text">
     <i class="filter-icon"></i>
-    <span class="nav-label-position">Filters</span>
+    <!-- <span class="nav-label-position">Filters</span> -->
+    <span class="nav-label-position">フィルター</span>
   </div>
   <div class="button-box">
-    <button type="button" class="btn width-75 m-r-sm" 
-      (click)="toogleFilter('department', 'men')" [ngClass]="filterActiveClass('department', 'men')">Men</button>
-    <button type="button" class="btn width-75 m-r-sm" 
-      (click)="toogleFilter('department', 'women')" [ngClass]="filterActiveClass('department', 'women')">Women</button>
-    <button type="button" class="btn width-95"
-      (click)="clearFilter('department')">Kids / Baby</button>
+    <!-- Men -->
+    <button type="button" class="btn width-75 m-r-sm" (click)="toogleFilter('department', 'men')"
+      [ngClass]="filterActiveClass('department', 'men')">男性</button>
+    <!-- Women -->
+    <button type="button" class="btn width-75 m-r-sm" (click)="toogleFilter('department', 'women')"
+      [ngClass]="filterActiveClass('department', 'women')">女性たち</button>
+    <!-- Kids / Baby -->
+    <button type="button" class="btn width-95" (click)="clearFilter('department')">キッズ/ベビー</button>
   </div>
   <div style="padding: 0px 10px 20px 10px">
     <div class="dropdown" dropdown [dropup]="isShowDropUp(0)" insideClick="true" autoClose="true">
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
-        Country
+        <!-- Country -->
+        国
         <span class="caret dropdown-position"></span></button>
       <ul *dropdownMenu class="dropdown-menu">
-        <li (click)="clearFilter('country')"><a>All</a></li>
-        <li *ngFor="let ctry of country" (click)="toogleFilter('country', ctry.display)" [ngClass]="filterActiveClass('country', ctry.display)">
+        <li (click)="clearFilter('country')"><a>すべて</a></li>
+        <li *ngFor="let ctry of country" (click)="toogleFilter('country', ctry.display)"
+          [ngClass]="filterActiveClass('country', ctry.display)">
           <a>{{ctry.display}}</a></li>
       </ul>
     </div>
     <div class="dropdown" dropdown [dropup]="isShowDropUp(1)" insideClick="true" autoClose="true">
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
-        Category
+        <!-- Category -->
+        カテゴリー
         <span class="caret dropdown-position"></span></button>
       <ul *dropdownMenu class="dropdown-menu">
-        <li (click)="clearFilter('category_dummy')"><a>All</a></li>
-        <li *ngFor="let cat of category" (click)="toogleFilter('category_dummy', cat.display)" [ngClass]="filterActiveClass('category_dummy', cat.display)">
+        <li (click)="clearFilter('category_dummy')"><a>すべて</a></li>
+        <li *ngFor="let cat of category" (click)="toogleFilter('category_dummy', cat.display)"
+          [ngClass]="filterActiveClass('category_dummy', cat.display)">
           <a>{{cat.display}}</a></li>
       </ul>
     </div>
     <div class="dropdown" dropdown [dropup]="isShowDropUp(2)" insideClick="true" autoClose="true">
       <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
-        Sub Category
+        <!-- Sub Category -->
+        サブカテゴリー
         <span class="caret dropdown-position"></span></button>
       <ul *dropdownMenu class="dropdown-menu">
-        <li (click)="clearFilter('sub_category_dummy')"><a>All</a></li>
-        <li *ngFor="let subcat of sub_category" (click)="toogleFilter('sub_category_dummy', subcat.display)" [ngClass]="filterActiveClass('sub_category_dummy', subcat.display)">
+        <li (click)="clearFilter('sub_category_dummy')"><a>すべて</a></li>
+        <li *ngFor="let subcat of sub_category" (click)="toogleFilter('sub_category_dummy', subcat.display)"
+          [ngClass]="filterActiveClass('sub_category_dummy', subcat.display)">
           <a>{{subcat.display}}</a></li>
       </ul>
     </div>
     <div>
-      <div class="dropdown inline-block issue-info padding-right" dropdown [dropup]="isShowDropUp(3)" insideClick="true" autoClose="true">
+      <div class="dropdown inline-block issue-info padding-right" dropdown [dropup]="isShowDropUp(3)" insideClick="true"
+        autoClose="true">
         <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" dropdownToggle>
-          Age
+          <!-- Age -->
+          年齢
           <span class="caret dropdown-position"></span></button>
         <ul *dropdownMenu class="dropdown-menu">
-          <li (click)="clearFilter('age_dummy')"><a>All</a></li>
-          <li *ngFor="let age of age_cat" (click)="toogleFilter('age_dummy', age.display)" [ngClass]="filterActiveClass('age_dummy', age.display)">
+          <li (click)="clearFilter('age_dummy')"><a>すべて</a></li>
+          <li *ngFor="let age of age_cat" (click)="toogleFilter('age_dummy', age.display)"
+            [ngClass]="filterActiveClass('age_dummy', age.display)">
             <a>{{age.display}}</a></li>
         </ul>
       </div>
-      <div class="dropdown inline-block issue-info p-l-xs" dropdown [dropup]="isShowDropUp(4)" insideClick="true" autoClose="true">
+      <div class="dropdown inline-block issue-info p-l-xs" dropdown [dropup]="isShowDropUp(4)" insideClick="true"
+        autoClose="true">
         <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" dropdownToggle>
-          Size
+          <!-- Size -->
+          サイズ
           <span class="caret dropdown-position"></span></button>
         <ul *dropdownMenu class="dropdown-menu">
-          <li (click)="clearFilter('size_dummy')"><a>All</a></li>
-          <li *ngFor="let size of size_cat" (click)="toogleFilter('size_dummy', size.display)" [ngClass]="filterActiveClass('size_dummy', size.display)">
+          <li (click)="clearFilter('size_dummy')"><a>すべて</a></li>
+          <li *ngFor="let size of size_cat" (click)="toogleFilter('size_dummy', size.display)"
+            [ngClass]="filterActiveClass('size_dummy', size.display)">
             <a>{{size.display}}</a></li>
         </ul>
       </div>
     </div>
     <div>
-      <div class="dropdown inline-block issue-info padding-right" dropdown [dropup]="isShowDropUp(5)" insideClick="true" autoClose="true">
+      <div class="dropdown inline-block issue-info padding-right" dropdown [dropup]="isShowDropUp(5)" insideClick="true"
+        autoClose="true">
         <button class="btn btn-default full-width m-r-sm dropdown-toggle" type="button" dropdownToggle>
-          Fabric
+          <!-- Fabric -->
+          ファブリック
           <span class="caret dropdown-position"></span></button>
         <ul *dropdownMenu class="dropdown-menu">
-          <li (click)="clearFilter('fab_dummy')"><a>All</a></li>
-          <li *ngFor="let fab of fabric_cat" (click)="toogleFilter('fab_dummy', fab.display)" [ngClass]="filterActiveClass('fab_dummy', fab.display)">
+          <li (click)="clearFilter('fab_dummy')"><a>すべて</a></li>
+          <li *ngFor="let fab of fabric_cat" (click)="toogleFilter('fab_dummy', fab.display)"
+            [ngClass]="filterActiveClass('fab_dummy', fab.display)">
             <a>{{fab.display}}</a></li>
         </ul>
       </div>
-      <div class="dropdown inline-block issue-info p-l-xs" dropdown [dropup]="isShowDropUp(6)" insideClick="true" autoClose="true">
+      <div class="dropdown inline-block issue-info p-l-xs" dropdown [dropup]="isShowDropUp(6)" insideClick="true"
+        autoClose="true">
         <button class="btn btn-default full-width dropdown-toggle" type="button" dropdownToggle>
-          Color
+          <!-- Color -->
+          色
           <span class="caret dropdown-position"></span></button>
         <ul *dropdownMenu class="dropdown-menu">
-          <li (click)="clearFilter('color_dummy')"><a>All</a></li>
-          <li *ngFor="let color of color_cat" (click)="toogleFilter('color_dummy', color.display)" [ngClass]="filterActiveClass('color_dummy', color.display)">
+          <li (click)="clearFilter('color_dummy')"><a>すべて</a></li>
+          <li *ngFor="let color of color_cat" (click)="toogleFilter('color_dummy', color.display)"
+            [ngClass]="filterActiveClass('color_dummy', color.display)">
             <a>{{color.display}}</a></li>
         </ul>
       </div>

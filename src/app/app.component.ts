@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         this.loading = true;
-        this.xls.getXlsxData('assets/uniqlodemodata.xlsx').subscribe(data => {
+        this.xls.getXlsxData('assets/uniqlodemodata.ja.xlsx').subscribe(data => {
             this.xls.setRawData(data);
             this.loading = false;
         });

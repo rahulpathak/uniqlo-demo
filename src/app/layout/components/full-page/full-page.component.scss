@@ -1,33 +1,40 @@
 .full-page-wrapper {
+
     // position: relative;
     // top: 45px;
     &.hide-side-nav {
         .navbar-static-top {
             .menu-icon {
                 background-color: transparent !important;
+
                 .fa-times {
                     display: none;
                 }
+
                 .fa-bars {
                     display: inline;
                 }
             }
         }
+
         .page-wrapper {
             .side-nav-wrapper {
                 margin-left: -290px;
                 transform: rotateY(100deg);
             }
+
             .page-content-wrapper {
                 width: 100%;
             }
         }
     }
+
     .navbar-static-top {
         .menu-icon {
             .fa-times {
                 display: inline;
             }
+
             .fa-bars {
                 display: none;
             }
@@ -36,24 +43,26 @@
 
     .page-wrapper {
         display: flex;
+
         // perspective: 1500px;
-        .side-nav-wrapper { 
+        .side-nav-wrapper {
             position: fixed;
-            top:0px;
+            top: 0px;
             min-width: 290px;
             max-width: 290px;
             height: 100%;
             // min-height: calc(100% - 45px);
             background-color: #303D74;
-            transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);  
-            transform-origin: botttom left;   
+            transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+            transform-origin: botttom left;
+
             .side-nav-inner-wrapper {
                 position: absolute;
                 top: 45px;
                 left: 0;
                 width: 100%;
                 transition: all 0.05s ease;
-            }       
+            }
         }
 
         .page-content-wrapper {
@@ -64,7 +73,7 @@
             background-color: #FFFFFF;
             transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
         }
-    }    
+    }
 }
 
 .ngx-datatable.material .datatable-footer .datatable-pager a {
@@ -72,25 +81,32 @@
     color: #ACB6E1;
     font-size: 14px;
 }
+
 .ngx-datatable.material .datatable-footer .datatable-pager li.active a {
     background-color: transparent;
     color: #000000;
 }
-.datatable-icon-prev:before {    
-    content: "<< FIRST";
+
+.datatable-icon-prev:before {
+    // content: "<< FIRST";
+    content: "<< 最初";
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 .datatable-icon-left:before {
-    content: "< PREV";
+    // content: "< PREV";
+    content: "< 前";
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
+
 .datatable-icon-right:before {
-    content: "NEXT > ";
+    // content: "NEXT > ";
+    content: "次 > ";
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
 
 .datatable-icon-skip:before {
-    content: "LAST >>";
+    // content: "LAST >>";
+    content: "最終 >>";
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }

@@ -76,27 +76,32 @@
 
 <div class="row">
   <div class="col-lg-12 box-heading">
-    Voice of Customer
+    <!-- Voice of Customer -->
+    お客様の声
   </div>
   <div class="col-lg-12 no-padding">
     <div class="col-lg-6 box-color no-padding-left">
       <div class="col-lg-12 no-padding border-all">
-        <div class="sub-heading">Opportunities: Products with Top Ratings</div>
+        <!-- <div class="sub-heading">Opportunities: Products with Top Ratings</div> -->
+        <div class="sub-heading">機会：最高評価の製品</div>
         <div class="col-lg-12 row-heading">
           <div class="col-lg-1">
             Id
           </div>
           <div class="col-lg-4 no-padding">
-            Part Number
+            <!-- Part Number -->
+            品番
           </div>
           <div class="col-lg-2 text-center">
             Dep ID
           </div>
           <div class="col-lg-3">
-            Evaluation(Average)
+            <!-- Evaluation(Average) -->
+            評価（平均）
           </div>
           <div class="col-lg-2 text-center">
-            Comments
+            <!-- Comments -->
+            コメント
           </div>
         </div>
         <div class="col-lg-12 row-dtl" *ngFor="let top of toprating; let index = index;" (click)="goToProductView(top)">
@@ -126,22 +131,26 @@
     </div>
     <div class="col-lg-6 box-color no-padding-right">
       <div class="col-lg-12 no-padding border-all">
-        <div class="sub-heading">Risks: Products with Low Ratings</div>
+        <!-- <div class="sub-heading">Risks: Products with Low Ratings</div> -->
+        <div class="sub-heading">リスク：評価の低い製品</div>
         <div class="col-lg-12 row-heading">
           <div class="col-lg-1">
             Id
           </div>
           <div class="col-lg-4 no-padding">
-            Part Number
+            <!-- Part Number -->
+            品番
           </div>
           <div class="col-lg-2 text-center">
             Dep ID
           </div>
           <div class="col-lg-3">
-            Evaluation(Average)
+            <!-- Evaluation(Average) -->
+            評価（平均）
           </div>
           <div class="col-lg-2 text-center">
-            Comments
+            <!-- Comments -->
+            コメント
           </div>
         </div>
         <div class="col-lg-12 row-dtl" *ngFor="let low of lowrating; let index = index;" (click)="goToProductView(low)">
@@ -173,8 +182,9 @@
 </div>
 <br>
 <div class="row">
-  <div class="col-lg-12 box-heading">
-    Voice of Store
+<div class="col-lg-12 box-heading">
+    <!-- Voice of Store -->
+    店の声
   </div>
   <div class="col-lg-12 no-padding">
     <div class="col-lg-3 box-color border-all no-padding-right no-padding-left" *ngFor="let box of VOSboxes;">
