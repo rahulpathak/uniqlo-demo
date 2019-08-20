@@ -69,6 +69,8 @@ export class VoiceofstoreComponent implements OnInit, AfterViewChecked {
       this.table.recalculate();
       this.changeDetectorRef.detectChanges();
     }
+
+    setTimeout(() => { window.dispatchEvent(new Event('resize')); }, 100);
   }
 
   selectProduct(event) {
